@@ -5,12 +5,21 @@ module.exports = {
     author: `A-Game`,
   },
   plugins: [
+    `gatsby-plugin-catch-links`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `news`,
+        path: `${__dirname}/src/pages/news`,
       },
     },
     `gatsby-transformer-sharp`,

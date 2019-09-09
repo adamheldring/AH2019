@@ -15,7 +15,6 @@ const SecondPage = () => (
       <h5>(Gatsby image query example)</h5>
       <Image />
     </div>
-    <Link to="/">{`<--`} Back </Link>
   </Layout>
 )
 
