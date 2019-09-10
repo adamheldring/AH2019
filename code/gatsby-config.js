@@ -5,6 +5,7 @@ module.exports = {
     author: `A-Game`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
