@@ -11,11 +11,11 @@ const MobileMenu = ({ setMobileMenuOpen }) => (
     <ul>
       {menuData.map((menuItem, index) => (
         <li key={`${index}-${menuItem.title}`}>
-          <div className="mobile-menu__item-wrapper">
-            <Link to={menuItem.url} onClick={() => setMobileMenuOpen(false)}>
+          <Link to={menuItem.url} onClick={() => setMobileMenuOpen(false)}>
+            <div className="mobile-menu__item-wrapper">
               <h2>{menuItem.title.toUpperCase()}</h2>
-            </Link>
-          </div>
+            </div>
+          </Link>
         </li>
       ))}
     </ul>
