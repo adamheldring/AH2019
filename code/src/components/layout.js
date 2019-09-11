@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from "./header"
-import Menu from "./menu"
-import MobileMenu from "./MobileMenu/MobileMenu"
-import "./layout.css"
+import Header from './header'
+import Menu from './menu'
+import MobileMenu from './MobileMenu/MobileMenu'
+import './layout.css'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,9 +29,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen}/>
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+      />
       <Menu />
-      {mobileMenuOpen && <MobileMenu setMobileMenuOpen={setMobileMenuOpen}/>}
+      {mobileMenuOpen && <MobileMenu setMobileMenuOpen={setMobileMenuOpen} />}
       <div
         style={{
           margin: `0 auto`,

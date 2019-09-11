@@ -10,5 +10,9 @@ export default [
   {
     title: "News",
     url: "/news"
+  },
+  {
+    title: "Tour",
+    url: "/tour"
   }
 ]

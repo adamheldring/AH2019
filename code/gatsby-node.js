@@ -1,7 +1,7 @@
 const path = require('path')
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
   const newsSinglePageTemplate = path.resolve('src/templates/newsSinglePage.js')
 
@@ -22,16 +22,15 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       }
     }
   `).then(res => {
-    if(res.errors) {
+    if (res.errors) {
       return Promise.reject(res.errors)
     }
 
     res.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: newsSinglePageTemplate
+        component: newsSinglePageTemplate,
       })
-      
-    });
+    })
   })
 }
