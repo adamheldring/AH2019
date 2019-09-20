@@ -10,6 +10,7 @@
   box-sizing: border-box
   text-align: center
   box-sizing: border-box
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
 
   ul
     list-style: none
@@ -19,11 +20,19 @@
     color: #333
 
   &__header
-    margin: 40px 40px
+    margin: 0 auto
+    max-width: 660px
+    margin: 30px 40px 0px
     font-size: 50px
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
     font-weight: bold
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__close-button
+    padding: 0
 
   &__item-wrapper
     background: #eeeeee
@@ -33,7 +42,21 @@
     justify-content: center
     max-width: 600px
 
+    &:hover
+      background: #FF0000
+      color: #eeeeee
+
     h2
       font-size: 40px
       letter-spacing: 0.11em
       font-weight: 900
+
+  &__submenu
+    display: flex
+    justify-content: center
+    font-size: 14px
+    margin: 0 40px
+    max-width: 600px
+
+  &__submenu-item
+    padding: 0 5px

@@ -1,12 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import menuData from '../../../data/menuData'
+import { MdClose } from 'react-icons/md'
+import SocialMediaBar from '../SocialMediaBar/SocialMediaBar'
 import './MobileMenu.sass'
+import menuData from '../../../data/menuData'
 
 const MobileMenu = ({ setMobileMenuOpen }) => (
   <div className="mobile-menu">
     <div className="mobile-menu__header">
       <span>AH2019</span>
+      <span
+        className="mobile-menu__close-button"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        <MdClose />
+      </span>
     </div>
     <ul>
       {menuData.map((menuItem, index) => (
@@ -19,7 +27,11 @@ const MobileMenu = ({ setMobileMenuOpen }) => (
         </li>
       ))}
     </ul>
-    <h2 onClick={() => setMobileMenuOpen(false)}>X CLOSE</h2>
+    <SocialMediaBar />
+    <div className="mobile-menu__submenu">
+      <span className="mobile-menu__submenu-item">CONTACT</span> |{' '}
+      <span className="mobile-menu__submenu-item">ABOUT</span>
+    </div>
   </div>
 )
 
