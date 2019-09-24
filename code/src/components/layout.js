@@ -5,9 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useTransition, animated } from 'react-spring'
 
 import Header from './header'
 import Menu from './menu'
@@ -26,16 +27,34 @@ const Layout = ({ children }) => {
   `)
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const transitions = useTransition(mobileMenuOpen, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    config: { duration: 1000 },
+  })
 
+  console.log('MMOpen?: ', mobileMenuOpen)
   return (
-    <>
+    <Fragment>
       <Header
         siteTitle={data.site.siteMetadata.title}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
       />
       <Menu />
-      {mobileMenuOpen && <MobileMenu setMobileMenuOpen={setMobileMenuOpen} />}
+      {mobileMenuOpen &&
+        transitions.map(
+          ({ item, key, props }) =>
+            item && (
+              <animated.div style={props} key={key}>
+                <MobileMenu
+                  mobileMenuOpen={mobileMenuOpen}
+                  setMobileMenuOpen={setMobileMenuOpen}
+                />
+              </animated.div>
+            )
+        )}
       <div
         style={{
           margin: `0 auto`,
@@ -50,12 +69,8 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Tennis Music</a>
         </footer>
       </div>
-    </>
+    </Fragment>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

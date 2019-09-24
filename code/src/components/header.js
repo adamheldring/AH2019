@@ -37,7 +37,7 @@ const Header = ({ siteTitle, mobileMenuOpen, setMobileMenuOpen }) => (
           display: 'flex',
           alignItems: 'center',
         }}
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        onClick={() => setMobileMenuOpen(true)}
       >
         <MdMenu />
       </h1>
