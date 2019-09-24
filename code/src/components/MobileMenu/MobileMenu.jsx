@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { MdClose } from 'react-icons/md'
+import { useSpring, animated } from 'react-spring'
 import SocialMediaBar from '../SocialMediaBar/SocialMediaBar'
 import './MobileMenu.sass'
 import menuData from '../../../data/menuData'
@@ -18,13 +19,7 @@ const MobileMenu = ({ setMobileMenuOpen }) => (
     </div>
     <ul>
       {menuData.map((menuItem, index) => (
-        <li key={`${index}-${menuItem.title}`}>
-          <Link to={menuItem.url} onClick={() => setMobileMenuOpen(false)}>
-            <div className="mobile-menu__item-wrapper">
-              <h2>{menuItem.title.toUpperCase()}</h2>
-            </div>
-          </Link>
-        </li>
+        <MenuItem menuItem={menuItem} index={index} />
       ))}
     </ul>
     <SocialMediaBar />
@@ -36,3 +31,19 @@ const MobileMenu = ({ setMobileMenuOpen }) => (
 )
 
 export default MobileMenu
+
+const MenuItem = ({ menuItem, index }) => {
+  const listItemStyle = useSpring({ opacity: 1, from: { opacity: 0 } })
+  return (
+    <li key={`${index}-${menuItem.title}`}>
+      <Link to={menuItem.url} onClick={() => setMobileMenuOpen(false)}>
+        <animated.div
+          style={listItemStyle}
+          className="mobile-menu__item-wrapper"
+        >
+          <h2>{menuItem.title.toUpperCase()} TEST</h2>
+        </animated.div>
+      </Link>
+    </li>
+  )
+}
