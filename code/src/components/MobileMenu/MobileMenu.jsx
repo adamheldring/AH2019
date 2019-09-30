@@ -41,7 +41,7 @@ const MenuItem = ({ menuItem, index }) => {
           style={listItemStyle}
           className="mobile-menu__item-wrapper"
         >
-          <h2>{menuItem.title.toUpperCase()} TEST</h2>
+          <h2>{menuItem.title.toUpperCase()}</h2>
         </animated.div>
       </Link>
     </li>

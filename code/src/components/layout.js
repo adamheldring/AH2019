@@ -8,7 +8,7 @@
 import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { useTransition, animated } from 'react-spring'
+import { useTransition, animated, config } from 'react-spring'
 
 import Header from './header'
 import Menu from './menu'
@@ -28,10 +28,10 @@ const Layout = ({ children }) => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const transitions = useTransition(mobileMenuOpen, null, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    config: { duration: 1000 },
+    from: { marginLeft: '100vw' },
+    enter: { marginLeft: '0' },
+    leave: { marginLeft: '100vw' },
+    config: config.stiff,
   })
 
   console.log('MMOpen?: ', mobileMenuOpen)
@@ -43,18 +43,17 @@ const Layout = ({ children }) => {
         setMobileMenuOpen={setMobileMenuOpen}
       />
       <Menu />
-      {mobileMenuOpen &&
-        transitions.map(
-          ({ item, key, props }) =>
-            item && (
-              <animated.div style={props} key={key}>
-                <MobileMenu
-                  mobileMenuOpen={mobileMenuOpen}
-                  setMobileMenuOpen={setMobileMenuOpen}
-                />
-              </animated.div>
-            )
-        )}
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && (
+            <animated.div style={props} key={key}>
+              <MobileMenu
+                mobileMenuOpen={mobileMenuOpen}
+                setMobileMenuOpen={setMobileMenuOpen}
+              />
+            </animated.div>
+          )
+      )}
       <div
         style={{
           margin: `0 auto`,
