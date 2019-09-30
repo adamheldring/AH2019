@@ -32,6 +32,7 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => (
         </Link>
       </h1>
       <button
+        type="button"
         className="mobile-menu__button"
         style={{ fontSize: '50px' }}
         onClick={() => setMobileMenuOpen(true)}

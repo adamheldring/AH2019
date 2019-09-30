@@ -10,6 +10,7 @@ const MobileMenu = ({ setMobileMenuOpen }) => (
     <div className="mobile-menu__header">
       <span>AH2019</span>
       <button
+        type="button"
         className="mobile-menu__button"
         onClick={() => setMobileMenuOpen(false)}
       >
