@@ -3,19 +3,18 @@ import { Link } from 'gatsby'
 import { MdClose } from 'react-icons/md'
 import { useSpring, animated } from 'react-spring'
 import SocialMediaBar from '../SocialMediaBar/SocialMediaBar'
-import './MobileMenu.sass'
 import menuData from '../../../data/menuData'
 
 const MobileMenu = ({ setMobileMenuOpen }) => (
   <div className="mobile-menu">
     <div className="mobile-menu__header">
       <span>AH2019</span>
-      <span
-        className="mobile-menu__close-button"
+      <button
+        className="mobile-menu__button"
         onClick={() => setMobileMenuOpen(false)}
       >
         <MdClose />
-      </span>
+      </button>
     </div>
     <ul>
       {menuData.map((menuItem, index) => (

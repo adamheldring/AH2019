@@ -13,6 +13,7 @@ import { useTransition, animated, config } from 'react-spring'
 import Header from './header'
 import Menu from './menu'
 import MobileMenu from './MobileMenu/MobileMenu'
+import './MobileMenu/MobileMenu.sass'
 import './layout.css'
 
 const Layout = ({ children }) => {

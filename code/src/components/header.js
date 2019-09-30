@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { MdMenu } from 'react-icons/md'
+import './MobileMenu/MobileMenu.sass'
 
-const Header = ({ siteTitle, mobileMenuOpen, setMobileMenuOpen }) => (
+const Header = ({ siteTitle, setMobileMenuOpen }) => (
   <header
     style={{
       background: `#333`,
@@ -14,7 +15,7 @@ const Header = ({ siteTitle, mobileMenuOpen, setMobileMenuOpen }) => (
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `1.45rem 2rem`,
         display: 'flex',
         justifyContent: 'space-between',
       }}
@@ -30,17 +31,13 @@ const Header = ({ siteTitle, mobileMenuOpen, setMobileMenuOpen }) => (
           {siteTitle}
         </Link>
       </h1>
-      <h1
-        style={{
-          margin: 0,
-          color: 'white',
-          display: 'flex',
-          alignItems: 'center',
-        }}
+      <button
+        className="mobile-menu__button"
+        style={{ fontSize: '50px' }}
         onClick={() => setMobileMenuOpen(true)}
       >
         <MdMenu />
-      </h1>
+      </button>
     </div>
   </header>
 )
