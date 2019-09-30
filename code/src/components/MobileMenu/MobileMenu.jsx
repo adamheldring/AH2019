@@ -10,6 +10,7 @@ const MobileMenu = ({ setMobileMenuOpen }) => {
   const trail = useTrail(menuItems.length, {
     opacity: 1,
     from: { opacity: 0 },
+    delay: 100,
   })
   return (
     <div className="mobile-menu">
@@ -29,7 +30,11 @@ const MobileMenu = ({ setMobileMenuOpen }) => {
             key={menuItems[index].title}
             style={{ ...props, overflow: 'hidden' }}
           >
-            <MenuItem menuItem={menuItems[index]} index={index} />
+            <MenuItem
+              menuItem={menuItems[index]}
+              index={index}
+              setMobileMenuOpen={setMobileMenuOpen}
+            />
           </animated.div>
         ))}
       </ul>
@@ -42,7 +47,7 @@ const MobileMenu = ({ setMobileMenuOpen }) => {
   )
 }
 
-const MenuItem = ({ menuItem, index }) => {
+const MenuItem = ({ menuItem, index, setMobileMenuOpen }) => {
   const listItemStyle = useSpring({ color: '#333', from: { color: '#eeeeee' } })
   return (
     <li key={`${index}-${menuItem.title}`}>
