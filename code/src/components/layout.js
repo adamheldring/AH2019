@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
       />
-      <Menu />
+      {/* <Menu /> */}
       {transitions.map(
         ({ item, key, props }) =>
           item && (

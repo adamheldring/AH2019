@@ -11,6 +11,53 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => (
       marginBottom: `0`,
     }}
   >
+    <div>
+      <h1
+        style={{
+          margin: 0,
+          padding: 0,
+          fontSize: '15rem',
+          lineHeight: 0.65,
+        }}
+      >
+        <Link
+          to="/"
+          style={{
+            margin: 0,
+            padding: 0,
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          {/* {siteTitle} */}
+          ADAM
+        </Link>
+      </h1>
+      <h1
+        style={{
+          margin: 0,
+          padding: 0,
+          fontSize: '15rem',
+          display: `flex`,
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+          lineHeight: '0.7',
+        }}
+      >
+        <Link
+          to="/"
+          style={{
+            margin: 0,
+            padding: 0,
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          {/* {siteTitle} */}
+          HELDRING
+        </Link>
+      </h1>
+    </div>
     <div
       style={{
         margin: `0 auto`,
@@ -20,17 +67,6 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => (
         justifyContent: 'space-between',
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
       <button
         type="button"
         className="mobile-menu__button"
