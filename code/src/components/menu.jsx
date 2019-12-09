@@ -3,17 +3,13 @@ import { Link } from 'gatsby'
 import menuData from '../../data/menuData'
 
 const Menu = () => (
-  <nav style={{ backgroundColor: 'pink' }}>
-    <ul
-      style={{
-        listStyle: 'none',
-        display: 'flex',
-        justifyContent: 'space-evenly',
-      }}
-    >
+  <nav className="ah-menu">
+    <ul className="ah-menu-list">
       {menuData.map((menuItem, index) => (
         <li key={`${index}-${menuItem.title}`}>
-          <Link to={menuItem.url}>{menuItem.title}</Link>
+          <Link to={menuItem.url} className="ah-menu-list-item">
+            {menuItem.title}
+          </Link>
         </li>
       ))}
     </ul>

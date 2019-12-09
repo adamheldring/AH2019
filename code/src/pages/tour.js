@@ -7,7 +7,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Tour" />
     <h1>Tour</h1>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <div className="ah-page">
       <div>
         <ul>
           {tourData.map((tourItem, index) => (

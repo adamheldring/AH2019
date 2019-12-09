@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
-import Image from "../components/image"
+import React from 'react'
+import { Link } from 'gatsby'
+import Image from '../components/image'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const SecondPage = () => (
   <Layout>
@@ -11,7 +11,7 @@ const SecondPage = () => (
     <h1>Bio</h1>
     <p>Thinking about New York...</p>
 
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <div className="ah-page">
       <h5>(Gatsby image query example)</h5>
       <Image />
     </div>

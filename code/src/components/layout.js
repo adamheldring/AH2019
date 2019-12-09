@@ -15,6 +15,7 @@ import Menu from './menu'
 import MobileMenu from './MobileMenu/MobileMenu'
 import './MobileMenu/MobileMenu.sass'
 import './layout.css'
+import './ah2019.sass'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -43,7 +44,7 @@ const Layout = ({ children }) => {
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
       />
-      {/* <Menu /> */}
+      <Menu />
       {transitions.map(
         ({ item, key, props }) =>
           item && (
@@ -55,14 +56,7 @@ const Layout = ({ children }) => {
             </animated.div>
           )
       )}
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
+      <div className="ah-wrapper">
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()},{` `}
