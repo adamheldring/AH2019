@@ -32,7 +32,7 @@
       max-width: 960px
       padding: 1.45rem 2rem
       display: flex
-      justify-content: space-between
+      justify-content: flex-end
       border: 1px solid yellow
 
   &-menu
@@ -55,3 +55,24 @@
     padding: 20px
     margin-bottom: 10px
     color: #333333
+
+@media only screen and (max-width: 1330px) and (min-width: 1065px)
+  .ah
+    &-header-title
+      font-size: 12em
+@media only screen and (max-width: 1064px) and (min-width: 805px)
+  .ah
+    &-header-title
+      font-size: 9em
+@media only screen and (max-width: 804px) and (min-width: 625px)
+  .ah
+    &-header-title
+      font-size: 7em
+@media only screen and (max-width: 624px) and (min-width: 321px)
+  .ah
+    &-header-title
+      font-size: 4.5em
+@media only screen and (max-width: 320px)
+  .ah
+    &-header-title
+      font-size: 4em
