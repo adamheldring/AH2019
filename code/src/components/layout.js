@@ -44,7 +44,6 @@ const Layout = ({ children }) => {
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
       />
-      <Menu />
       {transitions.map(
         ({ item, key, props }) =>
           item && (
@@ -57,6 +56,7 @@ const Layout = ({ children }) => {
           )
       )}
       <div className="ah-wrapper">
+        <Menu />
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()},{` `}
