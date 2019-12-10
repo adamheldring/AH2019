@@ -1,21 +1,38 @@
+body
+  --primary-color: #DDDDDD
+  --secondary-color: #333333
+  --tertiary-color: #b2eff7
+  --custom-white: pink
+
+  background-color: var(--primary-color)
+  border: 20px solid var(--secondary-color)
+  min-height: 100vh
+
 .ah
+  &-primary
+    color: var(--primary-color)
+
   &-wrapper
     margin: 0 auto
     max-width: 960px
     padding: 0px 1.0875rem 1.45rem
     padding-top: 0
-    color: white
+    color: var(--secondary-color)
 
   &-header
-    background: #333
     margin-bottom: 0
     &-title
       margin: 0
       padding: 0
       font-size: 15rem
+      letter-spacing: -0.5rem
       &-left
+        margin-left: -0.3rem
         line-height: 0.65
+        &-da-kerning
+          letter-spacing: -1.4rem
       &-right
+        margin-right: -0.3rem
         line-height: 0.7
         display: flex
         flex-direction: row
@@ -23,7 +40,7 @@
       &-link
         margin: 0
         padding: 0
-        color: white
+        color: var(--secondary-color)
         text-decoration: none
 
     &-mobile-menu-button-wrapper
@@ -40,38 +57,60 @@
       display: flex
       justify-content: space-between
       &-item
-        background: white
+        background: var(--secondary-color)
         font-size: 2em
         padding: 0px 10px
-        color: #333333
+        color: var(--primary-color)
 
   &-page
     margin-bottom: 1.45rem
     background: pink
 
   &-news
-    background: #BADA55
+    background: var(--secondary-color)
     padding: 20px
     margin-bottom: 10px
-    color: #333333
+    color: var(--primary-color)
 
-@media only screen and (max-width: 1330px) and (min-width: 1065px)
+@media only screen and (max-width: 1285px) and (min-width: 1024px)
   .ah
     &-header-title
       font-size: 12em
-@media only screen and (max-width: 1064px) and (min-width: 805px)
+      &-left-da-kerning
+        letter-spacing: -1.3rem
+@media only screen and (max-width: 1023px) and (min-width: 766px)
+  body
+    border: 15px solid var(--secondary-color)
   .ah
     &-header-title
       font-size: 9em
-@media only screen and (max-width: 804px) and (min-width: 625px)
+      letter-spacing: -0.4rem
+      &-left-da-kerning
+        letter-spacing: -0.9rem
+@media only screen and (max-width: 765px) and (min-width: 606px)
+  body
+    border: 15px solid var(--secondary-color)
   .ah
     &-header-title
       font-size: 7em
-@media only screen and (max-width: 624px) and (min-width: 321px)
+      letter-spacing: -0.3rem
+      &-left-da-kerning
+        letter-spacing: -0.7rem
+@media only screen and (max-width: 605px) and (min-width: 321px)
+  body
+    border: 10px solid var(--secondary-color)
   .ah
     &-header-title
       font-size: 4.5em
+      letter-spacing: -0.1rem
+      &-left-da-kerning
+        letter-spacing: -0.4rem
 @media only screen and (max-width: 320px)
+  body
+    border: 10px solid var(--secondary-color)
   .ah
     &-header-title
       font-size: 4em
+      letter-spacing: -0.15rem
+      &-left-da-kerning
+        letter-spacing: -0.3rem

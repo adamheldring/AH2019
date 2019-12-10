@@ -9,8 +9,8 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => (
     <div>
       <h1 className="ah-header-title ah-header-title-left">
         <Link to="/" className="ah-header-title-link">
-          {/* {siteTitle} */}
-          ADAM
+          {/* {siteTitle} */}A
+          <span className="ah-header-title-left-da-kerning">D</span>AM
         </Link>
       </h1>
       <h1 className="ah-header-title ah-header-title-right">

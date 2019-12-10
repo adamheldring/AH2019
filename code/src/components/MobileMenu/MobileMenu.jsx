@@ -21,7 +21,7 @@ const MobileMenu = ({ setMobileMenuOpen }) => {
           className="mobile-menu__button"
           onClick={() => setMobileMenuOpen(false)}
         >
-          <MdClose />
+          <MdClose className="ah-primary" />
         </button>
       </div>
       <ul>

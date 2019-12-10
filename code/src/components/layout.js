@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
           )
       )}
       <div className="ah-wrapper">
-        <Menu />
+        {/* <Menu /> */}
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()},{` `}
