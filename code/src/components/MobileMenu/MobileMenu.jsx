@@ -14,34 +14,36 @@ const MobileMenu = ({ setMobileMenuOpen }) => {
   })
   return (
     <div className="mobile-menu">
-      <div className="mobile-menu__header">
-        <span>AH2019</span>
-        <button
-          type="button"
-          className="mobile-menu__button"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          <MdClose className="ah-primary" />
-        </button>
-      </div>
-      <ul>
-        {trail.map((props, index) => (
-          <animated.div
-            key={menuItems[index].title}
-            style={{ ...props, overflow: 'hidden' }}
+      <div className="mobile-menu__inner-wrapper">
+        <div className="mobile-menu__header">
+          <span>AH2019</span>
+          <button
+            type="button"
+            className="mobile-menu__button"
+            onClick={() => setMobileMenuOpen(false)}
           >
-            <MenuItem
-              menuItem={menuItems[index]}
-              index={index}
-              setMobileMenuOpen={setMobileMenuOpen}
-            />
-          </animated.div>
-        ))}
-      </ul>
-      <SocialMediaBar />
-      <div className="mobile-menu__submenu">
-        <span className="mobile-menu__submenu-item">CONTACT</span> |{' '}
-        <span className="mobile-menu__submenu-item">ABOUT</span>
+            <MdClose className="ah-primary" />
+          </button>
+        </div>
+        <ul>
+          {trail.map((props, index) => (
+            <animated.div
+              key={menuItems[index].title}
+              style={{ ...props, overflow: 'hidden' }}
+            >
+              <MenuItem
+                menuItem={menuItems[index]}
+                index={index}
+                setMobileMenuOpen={setMobileMenuOpen}
+              />
+            </animated.div>
+          ))}
+        </ul>
+        <SocialMediaBar />
+        <div className="mobile-menu__submenu">
+          <span className="mobile-menu__submenu-item">CONTACT</span> |{' '}
+          <span className="mobile-menu__submenu-item">ABOUT</span>
+        </div>
       </div>
     </div>
   )
