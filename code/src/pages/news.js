@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 const News = ({ data }) => {
   console.log(data)
   return (
-    <Layout>
+    <Fragment>
       <SEO title="News" />
       <div>
         <h1>Newsfeed</h1>
@@ -25,7 +25,7 @@ const News = ({ data }) => {
           )
         })}
       </div>
-    </Layout>
+    </Fragment>
   )
 }
 

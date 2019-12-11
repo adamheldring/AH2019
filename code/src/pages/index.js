@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const IndexPage = () => (
-  <Layout>
+  <Fragment>
     <SEO title="Home" />
     {/* <h1>WHAT'S NEW?</h1> */}
     <div className="ah-page">
@@ -21,7 +21,7 @@ const IndexPage = () => (
       </div>
       <p>"You / More" video</p>
     </div>
-  </Layout>
+  </Fragment>
 )
 
 export default IndexPage

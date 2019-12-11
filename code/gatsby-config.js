@@ -5,6 +5,12 @@ module.exports = {
     author: `A-Game`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.js`),
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-remark`,

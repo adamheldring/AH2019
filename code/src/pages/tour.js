@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import tourData from '../../data/tourData'
 
 const IndexPage = () => (
-  <Layout>
+  <Fragment>
     <SEO title="Tour" />
     <h1>Tour</h1>
     <div className="ah-page">
@@ -16,7 +16,7 @@ const IndexPage = () => (
         </ul>
       </div>
     </div>
-  </Layout>
+  </Fragment>
 )
 
 export default IndexPage
