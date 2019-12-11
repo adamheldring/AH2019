@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amiri&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 html {
   font-family: sans-serif;
@@ -205,7 +208,8 @@ html {
 body {
   color: hsla(0, 0%, 0%, 0.8);
   /* font-family: georgia, serif; */
-  font-family: 'Merriweather', serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

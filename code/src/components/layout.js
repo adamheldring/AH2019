@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
 
   console.log('MMOpen?: ', mobileMenuOpen)
   return (
-    <Fragment>
+    <div className="ah-outer-wrapper">
       <Header
         siteTitle={data.site.siteMetadata.title}
         mobileMenuOpen={mobileMenuOpen}
@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
             </animated.div>
           )
       )}
-      <div className="ah-wrapper">
+      <div className="ah-inner-wrapper">
         {/* <Menu /> */}
         <main>{children}</main>
         <footer>
@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Tennis Music</a>
         </footer>
       </div>
-    </Fragment>
+    </div>
   )
 }
 

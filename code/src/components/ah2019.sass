@@ -1,20 +1,22 @@
 body
-  --primary-color: #DDDDDD
+  --primary-color: #FFFFFF
   --secondary-color: #333333
   --tertiary-color: #b2eff7
   --custom-white: pink
 
-  background-color: var(--primary-color)
-  border: 20px solid var(--secondary-color)
-  min-height: 100vh
+  background-color: var(--secondary-color)
 
 .ah
   &-primary
     color: var(--primary-color)
 
-  &-wrapper
+  &-outer-wrapper
+    background-color: var(--primary-color)
+    min-height: 100vh
+    border: 20px solid var(--secondary-color)
+  &-inner-wrapper
     margin: 0 auto
-    max-width: 960px
+    max-width: 900px
     padding: 0px 1.0875rem 1.45rem
     padding-top: 0
     color: var(--secondary-color)
@@ -64,13 +66,24 @@ body
 
   &-page
     margin-bottom: 1.45rem
-    background: pink
 
   &-news
     background: var(--secondary-color)
     padding: 20px
     margin-bottom: 10px
     color: var(--primary-color)
+
+  &-video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    &-wrapper
+      position: relative
+      width: 100%
+      height: 0
+      padding-bottom: 56.25%
 
 //L
 @media only screen and (max-width: 1285px) and (min-width: 1024px)
@@ -82,9 +95,9 @@ body
 
 //M
 @media only screen and (max-width: 1023px) and (min-width: 766px)
-  body
-    border: 15px solid var(--secondary-color)
   .ah
+    &-outer-wrapper
+      border: 15px solid var(--secondary-color)
     &-header-title
       font-size: 9em
       letter-spacing: -0.4rem
@@ -93,9 +106,9 @@ body
 
 //s
 @media only screen and (max-width: 765px) and (min-width: 606px)
-  body
-    border: 15px solid var(--secondary-color)
   .ah
+    &-outer-wrapper
+      border: 15px solid var(--secondary-color)
     &-header-title
       font-size: 7em
       letter-spacing: -0.3rem
@@ -104,9 +117,9 @@ body
 
 //XS
 @media only screen and (max-width: 605px) and (min-width: 321px)
-  body
-    border: 10px solid var(--secondary-color)
   .ah
+    &-outer-wrapper
+      border: 10px solid var(--secondary-color)
     &-header-title
       font-size: 4.5em
       letter-spacing: -0.1rem
@@ -115,9 +128,9 @@ body
 
 //XXS
 @media only screen and (max-width: 320px)
-  body
-    border: 10px solid var(--secondary-color)
   .ah
+    &-outer-wrapper
+      border: 10px solid var(--secondary-color)
     &-header-title
       font-size: 4em
       letter-spacing: -0.15rem
