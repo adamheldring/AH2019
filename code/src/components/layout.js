@@ -9,7 +9,6 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useTransition, animated, config } from 'react-spring'
-
 import Header from './header'
 import Menu from './menu'
 import MobileMenu from './MobileMenu/MobileMenu'
@@ -56,10 +55,18 @@ const Layout = ({ children }) => {
           )
       )}
       <div className="ah-inner-wrapper">
-        <Menu />
+        <div
+          style={{
+            background: 'yellow',
+            position: `sticky`,
+            top: '0',
+          }}
+        >
+          <Menu />
+        </div>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()},{` `}
+          © {new Date().getFullYear()},
           <a href="https://www.gatsbyjs.org">Tennis Music</a>
         </footer>
       </div>

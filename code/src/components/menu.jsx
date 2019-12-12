@@ -10,7 +10,7 @@ const Menu = () => {
     opacity: `${menuInView ? '1' : '0'}`,
     from: { opacity: '1' },
   })
-  
+
   return (
     <nav className="ah-menu">
       <animated.ul className="ah-menu-list" style={menuStyle} ref={menuRef}>
@@ -22,18 +22,6 @@ const Menu = () => {
           </li>
         ))}
       </animated.ul>
-      <animated.div
-        style={{
-          background: 'pink',
-          position: `fixed`,
-          display: `${menuInView ? 'none' : 'inline'}`,
-          top: '0px',
-          left: '0px',
-          width: '100%',
-        }}
-      >
-        test
-      </div>
     </nav>
   )
 }
