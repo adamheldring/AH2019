@@ -8,18 +8,20 @@ import './MobileMenu/MobileMenu.sass'
 
 const Header = ({ siteTitle, setMobileMenuOpen }) => {
   const [titleUpperRef, titleUpperInView, titleUpperEntry] = useInView({
-    threshold: 0.3,
+    threshold: 0.1,
   })
   const [titleLowerRef, titleLowerInView, titleLoweEntry] = useInView({
-    threshold: 0.3,
+    threshold: 0.1,
   })
   const titleLeftStyle = useSpring({
     left: `${titleUpperInView ? '0' : '-100%'}`,
-    from: { left: '-100%' },
+    opacity: `${titleUpperInView ? '1' : '0'}`,
+    from: { left: '-100%', opacity: '0' },
   })
   const titleRightStyle = useSpring({
     left: `${titleLowerInView ? '0' : '100%'}`,
-    from: { right: '100%' },
+    opacity: `${titleLowerInView ? '1' : '0'}`,
+    from: { right: '100%', opacity: '0' },
   })
   return (
     <header className="ah-header">
