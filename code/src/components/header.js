@@ -8,10 +8,10 @@ import './MobileMenu/MobileMenu.sass'
 
 const Header = ({ siteTitle, setMobileMenuOpen }) => {
   const [titleUpperRef, titleUpperInView, titleUpperEntry] = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
   })
   const [titleLowerRef, titleLowerInView, titleLoweEntry] = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
   })
   const titleLeftStyle = useSpring({
     left: `${titleUpperInView ? '0' : '-100%'}`,
