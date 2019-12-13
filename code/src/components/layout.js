@@ -9,6 +9,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useTransition, animated, config } from 'react-spring'
+import { MdMenu } from 'react-icons/md'
 import Header from './header'
 import Menu from './menu'
 import MobileMenu from './MobileMenu/MobileMenu'
@@ -55,14 +56,17 @@ const Layout = ({ children }) => {
           )
       )}
       <div className="ah-inner-wrapper">
-        <div
-          style={{
-            background: 'yellow',
-            position: `sticky`,
-            top: '0',
-          }}
-        >
+        <div className="ah-menu-wrapper">
           <Menu />
+          <div className="ah-header-mobile-menu-button-wrapper">
+            <button
+              type="button"
+              className="mobile-menu__button"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <MdMenu />
+            </button>
+          </div>
         </div>
         <main>{children}</main>
         <footer>

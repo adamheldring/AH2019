@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import { MdMenu } from 'react-icons/md'
+// import { MdMenu } from 'react-icons/md'
 import { useSpring, animated } from 'react-spring'
 import { useInView } from 'react-intersection-observer'
 import './MobileMenu/MobileMenu.sass'
@@ -37,7 +37,7 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => {
               <span className="ah-header-title-left-da-kerning">D</span>AM
             </Link>
           </animated.h1>
-          <div className="ah-header-mobile-menu-button-wrapper">
+          {/* <div className="ah-header-mobile-menu-button-wrapper">
             <button
               type="button"
               className="mobile-menu__button"
@@ -45,7 +45,7 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => {
             >
               <MdMenu />
             </button>
-          </div>
+          </div> */}
         </div>
         <div ref={titleLowerRef}>
           <animated.h1

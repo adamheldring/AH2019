@@ -15,6 +15,7 @@ body
     min-height: 100vh
     border: 20px solid var(--secondary-color)
     overflow: "hidden"
+
   &-inner-wrapper
     margin: 0 auto
     max-width: 900px
@@ -23,12 +24,13 @@ body
     color: var(--secondary-color)
 
   &-header
-    margin-bottom: 0
+    padding-bottom: 7px
     &-title
       margin: 0
       padding: 0
       font-size: 15rem
       letter-spacing: -0.5rem
+      z-index: 0
       &-upper-wrapper
         display: flex
         justify-content: space-between
@@ -55,20 +57,31 @@ body
     &-mobile-menu-button-wrapper
       margin: 0 0
       max-width: 960px
-      padding: 0 2rem
       display: flex
       justify-content: flex-end
 
   &-menu
+    &-wrapper
+      padding: 1rem 0 1rem
+      background: var(--primary-color)
+      position: -webkit-sticky
+      position: sticky
+      top: 0
+      display: flex
+      justify-content: space-between
     &-list
-      margin: 2rem 0 1.5rem 0
+      position: relative
+      top: 0.6rem
+      margin: 0
       list-style: none
       display: flex
       justify-content: space-between
+      background: var(--tertiary-color)
       &-item
         background: var(--secondary-color)
-        font-size: 2em
+        font-size: 2rem
         padding: 0px 10px
+        margin: 0 1rem
         color: var(--primary-color)
 
   &-page
