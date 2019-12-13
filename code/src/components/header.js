@@ -10,7 +10,7 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => {
   const [titleUpperRef, titleUpperInView, titleUpperEntry] = useInView({
     threshold: 0.5,
   })
-  const [titleLowerRef, titleLowerInView, titleLoweEntry] = useInView({
+  const [titleLowerRef, titleLowerInView, titleLowerEntry] = useInView({
     threshold: 0.5,
   })
   const titleLeftStyle = useSpring({
@@ -47,16 +47,18 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => {
             </button>
           </div> */}
         </div>
-        <div ref={titleLowerRef}>
-          <animated.h1
-            className="ah-header-title ah-header-title-right"
-            style={titleRightStyle}
-          >
-            <Link to="/" className="ah-header-title-link">
-              {/* {siteTitle} */}
-              HELDRING
-            </Link>
-          </animated.h1>
+        <div className="ah-header-title-lower-wrapper">
+          <div ref={titleLowerRef}>
+            <animated.h1
+              className="ah-header-title ah-header-title-right"
+              style={titleRightStyle}
+            >
+              <Link to="/" className="ah-header-title-link">
+                {/* {siteTitle} */}
+                HELDRING
+              </Link>
+            </animated.h1>
+          </div>
         </div>
       </div>
     </header>

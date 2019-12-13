@@ -58,7 +58,7 @@ const Layout = ({ children }) => {
       <div className="ah-inner-wrapper">
         <div className="ah-menu-wrapper">
           <Menu />
-          <div className="ah-header-mobile-menu-button-wrapper">
+          <div className="ah-mobile-menu-button-wrapper">
             <button
               type="button"
               className="mobile-menu__button"

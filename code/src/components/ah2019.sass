@@ -41,6 +41,9 @@ body
         line-height: 0.65
         &-da-kerning
           letter-spacing: -1.4rem
+      &-lower-wrapper
+        overflow: hidden
+        padding-bottom: 11px
       &-right
         position: relative
         margin-right: -0.3rem
@@ -54,11 +57,11 @@ body
         color: var(--secondary-color)
         text-decoration: none
 
-    &-mobile-menu-button-wrapper
-      margin: 0 0
-      max-width: 960px
-      display: flex
-      justify-content: flex-end
+  &-mobile-menu-button-wrapper
+    margin: 0 0
+    max-width: 960px
+    display: none
+    justify-content: flex-end
 
   &-menu
     &-wrapper
@@ -135,6 +138,10 @@ body
       &-left-da-kerning
         letter-spacing: -0.7rem
 
+    &-menu-list
+      display: none
+    &-mobile-menu-button-wrapper
+      display: flex
 //XS
 @media only screen and (max-width: 605px) and (min-width: 321px)
   .ah
@@ -146,6 +153,10 @@ body
       &-left-da-kerning
         letter-spacing: -0.4rem
 
+    &-menu-list
+      display: none
+    &-mobile-menu-button-wrapper
+      display: flex
 //XXS
 @media only screen and (max-width: 320px)
   .ah
@@ -156,3 +167,8 @@ body
       letter-spacing: -0.15rem
       &-left-da-kerning
         letter-spacing: -0.3rem
+
+    &-menu-list
+      display: none
+    &-mobile-menu-button-wrapper
+      display: flex
