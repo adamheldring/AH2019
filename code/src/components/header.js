@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-// import { MdMenu } from 'react-icons/md'
+// import { MdClose } from 'react-icons/md'
 import { useSpring, animated } from 'react-spring'
 import { useInView } from 'react-intersection-observer'
 import './MobileMenu/MobileMenu.sass'
 
-const Header = ({ siteTitle, setMobileMenuOpen }) => {
+const Header = ({ siteTitle, setMobileMenuOpen, setStickyMenuIsActive }) => {
   const [titleUpperRef, titleUpperInView, titleUpperEntry] = useInView({
     threshold: 0.5,
   })
@@ -23,6 +23,9 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => {
     opacity: `${titleLowerInView ? '1' : '0'}`,
     from: { right: '100%', opacity: '0' },
   })
+  useEffect(() => {
+    setStickyMenuIsActive(!titleLowerInView)
+  }, [setStickyMenuIsActive, titleLowerInView])
 
   return (
     <header className="ah-header">
@@ -43,7 +46,7 @@ const Header = ({ siteTitle, setMobileMenuOpen }) => {
               className="mobile-menu__button"
               onClick={() => setMobileMenuOpen(true)}
             >
-              <MdMenu />
+              <MdClose />
             </button>
           </div> */}
         </div>

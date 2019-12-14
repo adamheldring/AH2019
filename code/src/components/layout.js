@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useSpring, useTransition, animated, config } from 'react-spring'
@@ -31,6 +31,7 @@ const Layout = ({ children }) => {
   `)
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [stickyMenuIsActive, setStickyMenuIsActive] = useState(false)
   const transitions = useTransition(mobileMenuOpen, null, {
     from: { marginLeft: '100vw' },
     enter: { marginLeft: '0' },
@@ -41,13 +42,14 @@ const Layout = ({ children }) => {
     transform: `rotate(${mobileMenuOpen ? 0 : -135}deg)`,
     config: config.stiff,
   })
-  console.log('MMOpen?: ', mobileMenuOpen)
+
   return (
     <div className="ah-outer-wrapper">
       <Header
         siteTitle={data.site.siteMetadata.title}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
+        setStickyMenuIsActive={setStickyMenuIsActive}
       />
       {transitions.map(
         ({ item, key, props }) =>
@@ -62,7 +64,21 @@ const Layout = ({ children }) => {
           )
       )}
       <div className="ah-inner-wrapper">
-        <div className="ah-menu-wrapper">
+        <div
+          className="ah-menu-wrapper"
+          style={{
+            justifyContent: `${
+              stickyMenuIsActive ? 'space-between' : 'flex-end'
+            }`,
+          }}
+        >
+          <div
+            style={{
+              display: `${stickyMenuIsActive ? 'block' : 'none'}`,
+            }}
+          >
+            AH
+          </div>
           <Menu />
           <div className="ah-mobile-menu-button-wrapper">
             <animated.button
@@ -76,6 +92,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
         <main>{children}</main>
+
         <footer>
           © {new Date().getFullYear()},
           <a href="https://www.gatsbyjs.org">Tennis Music</a>
