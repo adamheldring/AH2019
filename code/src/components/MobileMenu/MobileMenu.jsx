@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { MdClose } from 'react-icons/md'
-import { useSpring, useTrail, animated } from 'react-spring'
+import { useSpring, useTrail, animated, config } from 'react-spring'
 import SocialMediaBar from '../SocialMediaBar/SocialMediaBar'
 import menuData from '../../../data/menuData'
 
-const MobileMenu = ({ setMobileMenuOpen }) => {
+const MobileMenu = ({ setMobileMenuOpen, mobileMenuButtonStyle }) => {
   const menuItems = menuData
   const trail = useTrail(menuItems.length, {
     opacity: 1,
@@ -17,13 +17,14 @@ const MobileMenu = ({ setMobileMenuOpen }) => {
       <div className="mobile-menu__inner-wrapper">
         <div className="mobile-menu__header">
           <span>AH2019</span>
-          <button
+          <animated.button
+            style={mobileMenuButtonStyle}
             type="button"
             className="mobile-menu__button"
             onClick={() => setMobileMenuOpen(false)}
           >
             <MdClose className="ah-primary" />
-          </button>
+          </animated.button>
         </div>
         <ul>
           {trail.map((props, index) => (

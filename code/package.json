@@ -17,6 +17,7 @@
     "gatsby-source-filesystem": "^2.1.21",
     "gatsby-transformer-remark": "^2.6.21",
     "gatsby-transformer-sharp": "^2.2.13",
+    "intersection-observer": "^0.7.0",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -47,6 +48,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "develop-m": "gatsby develop -H 0.0.0.0 -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

@@ -8,14 +8,16 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { useTransition, animated, config } from 'react-spring'
-import { MdMenu } from 'react-icons/md'
+import { useSpring, useTransition, animated, config } from 'react-spring'
+import { MdClose } from 'react-icons/md'
 import Header from './header'
 import Menu from './menu'
 import MobileMenu from './MobileMenu/MobileMenu'
 import './MobileMenu/MobileMenu.sass'
 import './layout.css'
 import './ah2019.sass'
+
+require('intersection-observer')
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,7 +37,10 @@ const Layout = ({ children }) => {
     leave: { marginLeft: '100vw' },
     config: config.stiff,
   })
-
+  const mobileMenuButtonStyle = useSpring({
+    transform: `rotate(${mobileMenuOpen ? 0 : -135}deg)`,
+    config: config.stiff,
+  })
   console.log('MMOpen?: ', mobileMenuOpen)
   return (
     <div className="ah-outer-wrapper">
@@ -51,6 +56,7 @@ const Layout = ({ children }) => {
               <MobileMenu
                 mobileMenuOpen={mobileMenuOpen}
                 setMobileMenuOpen={setMobileMenuOpen}
+                mobileMenuButtonStyle={mobileMenuButtonStyle}
               />
             </animated.div>
           )
@@ -59,13 +65,14 @@ const Layout = ({ children }) => {
         <div className="ah-menu-wrapper">
           <Menu />
           <div className="ah-mobile-menu-button-wrapper">
-            <button
+            <animated.button
               type="button"
               className="mobile-menu__button"
-              onClick={() => setMobileMenuOpen(true)}
+              style={mobileMenuButtonStyle}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <MdMenu />
-            </button>
+              <MdClose />
+            </animated.button>
           </div>
         </div>
         <main>{children}</main>
