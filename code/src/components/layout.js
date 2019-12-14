@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
   `)
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [stickyMenuIsActive, setStickyMenuIsActive] = useState(false)
+  const [menuInDarkmode, setMenuInDarkmode] = useState(false)
   const transitions = useTransition(mobileMenuOpen, null, {
     from: { marginLeft: '100vw' },
     enter: { marginLeft: '0' },
@@ -42,6 +42,12 @@ const Layout = ({ children }) => {
     transform: `rotate(${mobileMenuOpen ? 0 : -135}deg)`,
     config: config.stiff,
   })
+  const menuDarkmodeLayerStyle = useSpring({
+    height: `${menuInDarkmode ? '100%' : '0'})`,
+    opacity: `${menuInDarkmode ? '1' : '0'})`,
+    from: { height: '0%', opacity: '0' },
+    config: config.stiff,
+  })
 
   return (
     <div className="ah-outer-wrapper">
@@ -49,7 +55,7 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
-        setStickyMenuIsActive={setStickyMenuIsActive}
+        setMenuInDarkmode={setMenuInDarkmode}
       />
       {transitions.map(
         ({ item, key, props }) =>
@@ -64,21 +70,24 @@ const Layout = ({ children }) => {
           )
       )}
       <div
-        className={`ah-menu-wrapper-outer ${
-          stickyMenuIsActive ? 'ah-menu-wrapper-outer--darkmode' : ''
-        }`}
+        // className={`ah-menu-wrapper-outer ${
+        //   menuInDarkmode ? 'ah-menu-wrapper-outer--darkmode' : ''
+        // }`}
+        className="ah-menu-wrapper-outer"
       >
+        <animated.div
+          className="ah-menu-darkmode-layer"
+          style={menuDarkmodeLayerStyle}
+        />
         <div
           className="ah-menu-wrapper-inner"
           style={{
-            justifyContent: `${
-              stickyMenuIsActive ? 'space-between' : 'flex-end'
-            }`,
+            justifyContent: `${menuInDarkmode ? 'space-between' : 'flex-end'}`,
           }}
         >
           <div
             style={{
-              display: `${stickyMenuIsActive ? 'block' : 'none'}`,
+              display: `${menuInDarkmode ? 'block' : 'none'}`,
             }}
           >
             AH
@@ -88,7 +97,7 @@ const Layout = ({ children }) => {
             <animated.button
               type="button"
               className={`mobile-menu__button ${
-                stickyMenuIsActive ? 'mobile-menu__button--darkmode' : ''
+                menuInDarkmode ? 'mobile-menu__button--darkmode' : ''
               }`}
               style={mobileMenuButtonStyle}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

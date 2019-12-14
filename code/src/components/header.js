@@ -6,12 +6,15 @@ import { useSpring, animated } from 'react-spring'
 import { useInView } from 'react-intersection-observer'
 import './MobileMenu/MobileMenu.sass'
 
-const Header = ({ siteTitle, setMobileMenuOpen, setStickyMenuIsActive }) => {
-  const [titleUpperRef, titleUpperInView, titleUpperEntry] = useInView({
+const Header = ({ siteTitle, setMobileMenuOpen, setMenuInDarkmode }) => {
+  const [titleUpperRef, titleUpperInView] = useInView({
     threshold: 0.5,
   })
-  const [titleLowerRef, titleLowerInView, titleLowerEntry] = useInView({
+  const [titleLowerRef, titleLowerInView] = useInView({
     threshold: 0.5,
+  })
+  const [headerRef, headerInView] = useInView({
+    threshold: 0,
   })
   const titleLeftStyle = useSpring({
     left: `${titleUpperInView ? '0' : '-100%'}`,
@@ -24,11 +27,11 @@ const Header = ({ siteTitle, setMobileMenuOpen, setStickyMenuIsActive }) => {
     from: { right: '100%', opacity: '0' },
   })
   useEffect(() => {
-    setStickyMenuIsActive(!titleLowerInView)
-  }, [setStickyMenuIsActive, titleLowerInView])
+    setMenuInDarkmode(!headerInView)
+  }, [headerInView, setMenuInDarkmode])
 
   return (
-    <header className="ah-header">
+    <header className="ah-header" ref={headerRef}>
       <div>
         <div className="ah-header-title-upper-wrapper" ref={titleUpperRef}>
           <animated.h1

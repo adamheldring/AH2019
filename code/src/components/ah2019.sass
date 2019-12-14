@@ -65,6 +65,12 @@ body
     justify-content: flex-end
 
   &-menu
+    &-darkmode-layer
+      background-color: var(--secondary-color)
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
     &-wrapper-outer
       padding: 0.5rem 0
       background: var(--primary-color)
@@ -72,8 +78,6 @@ body
       position: sticky
       top: 0
       z-index: 10
-      &--darkmode
-        background: var(--secondary-color)
     &-wrapper-inner
       display: flex
       justify-content: space-between
