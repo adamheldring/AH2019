@@ -63,9 +63,13 @@ const Layout = ({ children }) => {
             </animated.div>
           )
       )}
-      <div className="ah-inner-wrapper">
+      <div
+        className={`ah-menu-wrapper-outer ${
+          stickyMenuIsActive ? 'ah-menu-wrapper-outer--darkmode' : ''
+        }`}
+      >
         <div
-          className="ah-menu-wrapper"
+          className="ah-menu-wrapper-inner"
           style={{
             justifyContent: `${
               stickyMenuIsActive ? 'space-between' : 'flex-end'
@@ -83,7 +87,9 @@ const Layout = ({ children }) => {
           <div className="ah-mobile-menu-button-wrapper">
             <animated.button
               type="button"
-              className="mobile-menu__button"
+              className={`mobile-menu__button ${
+                stickyMenuIsActive ? 'mobile-menu__button--darkmode' : ''
+              }`}
               style={mobileMenuButtonStyle}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -91,13 +97,16 @@ const Layout = ({ children }) => {
             </animated.button>
           </div>
         </div>
+      </div>
+      <div className="ah-inner-wrapper">
         <main>{children}</main>
-
-        <footer>
+      </div>
+      <footer>
+        <div className="ah-inner-wrapper">
           © {new Date().getFullYear()},
           <a href="https://www.gatsbyjs.org">Tennis Music</a>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
   )
 }
