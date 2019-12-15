@@ -43,10 +43,9 @@ const Layout = ({ children }) => {
     config: config.stiff,
   })
   const menuDarkmodeLayerStyle = useSpring({
-    height: `${menuInDarkmode ? '100%' : '0'})`,
+    width: `${menuInDarkmode ? '100vw' : '0'})`,
     opacity: `${menuInDarkmode ? '1' : '0'})`,
-    from: { height: '0%', opacity: '0' },
-    config: config.stiff,
+    from: { width: '0%', opacity: '0' },
   })
 
   return (
