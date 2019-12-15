@@ -43,9 +43,10 @@ const Layout = ({ children }) => {
     config: config.stiff,
   })
   const menuDarkmodeLayerStyle = useSpring({
-    width: `${menuInDarkmode ? '100vw' : '0'})`,
-    opacity: `${menuInDarkmode ? '1' : '0'})`,
-    from: { width: '0%', opacity: '0' },
+    height: `${menuInDarkmode ? '100vw' : '0'})`,
+    // opacity: `${menuInDarkmode ? '1' : '0'})`,
+    from: { height: '0%' },
+    config: config.stiff,
   })
 
   return (
@@ -75,7 +76,9 @@ const Layout = ({ children }) => {
         className="ah-menu-wrapper-outer"
       >
         <animated.div
-          className="ah-menu-darkmode-layer"
+          className={`ah-menu-darkmode-layer${
+            menuInDarkmode ? '' : '--inactive'
+          }`}
           style={menuDarkmodeLayerStyle}
         />
         <div
