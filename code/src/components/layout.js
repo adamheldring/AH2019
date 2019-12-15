@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useSpring, useTransition, animated, config } from 'react-spring'
 import { MdClose } from 'react-icons/md'
+import Img from 'gatsby-image'
 import Header from './header'
 import Menu from './menu'
 import MobileMenu from './MobileMenu/MobileMenu'
@@ -25,6 +26,13 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+        }
+      }
+      logo: file(relativePath: { eq: "materials/ahlogotrans.png" }) {
+        childImageSharp {
+          fixed(height: 40) {
+            ...GatsbyImageSharpFixed
+          }
         }
       }
     }
@@ -43,7 +51,7 @@ const Layout = ({ children }) => {
     config: config.stiff,
   })
   const menuDarkmodeLayerStyle = useSpring({
-    height: `${menuInDarkmode ? '100vw' : '0'})`,
+    height: `${menuInDarkmode ? '100%' : '0'})`,
     // opacity: `${menuInDarkmode ? '1' : '0'})`,
     from: { height: '0%' },
     config: config.stiff,
@@ -69,12 +77,7 @@ const Layout = ({ children }) => {
             </animated.div>
           )
       )}
-      <div
-        // className={`ah-menu-wrapper-outer ${
-        //   menuInDarkmode ? 'ah-menu-wrapper-outer--darkmode' : ''
-        // }`}
-        className="ah-menu-wrapper-outer"
-      >
+      <div className="ah-menu-wrapper-outer">
         <animated.div
           className={`ah-menu-darkmode-layer${
             menuInDarkmode ? '' : '--inactive'
@@ -92,8 +95,16 @@ const Layout = ({ children }) => {
               display: `${menuInDarkmode ? 'block' : 'none'}`,
             }}
           >
-            AH
+            <Img
+              fixed={data.logo.childImageSharp.fixed}
+              className="ah-menu-logo"
+            />
           </div>
+          {menuInDarkmode && (
+            <span className="ah-menu-page-title">
+              {data.site.siteMetadata.title}
+            </span>
+          )}
           <Menu />
           <div className="ah-mobile-menu-button-wrapper">
             <animated.button

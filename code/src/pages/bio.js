@@ -15,6 +15,7 @@ const SecondPage = ({ data }) => {
 
       <div className="ah-page">
         <h5>(Gatsby image query example)</h5>
+        <Img fluid={data.preston.childImageSharp.fluid} />
         <Img fluid={data.logo.childImageSharp.fluid} />
         <Image />
       </div>
@@ -26,7 +27,14 @@ export default SecondPage
 
 export const logoQuery = graphql`
   query {
-    logo: file(relativePath: { eq: "preston.png" }) {
+    preston: file(relativePath: { eq: "preston.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    logo: file(relativePath: { eq: "materials/ahlogotrans.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
