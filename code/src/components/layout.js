@@ -104,7 +104,7 @@ const Layout = ({ children }) => {
           {menuInDarkmode && (
             <span className="ah-menu-page-title">{currentPage}</span>
           )}
-          <Menu />
+          <Menu currentUri={children.props.uri} />
           <div className="ah-mobile-menu-button-wrapper">
             <animated.button
               type="button"
