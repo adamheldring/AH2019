@@ -3,8 +3,9 @@ body
   --primary-color: #F7F7F7
   // --primary-color: #c6f2f1
   --secondary-color: #333333
-  --tertiary-color: yellow
+  --tertiary-color: lightblue
   --custom-white: #FFFFFF
+  --custom-black: #000000
 
   background-color: var(--secondary-color)
 
@@ -15,7 +16,7 @@ body
   &-outer-wrapper
     background-color: var(--primary-color)
     min-height: 100vh
-    border: 20px solid var(--secondary-color)
+    // border: 20px solid var(--secondary-color)
     overflow: "hidden"
 
   &-inner-wrapper
@@ -32,6 +33,8 @@ body
       font-size: 15rem
       letter-spacing: -0.5rem
       z-index: 0
+      text-shadow: 4px 4px var(--custom-black)
+
       &-upper-wrapper
         display: flex
         justify-content: space-between
@@ -146,7 +149,7 @@ body
 @media only screen and (max-width: 1023px) and (min-width: 766px)
   .ah
     &-outer-wrapper
-      border: 15px solid var(--secondary-color)
+      // border: 15px solid var(--secondary-color)
     &-header-title
       font-size: 9em
       letter-spacing: -0.4rem
@@ -157,7 +160,7 @@ body
 @media only screen and (max-width: 765px) and (min-width: 606px)
   .ah
     &-outer-wrapper
-      border: 15px solid var(--secondary-color)
+      // border: 15px solid var(--secondary-color)
     &-header-title
       font-size: 7em
       letter-spacing: -0.3rem
@@ -172,7 +175,7 @@ body
 @media only screen and (max-width: 605px) and (min-width: 321px)
   .ah
     &-outer-wrapper
-      border: 10px solid var(--secondary-color)
+      // border: 10px solid var(--secondary-color)
     &-header-title
       font-size: 4.5em
       letter-spacing: -0.1rem
@@ -187,7 +190,7 @@ body
 @media only screen and (max-width: 320px)
   .ah
     &-outer-wrapper
-      border: 10px solid var(--secondary-color)
+      // border: 10px solid var(--secondary-color)
     &-header-title
       font-size: 4em
       letter-spacing: -0.15rem
