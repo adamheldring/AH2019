@@ -46,7 +46,9 @@
     &--darkmode
       color: var(--custom-white)
 
-  &__item-wrapper
+  &__item-wrapper-outer
+    position: relative
+  &__item-wrapper-inner
     background: var(--primary-color)
     padding: 10px
     margin: 20px auto
@@ -63,6 +65,13 @@
       font-size: 40px
       letter-spacing: 0.11em
       font-weight: 900
+
+  &--active-marker
+    position: absolute
+    top: 12px
+    left: 12px
+    font-size: 40px
+    color: var(--secondary-color)
 
   &__submenu
     display: flex

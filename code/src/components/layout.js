@@ -74,6 +74,7 @@ const Layout = ({ children }) => {
                 setMobileMenuOpen={setMobileMenuOpen}
                 mobileMenuButtonStyle={mobileMenuButtonStyle}
                 logo={data.logo.childImageSharp.fixed}
+                currentUri={children.props.uri}
               />
             </animated.div>
           )

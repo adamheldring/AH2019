@@ -1,12 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { MdClose } from 'react-icons/md'
-import { useSpring, useTrail, animated, config } from 'react-spring'
+import { GiAnchor } from 'react-icons/gi'
+import { useSpring, useTrail, animated } from 'react-spring'
 import Img from 'gatsby-image'
 import SocialMediaBar from '../SocialMediaBar/SocialMediaBar'
 import menuData from '../../../data/menuData'
 
-const MobileMenu = ({ setMobileMenuOpen, mobileMenuButtonStyle, logo }) => {
+const MobileMenu = ({
+  setMobileMenuOpen,
+  mobileMenuButtonStyle,
+  logo,
+  currentUri,
+}) => {
   const menuItems = menuData
   const trail = useTrail(menuItems.length, {
     opacity: 1,
@@ -38,6 +44,7 @@ const MobileMenu = ({ setMobileMenuOpen, mobileMenuButtonStyle, logo }) => {
               menuItem={menuItems[index]}
               index={index}
               setMobileMenuOpen={setMobileMenuOpen}
+              currentUri={currentUri}
             />
           </animated.div>
         ))}
@@ -51,14 +58,20 @@ const MobileMenu = ({ setMobileMenuOpen, mobileMenuButtonStyle, logo }) => {
   )
 }
 
-const MenuItem = ({ menuItem, index, setMobileMenuOpen }) => {
+const MenuItem = ({ menuItem, index, setMobileMenuOpen, currentUri }) => {
   const listItemStyle = useSpring({ color: '#333', from: { color: '#eeeeee' } })
   return (
-    <li key={`${index}-${menuItem.title}`}>
+    <li
+      key={`${index}-${menuItem.title}`}
+      className="mobile-menu__item-wrapper-outer"
+    >
+      {menuItem.url === currentUri && (
+        <GiAnchor className="mobile-menu--active-marker" />
+      )}
       <Link to={menuItem.url} onClick={() => setMobileMenuOpen(false)}>
         <animated.div
           style={listItemStyle}
-          className="mobile-menu__item-wrapper"
+          className="mobile-menu__item-wrapper-inner"
         >
           <h2>{menuItem.title.toUpperCase()}</h2>
         </animated.div>
