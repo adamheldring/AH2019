@@ -125,7 +125,7 @@ const Layout = ({ children }) => {
       </div>
       <footer>
         <div className="ah-inner-wrapper">
-          © {new Date().getFullYear()},
+          © {new Date().getFullYear()},{' '}
           <a href="https://www.gatsbyjs.org">Tennis Music</a>
         </div>
       </footer>
