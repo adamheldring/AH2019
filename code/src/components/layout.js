@@ -52,10 +52,11 @@ const Layout = ({ children }) => {
   })
   const menuDarkmodeLayerStyle = useSpring({
     height: `${menuInDarkmode ? '100%' : '0'})`,
-    // opacity: `${menuInDarkmode ? '1' : '0'})`,
     from: { height: '0%' },
     config: config.stiff,
   })
+
+  const currentPage = children.props.uri.slice(1).toUpperCase() || 'HOME'
 
   return (
     <div className="ah-outer-wrapper">
@@ -70,9 +71,9 @@ const Layout = ({ children }) => {
           item && (
             <animated.div style={props} key={key}>
               <MobileMenu
-                mobileMenuOpen={mobileMenuOpen}
                 setMobileMenuOpen={setMobileMenuOpen}
                 mobileMenuButtonStyle={mobileMenuButtonStyle}
+                logo={data.logo.childImageSharp.fixed}
               />
             </animated.div>
           )
@@ -101,9 +102,7 @@ const Layout = ({ children }) => {
             />
           </div>
           {menuInDarkmode && (
-            <span className="ah-menu-page-title">
-              {data.site.siteMetadata.title}
-            </span>
+            <span className="ah-menu-page-title">{currentPage}</span>
           )}
           <Menu />
           <div className="ah-mobile-menu-button-wrapper">

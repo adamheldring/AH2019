@@ -2,10 +2,11 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { MdClose } from 'react-icons/md'
 import { useSpring, useTrail, animated, config } from 'react-spring'
+import Img from 'gatsby-image'
 import SocialMediaBar from '../SocialMediaBar/SocialMediaBar'
 import menuData from '../../../data/menuData'
 
-const MobileMenu = ({ setMobileMenuOpen, mobileMenuButtonStyle }) => {
+const MobileMenu = ({ setMobileMenuOpen, mobileMenuButtonStyle, logo }) => {
   const menuItems = menuData
   const trail = useTrail(menuItems.length, {
     opacity: 1,
@@ -14,37 +15,37 @@ const MobileMenu = ({ setMobileMenuOpen, mobileMenuButtonStyle }) => {
   })
   return (
     <div className="mobile-menu">
-      <div className="mobile-menu__inner-wrapper">
-        <div className="mobile-menu__header">
-          <span>AH2019</span>
-          <animated.button
-            style={mobileMenuButtonStyle}
-            type="button"
-            className="mobile-menu__button"
-            onClick={() => setMobileMenuOpen(false)}
+      <div className="mobile-menu__header">
+        <span>
+          <Img fixed={logo} />
+        </span>
+        <animated.button
+          style={mobileMenuButtonStyle}
+          type="button"
+          className="mobile-menu__button"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <MdClose className="ah-primary" />
+        </animated.button>
+      </div>
+      <ul>
+        {trail.map((props, index) => (
+          <animated.div
+            key={menuItems[index].title}
+            style={{ ...props, overflow: 'hidden' }}
           >
-            <MdClose className="ah-primary" />
-          </animated.button>
-        </div>
-        <ul>
-          {trail.map((props, index) => (
-            <animated.div
-              key={menuItems[index].title}
-              style={{ ...props, overflow: 'hidden' }}
-            >
-              <MenuItem
-                menuItem={menuItems[index]}
-                index={index}
-                setMobileMenuOpen={setMobileMenuOpen}
-              />
-            </animated.div>
-          ))}
-        </ul>
-        <SocialMediaBar />
-        <div className="mobile-menu__submenu">
-          <span className="mobile-menu__submenu-item">CONTACT</span> |{' '}
-          <span className="mobile-menu__submenu-item">ABOUT</span>
-        </div>
+            <MenuItem
+              menuItem={menuItems[index]}
+              index={index}
+              setMobileMenuOpen={setMobileMenuOpen}
+            />
+          </animated.div>
+        ))}
+      </ul>
+      <SocialMediaBar />
+      <div className="mobile-menu__submenu">
+        <span className="mobile-menu__submenu-item">CONTACT</span> |{' '}
+        <span className="mobile-menu__submenu-item">ABOUT</span>
       </div>
     </div>
   )
