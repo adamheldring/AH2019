@@ -1,6 +1,8 @@
 body
   --primary-color: #F7F7F7
   --secondary-color: #333333
+  --secondary-color: #0498a0
+  --secondary-color: #333333
   --tertiary-color: yellow
   --custom-white: #FFFFFF
   --custom-black: #000000
@@ -26,7 +28,7 @@ body
   &-header
     padding-bottom: 7px
     &-title
-      margin: 0
+      margin: 0.2rem 0 0 0
       padding: 0
       font-size: 15rem
       letter-spacing: -0.5rem
@@ -39,7 +41,7 @@ body
 
       &-left
         position: relative
-        margin-left: -0.3rem
+        margin-left: -0rem
         line-height: 0.65
         &-da-kerning
           letter-spacing: -1.4rem
@@ -49,7 +51,7 @@ body
         margin-bottom: -13px
       &-right
         position: relative
-        margin-right: -0.3rem
+        margin-right: 0.2rem
         line-height: 0.74
         overflow: visible
         display: flex
@@ -65,6 +67,7 @@ body
     margin: 0 0
     display: none
     justify-content: flex-end
+    text-shadow: 2px 2px var(--custom-black) !important !important !important
 
   &-mobile-menu-button-external
     font-size: 40px
@@ -84,8 +87,10 @@ body
       position: absolute
       top: 0
       left: 0
-      width: 100%
+      margin-left: 1vw
+      width: 97vw
       overflow: hidden
+      box-shadow: 4px 4px var(--custom-black)
       &--inactive
         background-color: transparent
     &-wrapper-outer
@@ -134,6 +139,20 @@ body
       font-weight: bold
       letter-spacing: 0.1em
 
+      background: var(--secondary-color)
+      font-weight: bold
+      letter-spacing: 0.1em
+      padding: 0px 10px
+      margin: 0 1rem
+      color: var(--primary-color)
+      box-shadow: 2px 2px var(--custom-black)
+
+      color: var(--secondary-color)
+      background-color: var(--primary-color)
+      height: 22px
+
+      margin: auto 0
+
   &-page
     margin-bottom: 1.45rem
 
@@ -154,6 +173,7 @@ body
       width: 100%
       height: 0
       padding-bottom: 56.25%
+      overflow: hidden
 
 //L
 @media only screen and (max-width: 1285px) and (min-width: 1024px)

@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
       <div className="ah-page">
         {/* <img src="http://placekitten.com/200/300" /> */}
 
-        <article>
+        <CustomArticle title={"LATEST VIDEO"}>
           <div className="ah-video-wrapper">
             <iframe
               title="You/More video"
@@ -24,22 +24,12 @@ const IndexPage = ({ data }) => {
             ></iframe>
           </div>
           <p>"You / More" video</p>
-        </article>
-        <article style={{ display: 'flex' }}>
-          <div style={{ width: '50%' }}>
+        </CustomArticle>
+        <CustomArticle title="LATEST RELEASE">
+          <div style={{ width: '100%' }}>
             <Img fluid={data.ymcover.childImageSharp.fluid} />
           </div>
-          <div
-            style={{
-              width: '50%',
-              display: 'flex',
-              justifyContent: 'center',
-              marginTop: '2rem',
-            }}
-          >
-            <p>New single "You / More" released 2019</p>
-          </div>
-        </article>
+        </CustomArticle>
       </div>
     </Fragment>
   )
@@ -60,3 +50,15 @@ export const imageQuery = graphql`
     }
   }
 `
+
+export const CustomArticle = (props) => {
+  const {children, title} = props
+  return (
+    <article style={{ boxShadow: "2px 2px 6px #CCCCCC"}}>
+      <div style={{ backgroundColor: "#DDDDDD", color: "#333333", margin: "0", height: "50px", padding: "0 20px", display: "flex", alignItems: "center", letterSpacing: "0.1rem", fontSize: "14px" }}>{title}</div>
+      <div>
+        {children}
+      </div>
+    </article>
+  )
+}

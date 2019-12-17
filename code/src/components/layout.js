@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
           title
         }
       }
-      logo: file(relativePath: { eq: "materials/ahlogotrans.png" }) {
+      logo: file(relativePath: { eq: "materials/ahlogotransshadow.png" }) {
         childImageSharp {
           fixed(height: 40) {
             ...GatsbyImageSharpFixed
