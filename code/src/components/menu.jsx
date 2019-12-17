@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import menuData from '../../data/menuData'
 
-const Menu = ({ currentUri }) => (
+const Menu = ({ currentUri, menuInDarkmode }) => (
   <nav className="ah-menu">
     <ul className="ah-menu-list">
       {menuData.map((menuItem, index) => (
@@ -11,9 +11,11 @@ const Menu = ({ currentUri }) => (
             to={menuItem.url}
             className={`ah-menu-list-item ${
               menuItem.url === currentUri ? 'ah-menu-list-item--active' : ''
+            } ${
+              menuInDarkmode ? "ah-menu-list-item--darkmode" : ""
             }`}
           >
-            {menuItem.title}
+            {menuItem.title.toUpperCase()}
           </Link>
         </li>
       ))}
