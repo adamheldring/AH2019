@@ -2,18 +2,16 @@ import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
+import { ArticleWrapper } from "../components/ArticleWrapper/ArticleWrapper"
 
 const IndexPage = ({ data }) => {
   console.log(data)
   return (
     <Fragment>
       <SEO title="Home" />
-      {/* <h1>WHAT'S NEW?</h1> */}
       <div className="ah-page">
-        {/* <img src="http://placekitten.com/200/300" /> */}
-
-        <CustomArticle title={"LATEST VIDEO"}>
-          <div className="ah-video-wrapper">
+        <ArticleWrapper title={"LATEST VIDEO"}>
+          <section className="ah-video-wrapper">
             <iframe
               title="You/More video"
               className="ah-video"
@@ -22,14 +20,26 @@ const IndexPage = ({ data }) => {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-          </div>
-          <p>"You / More" video</p>
-        </CustomArticle>
-        <CustomArticle title="LATEST RELEASE">
-          <div style={{ width: '100%' }}>
-            <Img fluid={data.ymcover.childImageSharp.fluid} />
-          </div>
-        </CustomArticle>
+          </section>
+          <section style={{ padding: "20px", fontSize: "14px" }}>
+            <p style={{ margin: "0" }}>"You / More" video</p>
+          </section>          
+        </ArticleWrapper>
+        <ArticleWrapper title="LATEST RELEASE">
+          <section style={{ display: "flex", margin: "20px 20px 0 20px", justifyContent: "center"}}>
+            <div style={{ width: '100%', margin: "0px" }}>
+              <Img fluid={data.ymcover.childImageSharp.fluid} />
+            </div>
+          </section>
+          <section style={{ padding: "20px", fontSize: "14px", display: "flex", justifyContent: "center" }}>
+            <p style={{ margin: "0", display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <span><h3 style={{ marginBottom: "10px", fontStyle: "normal"}}>You / More</h3></span>
+              <span>Format: Single<br/></span>
+              <span>Year: 2019<br/></span>
+              <span>Label: Tennis<br/></span>
+            </p>
+          </section>          
+        </ArticleWrapper>
       </div>
     </Fragment>
   )
@@ -50,15 +60,3 @@ export const imageQuery = graphql`
     }
   }
 `
-
-export const CustomArticle = (props) => {
-  const {children, title} = props
-  return (
-    <article style={{ boxShadow: "2px 2px 6px #CCCCCC"}}>
-      <div style={{ backgroundColor: "#DDDDDD", color: "#333333", margin: "0", height: "50px", padding: "0 20px", display: "flex", alignItems: "center", letterSpacing: "0.1rem", fontSize: "14px" }}>{title}</div>
-      <div>
-        {children}
-      </div>
-    </article>
-  )
-}
