@@ -8,7 +8,11 @@ body
   --custom-white: #FFFFFF
   --custom-black: #000000
 
+  //menu placeholder to occupy corresponding inline space when menu is in fixed mode
+  --menu-placeholder-height: 67.84px
+
   background-color: var(--primary-color)
+  overflow-x: hidden
 
 .ah
   &-primary
@@ -68,7 +72,6 @@ body
     margin: 0 0
     display: none
     justify-content: flex-end
-    text-shadow: 2px 2px var(--custom-black) !important !important !important
 
   &-mobile-menu-button-external
     font-size: 40px
@@ -83,6 +86,11 @@ body
       color: var(--custom-white)
 
   &-menu
+    &-placeholder-when-sticky
+      height: var(--menu-placeholder-height)
+      display: none
+      &--active
+        display: block
     &-darkmode-layer
       background-color: var(--secondary-color)
       position: absolute
@@ -95,18 +103,24 @@ body
       &--inactive
         background-color: transparent
     &-wrapper-outer
+      position: relative
       padding: 0.5rem 0
       background: transparent
-      position: -webkit-sticky
-      position: sticky
       top: 0
       z-index: 10
+      min-height: var(--menu-placeholder-height)
+      // border: 1px solid red
+      &--darkmode
+        position: fixed
+        width: calc(100vw - 15px)
+
     &-wrapper-inner
       display: flex
       justify-content: space-between
       margin: 0 auto
       max-width: 900px
-      padding: 0px 2px
+      padding: 0px 2px 0 2px
+      // border: 1px solid blue
     &-list
       position: relative
       top: 0.6rem

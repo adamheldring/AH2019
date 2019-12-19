@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
           </section>          
         </ArticleWrapper>
         <ArticleWrapper title="LATEST RELEASE">
-          <section style={{ display: "flex", margin: "20px 20px 0 20px", justifyContent: "center"}}>
+          <section style={{ display: "flex", justifyContent: "center"}}>
             <div style={{ width: '100%', margin: "0px" }}>
               <Img fluid={data.ymcover.childImageSharp.fluid} />
             </div>

@@ -79,7 +79,10 @@ const Layout = ({ children }) => {
             </animated.div>
           )
       )}
-      <div className="ah-menu-wrapper-outer">
+      <div className={`ah-menu-placeholder-when-sticky ${menuInDarkmode ? "ah-menu-placeholder-when-sticky--active" : ""}`} />
+      <div 
+        className={`ah-menu-wrapper-outer ${menuInDarkmode ? "ah-menu-wrapper-outer--darkmode" : ""}`}
+      >
         <animated.div
           className={`ah-menu-darkmode-layer${
             menuInDarkmode ? '' : '--inactive'
