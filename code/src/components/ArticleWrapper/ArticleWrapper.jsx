@@ -1,11 +1,15 @@
 import React from "react"
+import "./ArticleWrapper.sass"
 
 export const ArticleWrapper = (props) => {
-  const {children, title} = props
+  const {children, title, split = false} = props
   return (
-    <section style={{ boxShadow: "2px 2px 6px #CCCCCC", marginBottom: "40px" }}>
-      <div style={{ backgroundColor: "#DDDDDD", color: "#333333", margin: "0", height: "50px", padding: "0 20px", display: "flex", alignItems: "center", letterSpacing: "0.1rem", fontSize: "14px" }}>{title}</div>
-      <div>
+    <section className="ah-article-wrapper">
+      <div
+        className="ah-article-title"
+        style={{ backgroundColor: "#DDDDDD", color: "#333333", margin: "0", height: "50px", padding: "0 20px", display: "flex", alignItems: "center", letterSpacing: "0.1rem", fontSize: "14px" }}
+      >{title}</div>
+      <div className={`${split ? "ah-article--split" : ""}`}>
         {children}
       </div>
     </section>

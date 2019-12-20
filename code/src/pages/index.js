@@ -5,40 +5,43 @@ import SEO from '../components/seo'
 import { ArticleWrapper } from "../components/ArticleWrapper/ArticleWrapper"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
   return (
     <Fragment>
       <SEO title="Home" />
       <div className="ah-page">
         <ArticleWrapper title={"LATEST VIDEO"}>
-          <section className="ah-video-wrapper">
+          <section className="ah-article-visual--video-container">
             <iframe
               title="You/More video"
-              className="ah-video"
+              className="ah-article-visual--video"
               src="https://www.youtube.com/embed/hP7B0h3oIdk?loop=1&playList=hP7B0h3oIdk&modestbranding"
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </section>
-          <section style={{ padding: "20px", fontSize: "14px" }}>
-            <p style={{ margin: "0" }}>"You / More" video</p>
-          </section>          
+          <section 
+            className="ah-article-info-wrapper"
+          >
+            <p className="ah-article-info-paragraph">
+              <h2 className="ah-article-info-paragraph-heading">You / More</h2>
+            </p>
+          </section>
         </ArticleWrapper>
-        <ArticleWrapper title="LATEST RELEASE">
-          <section style={{ display: "flex", justifyContent: "center"}}>
-            <div style={{ width: '100%', margin: "0px" }}>
+        <ArticleWrapper title="LATEST RELEASE" split={true}>
+          <section className="ah-article-visual--image-outer-container ah-article--split-section">
+            <div className="ah-article-visual--image-inner-container">
               <Img fluid={data.ymcover.childImageSharp.fluid} />
             </div>
           </section>
-          <section style={{ padding: "20px", fontSize: "14px", display: "flex", justifyContent: "center" }}>
-            <p style={{ margin: "0", display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <span><h3 style={{ marginBottom: "10px", fontStyle: "normal"}}>You / More</h3></span>
+          <section className="ah-article-info-wrapper ah-article--split-section">
+            <p className="ah-article-info-paragraph ah-article-info-paragraph--list">
+              <h2 className="ah-article-info-paragraph-heading">You / More</h2>
               <span>Format: Single<br/></span>
               <span>Year: 2019<br/></span>
               <span>Label: Tennis<br/></span>
             </p>
-          </section>          
+          </section>
         </ArticleWrapper>
       </div>
     </Fragment>
