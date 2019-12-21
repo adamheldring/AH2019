@@ -79,9 +79,15 @@ const Layout = ({ children }) => {
             </animated.div>
           )
       )}
-      <div className={`ah-menu-placeholder-when-sticky ${menuInDarkmode ? "ah-menu-placeholder-when-sticky--active" : ""}`} />
-      <div 
-        className={`ah-menu-wrapper-outer ${menuInDarkmode ? "ah-menu-wrapper-outer--darkmode" : ""}`}
+      <div
+        className={`ah-menu-placeholder-when-sticky ${
+          menuInDarkmode ? 'ah-menu-placeholder-when-sticky--active' : ''
+        }`}
+      />
+      <div
+        className={`ah-menu-wrapper-outer ${
+          menuInDarkmode ? 'ah-menu-wrapper-outer--darkmode' : ''
+        }`}
       >
         <animated.div
           className={`ah-menu-darkmode-layer${
@@ -108,7 +114,10 @@ const Layout = ({ children }) => {
           {menuInDarkmode && (
             <span className="ah-menu-page-title">{currentPage}</span>
           )}
-          <Menu currentUri={children.props.uri} menuInDarkmode={menuInDarkmode}/>
+          <Menu
+            currentUri={children.props.uri}
+            menuInDarkmode={menuInDarkmode}
+          />
           <div className="ah-mobile-menu-button-wrapper">
             <animated.button
               type="button"
