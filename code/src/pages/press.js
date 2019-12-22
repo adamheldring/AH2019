@@ -5,12 +5,12 @@ import Image from '../components/image'
 
 import SEO from '../components/seo'
 
-const SecondPage = ({ data }) => {
+const Press = ({ data }) => {
   console.log(data)
   return (
     <Fragment>
-      <SEO title="biography" />
-      <h1>Bio</h1>
+      <SEO title="press" />
+      <h1>Press</h1>
       <p>Thinking about New York...</p>
 
       <div className="ah-page">
@@ -23,7 +23,7 @@ const SecondPage = ({ data }) => {
   )
 }
 
-export default SecondPage
+export default Press
 
 export const logoQuery = graphql`
   query {

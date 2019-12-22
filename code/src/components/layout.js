@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
     config: config.stiff,
   })
 
-  const currentPage = children.props.uri.slice(1).toUpperCase() || 'HOME'
+  const currentPage = children.props.uri.slice(1).toUpperCase() || 'ABOUT'
 
   return (
     <div className="ah-outer-wrapper">

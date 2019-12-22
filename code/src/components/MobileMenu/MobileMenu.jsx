@@ -13,7 +13,7 @@ const MobileMenu = ({
   logo,
   currentUri,
 }) => {
-  const menuItems = menuData
+  const menuItems = menuData.menu
   const trail = useTrail(menuItems.length, {
     opacity: 1,
     from: { opacity: 0 },

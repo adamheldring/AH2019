@@ -1,18 +1,30 @@
-export default [
-  {
-    title: "Home",
-    url: "/"
-  },
-  {
-    title: "Bio",
-    url: "/bio"
-  },
-  {
-    title: "News",
-    url: "/news"
-  },
-  {
-    title: "Tour",
-    url: "/tour"
-  }
-]
+export default {
+  menu: [
+    {
+      title: 'About',
+      url: '/',
+    },
+    {
+      title: 'News',
+      url: '/news',
+    },
+    {
+      title: 'Music',
+      url: '/music',
+    },
+    {
+      title: 'Videos',
+      url: '/videos',
+    },
+  ],
+  submenu: [
+    {
+      title: 'Contact',
+      url: '/contact',
+    },
+    {
+      title: 'Press',
+      url: '/press',
+    },
+  ],
+}

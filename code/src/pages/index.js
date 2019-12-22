@@ -6,7 +6,7 @@ import { ArticleWrapper } from '../components/ArticleWrapper/ArticleWrapper'
 
 const IndexPage = ({ data }) => (
   <Fragment>
-    <SEO title="Home" />
+    <SEO title="ABOUT" />
     <div className="ah-page">
       <ArticleWrapper title="LATEST VIDEO">
         <section className="ah-article-visual--video-container">
@@ -49,14 +49,14 @@ const IndexPage = ({ data }) => (
           </p>
         </section>
       </ArticleWrapper>
-      <ArticleWrapper title="ABOUT">
+      <ArticleWrapper title="BIOGRAPHY">
         <section className="ah-article-visual--image-wide-container">
           <Img fluid={data.portrait.childImageSharp.fluid} />
         </section>
         <section className="ah-article-info-wrapper">
           <p className="ah-article-info-paragraph ah-article-info-paragraph--block">
             <h2 className="ah-article-info-paragraph-heading ah-article-info-paragraph-heading--space">
-              Biography
+              Adam Heldring
             </h2>
             <span>
               <b>
@@ -91,6 +91,7 @@ const IndexPage = ({ data }) => (
         </section>
       </ArticleWrapper>
       <ArticleWrapper title="SOCIAL MEDIA"></ArticleWrapper>
+      <ArticleWrapper title="CONTACT"></ArticleWrapper>
     </div>
   </Fragment>
 )
