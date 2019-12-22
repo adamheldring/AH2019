@@ -60,7 +60,7 @@
           flex-direction: column
           align-items: center
         &--block
-          margin: 20px 80px
+          margin: 20px 20%
 
         &-heading
           margin-bottom: 10px
@@ -68,6 +68,8 @@
           font-family: georgia
           font-style: italic
           font-weight: bold
+          &--space
+            margin-bottom: 20px
 
 // Breakpoint for splitting image and info horizontally
 @media only screen and (max-width: 750px)
@@ -81,3 +83,8 @@
         &--image
           &-inner-container
             margin: 10px
+
+      &-info
+        &-paragraph
+          &--block
+            margin: 20px 5%
