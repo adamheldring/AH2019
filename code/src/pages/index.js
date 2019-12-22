@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => (
           </div>
         </section>
         <section className="ah-article-info-wrapper ah-article--split-section">
-          <p className="ah-article-info-paragraph ah-article-info-paragraph--list">
+          <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
             <h2 className="ah-article-info-paragraph-heading">You / More</h2>
             <span>
               Format: Single
@@ -46,7 +46,7 @@ const IndexPage = ({ data }) => (
               Label: Tennis
               <br />
             </span>
-          </p>
+          </div>
         </section>
       </ArticleWrapper>
       <ArticleWrapper title="BIOGRAPHY">
@@ -54,11 +54,11 @@ const IndexPage = ({ data }) => (
           <Img fluid={data.portrait.childImageSharp.fluid} />
         </section>
         <section className="ah-article-info-wrapper">
-          <p className="ah-article-info-paragraph ah-article-info-paragraph--block">
+          <div className="ah-article-info-paragraph ah-article-info-paragraph--block">
             <h2 className="ah-article-info-paragraph-heading ah-article-info-paragraph-heading--space">
               Adam Heldring
             </h2>
-            <span>
+            <p style={{ marginBottom: '20px' }}>
               <b>
                 Adam Heldring released two Ep:s and the debut album ”Mount
                 Foreverest” in quick succession which generated wide interest
@@ -86,8 +86,8 @@ const IndexPage = ({ data }) => (
                 second album is expected in 2020.
                 {/* </b> */}
               </i>
-            </span>
-          </p>
+            </p>
+          </div>
         </section>
       </ArticleWrapper>
       <ArticleWrapper title="SOCIAL MEDIA"></ArticleWrapper>
