@@ -4,8 +4,8 @@ import { MdClose } from 'react-icons/md'
 import { GiAnchor } from 'react-icons/gi'
 import { useSpring, useTrail, animated } from 'react-spring'
 import Img from 'gatsby-image'
-import SocialMediaBar from '../SocialMediaBar/SocialMediaBar'
-import menuData from '../../../data/menuData'
+import SocialMediaBar from '../../SocialMediaBar/SocialMediaBar'
+import menuData from '../../../../data/menuData'
 
 const MobileMenu = ({
   setMobileMenuOpen,

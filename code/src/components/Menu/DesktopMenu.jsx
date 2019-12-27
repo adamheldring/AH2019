@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import menuData from '../../data/menuData'
+import menuData from '../../../data/menuData'
 
 const Menu = ({ currentUri, menuInDarkmode }) => (
-  <nav className="ah-menu">
+  <div className="ah-menu">
     <ul className="ah-menu-list">
       {menuData.menu.map((menuItem, index) => (
         <li key={`${index}-${menuItem.title}`}>
@@ -18,7 +18,7 @@ const Menu = ({ currentUri, menuInDarkmode }) => (
         </li>
       ))}
     </ul>
-  </nav>
+  </div>
 )
 
 export default Menu
