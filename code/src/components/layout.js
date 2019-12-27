@@ -8,8 +8,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import Header from './header'
+import Header from './Header/Header'
 import Menu from './Menu/Menu'
+import Footer from './Footer/Footer'
 import './layout.css'
 import './ah2019.sass'
 import './mediaQueries.sass'
@@ -55,12 +56,7 @@ const Layout = ({ children }) => {
       <div className="ah-inner-wrapper">
         <main>{children}</main>
       </div>
-      <footer>
-        <div className="ah-inner-wrapper">
-          © {new Date().getFullYear()},{' '}
-          <a href="https://www.gatsbyjs.org">Tennis Music</a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

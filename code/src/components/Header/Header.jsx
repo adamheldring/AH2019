@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { useSpring, animated } from 'react-spring'
 import { useInView } from 'react-intersection-observer'
-import './Menu/MobileMenu/MobileMenu.sass'
+import '../Menu/MobileMenu/MobileMenu.sass'
 
 const Header = ({ siteTitle, setMobileMenuOpen, setMenuInDarkmode }) => {
   const [titleUpperRef, titleUpperInView] = useInView({
