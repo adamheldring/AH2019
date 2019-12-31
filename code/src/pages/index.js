@@ -29,34 +29,10 @@ const IndexPage = ({ data }) => (
           </p>
         </section>
       </ArticleWrapper>
-      <ArticleWrapper title="LATEST RELEASE" split>
-        <section className="ah-article-visual--image-square-outer-container ah-article--split-section">
-          <div className="ah-article-visual--image-square-inner-container">
-            <Img fluid={data.ymcover.childImageSharp.fluid} />
-          </div>
-        </section>
-        <section className="ah-article-info-wrapper ah-article--split-section">
-          <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
-            <h2 className="ah-article-info-paragraph-heading">You / More</h2>
-            <span>
-              Format: Single
-              <br />
-            </span>
-            <span>
-              Year: 2019
-              <br />
-            </span>
-            <span>
-              Label: Tennis
-              <br />
-            </span>
-          </div>
-        </section>
-      </ArticleWrapper>
       <ReleaseArticle
         release={latestRelease}
         coverFluid={data[latestRelease.coverName].childImageSharp.fluid}
-        // articleTitle="LATEST RELEASE test"
+        articleTitle="LATEST RELEASE"
       />
       <ArticleWrapper title="BIOGRAPHY">
         <section className="ah-article-visual--image-wide-container">

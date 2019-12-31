@@ -6,7 +6,7 @@ export default {
       format: 'Single',
       year: 2019,
       label: 'Tennis',
-      distribution: 'AWAL / Cobalt Music',
+      distribution: 'AWAL / Kobalt Music',
     },
     {
       title: 'True North',
@@ -26,7 +26,7 @@ export default {
     },
     {
       title: 'Metro',
-      coverName: 'tncover',
+      coverName: 'mcover',
       format: 'EP',
       year: 2008,
       label: 'Tennis',

@@ -1,17 +1,23 @@
 import React, { Fragment } from 'react'
-import Layout from '../components/layout'
+import { graphql } from 'gatsby'
+import ReleaseArticle from '../components/Article/ReleaseArticle'
 import SEO from '../components/seo'
-import tourData from '../../data/tourData'
+import releaseData from '../../data/releaseData'
 
-const Music = () => (
+const { releases } = releaseData
+
+const MusicPage = ({ data }) => (
   <Fragment>
     <SEO title="Music" />
-    <h1>Tour</h1>
     <div className="ah-page">
       <div>
         <ul>
-          {tourData.map((tourItem, index) => (
-            <li key={`${index}-${tourItem.date}`}>{tourItem.date}</li>
+          {releases.map((releaseItem, index) => (
+            <ReleaseArticle
+              key={`${index}-${releaseItem.title}`}
+              release={releaseItem}
+              coverFluid={data[releaseItem.coverName].childImageSharp.fluid}
+            />
           ))}
         </ul>
       </div>
@@ -19,4 +25,39 @@ const Music = () => (
   </Fragment>
 )
 
-export default Music
+export default MusicPage
+
+export const imageQuery = graphql`
+  query {
+    ymcover: file(relativePath: { eq: "covers/ah-youmore-single-cover.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    tncover: file(relativePath: { eq: "covers/ah-true_north-ep-cover.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mfcover: file(
+      relativePath: { eq: "covers/ah-mount_foreverest-album-cover.jpg" }
+    ) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mcover: file(relativePath: { eq: "covers/ah-metro-ep-cover.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
