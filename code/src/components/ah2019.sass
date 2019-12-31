@@ -10,6 +10,8 @@ body
 
   //menu placeholder to occupy corresponding inline space when menu is in fixed mode
   --menu-placeholder-height: 67.84px
+  --footer-height: 100px
+  --footer-bottom: 8px
 
   background-color: var(--primary-color)
   overflow-x: hidden
@@ -19,9 +21,11 @@ body
     color: var(--primary-color)
 
   &-outer-wrapper
+    position: relative
     background-color: var(--primary-color)
-    min-height: 100vh
     overflow: "hidden"
+    min-height: 100vh
+    padding-bottom: calc(var(--footer-height) + var(--footer-bottom))
 
   &-inner-wrapper
     margin: 0 auto

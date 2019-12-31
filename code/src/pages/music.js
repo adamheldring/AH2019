@@ -3,9 +3,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import tourData from '../../data/tourData'
 
-const IndexPage = () => (
+const Music = () => (
   <Fragment>
-    <SEO title="Tour" />
+    <SEO title="Music" />
     <h1>Tour</h1>
     <div className="ah-page">
       <div>
@@ -19,4 +19,4 @@ const IndexPage = () => (
   </Fragment>
 )
 
-export default IndexPage
+export default Music
