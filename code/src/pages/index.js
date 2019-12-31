@@ -2,7 +2,11 @@ import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
-import { ArticleWrapper } from '../components/ArticleWrapper/ArticleWrapper'
+import ArticleWrapper from '../components/Article/ArticleWrapper/ArticleWrapper'
+import ReleaseArticle from '../components/Article/ReleaseArticle'
+import releaseData from '../../data/releaseData'
+
+const latestRelease = releaseData.releases[0]
 
 const IndexPage = ({ data }) => (
   <Fragment>
@@ -49,6 +53,11 @@ const IndexPage = ({ data }) => (
           </div>
         </section>
       </ArticleWrapper>
+      <ReleaseArticle
+        release={latestRelease}
+        coverFluid={data[latestRelease.coverName].childImageSharp.fluid}
+        // articleTitle="LATEST RELEASE test"
+      />
       <ArticleWrapper title="BIOGRAPHY">
         <section className="ah-article-visual--image-wide-container">
           <Img fluid={data.portrait.childImageSharp.fluid} />
