@@ -26,6 +26,7 @@ const IndexPage = ({ data }) => (
         <section className="ah-article-info-wrapper">
           <p className="ah-article-info-paragraph ah-article-info-paragraph--list">
             <h2 className="ah-article-info-paragraph-heading">You / More</h2>
+            <span>Single released in 2019 from ucpcoming full album</span>
           </p>
         </section>
       </ArticleWrapper>
