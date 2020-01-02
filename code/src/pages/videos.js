@@ -91,7 +91,7 @@ const VideosPage = () => (
             <span>Live in a Brooklyn clothing store</span>
             <span>
               <br />
-              <i>From Mount Foreverest album</i>
+              <i>From Mount Foreverest</i>
             </span>
           </p>
         </section>
