@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import SEO from '../components/seo'
 import ArticleWrapper from '../components/Article/ArticleWrapper/ArticleWrapper'
 import ReleaseArticle from '../components/Article/ReleaseArticle'
+import SocialMediaBar from '../components/SocialMediaBar/SocialMediaBar'
 import releaseData from '../../data/releaseData'
 
 const latestRelease = releaseData.releases[0]
@@ -67,16 +68,21 @@ const IndexPage = ({ data }) => (
               behind locked studio doors and under great secrecy. <br />
               <br />
               <i>
-                {/* <b> */}
                 The first single "You/More" was released in 2019 and the full
                 second album is expected in 2020.
-                {/* </b> */}
               </i>
             </p>
           </div>
         </section>
       </ArticleWrapper>
-      <ArticleWrapper title="SOCIAL MEDIA"></ArticleWrapper>
+      <ArticleWrapper title="SOCIAL MEDIA">
+        <section className="ah-article-info-wrapper">
+          <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
+            FOLLOW ADAM HELDRING
+            <SocialMediaBar lightBackground></SocialMediaBar>
+          </div>
+        </section>
+      </ArticleWrapper>
       <ArticleWrapper title="CONTACT"></ArticleWrapper>
     </div>
   </Fragment>

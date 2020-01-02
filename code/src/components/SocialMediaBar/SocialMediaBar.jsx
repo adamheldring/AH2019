@@ -8,15 +8,19 @@ import {
 } from 'react-icons/fa'
 import './SocialMediaBar.sass'
 
-const SocialMediaBar = () => (
-  <div className="social-media__wrapper">
+const SocialMediaBar = ({ lightBackground = false }) => (
+  <div className="ah-social-media__wrapper">
     <a
       href="https://open.spotify.com/artist/4o6OwD3pYXO8phn4erAROF"
       alt="Adam Heldring on Spotify"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FaSpotify className="social-media__icon" />
+      <FaSpotify
+        className={`ah-social-media__icon ${
+          lightBackground ? 'ah-social-media__icon--dark' : ''
+        }`}
+      />
     </a>
     <a
       href="https://www.facebook.com/adamheldring"
@@ -24,7 +28,11 @@ const SocialMediaBar = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FaFacebookF className="social-media__icon" />
+      <FaFacebookF
+        className={`ah-social-media__icon ${
+          lightBackground ? 'ah-social-media__icon--dark' : ''
+        }`}
+      />
     </a>
     <a
       href="https://www.instagram.com/adamheldring"
@@ -32,7 +40,11 @@ const SocialMediaBar = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FaInstagram className="social-media__icon" />
+      <FaInstagram
+        className={`ah-social-media__icon ${
+          lightBackground ? 'ah-social-media__icon--dark' : ''
+        }`}
+      />
     </a>
     <a
       href="https://www.youtube.com/user/adamheldring"
@@ -40,7 +52,11 @@ const SocialMediaBar = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FaYoutube className="social-media__icon" />
+      <FaYoutube
+        className={`ah-social-media__icon ${
+          lightBackground ? 'ah-social-media__icon--dark' : ''
+        }`}
+      />
     </a>
     <a
       href="https://www.twitter.com/adamheldring"
@@ -48,7 +64,11 @@ const SocialMediaBar = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FaTwitter className="social-media__icon" />
+      <FaTwitter
+        className={`ah-social-media__icon ${
+          lightBackground ? 'ah-social-media__icon--dark' : ''
+        }`}
+      />
     </a>
   </div>
 )

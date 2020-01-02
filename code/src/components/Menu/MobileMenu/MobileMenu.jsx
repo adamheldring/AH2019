@@ -49,7 +49,9 @@ const MobileMenu = ({
           </animated.div>
         ))}
       </ul>
-      <SocialMediaBar />
+      <div style={{ width: '250px' }}>
+        <SocialMediaBar />
+      </div>
       <div className="mobile-menu__submenu">
         <span className="mobile-menu__submenu-item">CONTACT</span> |{' '}
         <span className="mobile-menu__submenu-item">ABOUT</span>

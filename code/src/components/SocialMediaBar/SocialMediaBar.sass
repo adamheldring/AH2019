@@ -1,12 +1,22 @@
-.social-media__wrapper
-  max-width: 400px
-  margin: 0 auto 0px
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  font-size: 30px
-  padding: 10px 60px
+.ah
+  &-social-media__wrapper
+    width: 100%
+    max-width: 400px
+    margin: 0 auto 0px
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    font-size: 30px
+    padding: 10px 0px
 
-  .social-media__icon
-    color: var(--primary-color)
-    margin: 0 0.2em
+    .ah-social-media__icon
+      color: var(--primary-color)
+      margin: 0
+      padding: 0.2em
+      box-sizing: content-box
+      &:hover, &:focus
+        color: var(--tertiary-color)
+
+      &--dark
+        color: var(--secondary-color)
+        // opacity: 0.8
