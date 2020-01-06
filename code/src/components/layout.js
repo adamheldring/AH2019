@@ -32,6 +32,15 @@ const Layout = ({ children }) => {
           }
         }
       }
+      tennislogo: file(
+        relativePath: { eq: "materials/tennis-logo-trans-white.png" }
+      ) {
+        childImageSharp {
+          fixed(height: 14) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `)
 
@@ -55,7 +64,7 @@ const Layout = ({ children }) => {
       <div className="ah-inner-wrapper">
         <main>{children}</main>
       </div>
-      <Footer />
+      <Footer labelLogo={data.tennislogo} />
     </div>
   )
 }

@@ -1,14 +1,33 @@
 import React from 'react'
+import Img from 'gatsby-image'
 import './Footer.sass'
 
-const Footer = () => (
+const Footer = ({ labelLogo }) => (
   <footer className="ah-footer">
-    <div className="ah-inner-wrapper ah-inner-wrapper--dark">
-      <div className="ah-footer-content">
-        <span>© {new Date().getFullYear()}</span>
+    <div className="ah-footer-content">
+      <div className="ah-footer-content-box">
         <a className="ah-footer-link" href="https://www.gatsbyjs.org">
-          Tennis Music
+          <Img fixed={labelLogo.childImageSharp.fixed} />
         </a>
+        <span>Tennis Music</span>
+        <span>tennismusic.net</span>
+        <span>© {new Date().getFullYear()}</span>
+      </div>
+      <div className="ah-footer-content-box ah-footer-content-box--center">
+        <span>
+          <b>INFO</b>
+        </span>
+        <span>Press</span>
+        <span>Contact</span>
+      </div>
+      <div className="ah-footer-content-box ah-footer-content-box--right">
+        <span>
+          <b>MENU</b>
+        </span>
+        <span>Item</span>
+        <span>Item</span>
+        <span>Item</span>
+        <span>Item</span>
       </div>
     </div>
   </footer>
