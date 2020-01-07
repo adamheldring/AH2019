@@ -15,7 +15,7 @@
       font-size: 12px
       color: var(--primary-color)
       width: 100%
-      padding: 0 30px
+      padding: 0px 30px
       max-width: 900px
       display: flex
       justify-content: space-between
@@ -25,20 +25,27 @@
         flex-direction: column
         align-items: stretch
 
+        &-heading
+          font-size: 14px
+          font-weight: bold
+          height: 26px
+
         &--center
-          // align-items: center
+          align-items: center
         &--right
-          // align-items: flex-end
+          align-items: flex-end
 
-      &-link
-        color: var(--primary-color)
-        display: flex
-        align-items: center
-        &:hover
-          color: var(--tertiary-color)
+    &-link
+      color: var(--primary-color)
+      display: flex
+      align-items: center
 
-// reaches inside Gatsby links to override user agent style for anchor tags
-a.ah-footer-link
-  color: var(--primary-color)
-  &:hover
-    color: var(--tertiary-color)
+      &:hover
+        color: var(--tertiary-color)
+
+    &-menu-container
+      display: flex
+      justify-content: space-between
+      width: 140px
+    &-tennis-logo
+      padding-top: 2px
