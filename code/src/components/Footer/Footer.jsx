@@ -1,5 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 import './Footer.sass'
 import menuData from '../../../data/menuData'
 
@@ -21,7 +22,7 @@ const Footer = ({ labelLogo }) => {
             <b>INFO</b>
           </span>
           {menuData.submenu.map(submenuItem => (
-            <span>{submenuItem.title}</span>
+            <Link to={submenuItem.url}>{submenuItem.title}</Link>
           ))}
         </div>
         <div className="ah-footer-content-box ah-footer-content-box--right">
@@ -29,7 +30,7 @@ const Footer = ({ labelLogo }) => {
             <b>MENU</b>
           </span>
           {menuData.menu.map(menuItem => (
-            <span>{menuItem.title}</span>
+            <Link to={menuItem.url}>{menuItem.title}</Link>
           ))}
         </div>
       </div>
