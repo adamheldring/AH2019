@@ -25,14 +25,14 @@ const Layout = ({ children }) => {
           title
         }
       }
-      logo: file(relativePath: { eq: "materials/ahlogotransshadow.png" }) {
+      ahlogo: file(relativePath: { eq: "materials/ahlogotransshadow.png" }) {
         childImageSharp {
           fixed(height: 40) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      tennislogo: file(
+      tennislogowhite: file(
         relativePath: { eq: "materials/tennis-logo-trans-white.png" }
       ) {
         childImageSharp {
@@ -59,12 +59,12 @@ const Layout = ({ children }) => {
         setMobileMenuOpen={setMobileMenuOpen}
         menuInDarkmode={menuInDarkmode}
         currentUri={children.props.uri}
-        logo={data.logo}
+        logo={data.ahlogo}
       />
       <div className="ah-inner-wrapper">
         <main>{children}</main>
       </div>
-      <Footer labelLogo={data.tennislogo} />
+      <Footer labelLogo={data.tennislogowhite} />
     </div>
   )
 }

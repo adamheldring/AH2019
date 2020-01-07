@@ -18,7 +18,7 @@ const Footer = ({ labelLogo }) => (
         >
           <Img fixed={labelLogo.childImageSharp.fixed} />
         </a>
-        <span className="test">
+        <span>
           <a
             className="ah-footer-link"
             href="http://www.tennismusic.net"
@@ -29,7 +29,7 @@ const Footer = ({ labelLogo }) => (
             Tennis Music
           </a>
         </span>
-        <span className="test">
+        <span>
           <a
             className="ah-footer-link"
             href="http://www.tennismusic.net"
