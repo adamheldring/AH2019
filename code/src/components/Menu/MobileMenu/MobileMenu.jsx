@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 import { MdClose } from 'react-icons/md'
 import { GiAnchor } from 'react-icons/gi'
@@ -53,8 +53,18 @@ const MobileMenu = ({
         <SocialMediaBar />
       </div>
       <div className="mobile-menu__submenu">
-        <span className="mobile-menu__submenu-item">CONTACT</span> |{' '}
-        <span className="mobile-menu__submenu-item">ABOUT</span>
+        {menuData.submenu.map((submenuItem, index) => (
+          <Fragment>
+            <Link
+              to={submenuItem.url}
+              onClick={() => setMobileMenuOpen(false)}
+              className="mobile-menu__submenu-item"
+            >
+              {submenuItem.title.toUpperCase()}
+            </Link>
+            {index !== menuData.submenu.length - 1 && <Fragment> | </Fragment>}
+          </Fragment>
+        ))}
       </div>
     </div>
   )
