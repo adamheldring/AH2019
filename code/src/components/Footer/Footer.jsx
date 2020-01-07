@@ -10,11 +10,11 @@ const Footer = ({ labelLogo }) => {
     <footer className="ah-footer">
       <div className="ah-footer-content">
         <div className="ah-footer-content-box">
-          <a className="ah-footer-link" href="https://www.gatsbyjs.org">
+          <a className="ah-footer-link" href="http://www.tennismusic.net">
             <Img fixed={labelLogo.childImageSharp.fixed} />
           </a>
           <span>Tennis Music</span>
-          {/* <span>tennismusic.net</span> */}
+          <span>tennismusic.net</span>
           <span>© {new Date().getFullYear()}</span>
         </div>
         <div className="ah-footer-content-box ah-footer-content-box--center">
@@ -22,7 +22,9 @@ const Footer = ({ labelLogo }) => {
             <b>INFO</b>
           </span>
           {menuData.submenu.map(submenuItem => (
-            <Link to={submenuItem.url}>{submenuItem.title}</Link>
+            <Link to={submenuItem.url} className="ah-footer-link">
+              {submenuItem.title}
+            </Link>
           ))}
         </div>
         <div className="ah-footer-content-box ah-footer-content-box--right">
@@ -30,7 +32,9 @@ const Footer = ({ labelLogo }) => {
             <b>MENU</b>
           </span>
           {menuData.menu.map(menuItem => (
-            <Link to={menuItem.url}>{menuItem.title}</Link>
+            <Link to={menuItem.url} className="ah-footer-link">
+              {menuItem.title}
+            </Link>
           ))}
         </div>
       </div>
