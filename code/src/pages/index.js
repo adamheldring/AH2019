@@ -4,8 +4,10 @@ import Img from 'gatsby-image'
 import SEO from '../components/seo'
 import ArticleWrapper from '../components/Article/ArticleWrapper/ArticleWrapper'
 import ReleaseArticle from '../components/Article/ReleaseArticle'
+import ContactArticle from '../components/Article/ContactArticle'
 import SocialMediaBar from '../components/SocialMediaBar/SocialMediaBar'
 import releaseData from '../../data/releaseData'
+import SocialMediaArticle from '../components/Article/SocialMediaArticle'
 
 const latestRelease = releaseData.releases[0]
 
@@ -75,98 +77,11 @@ const IndexPage = ({ data }) => (
           </div>
         </section>
       </ArticleWrapper>
-      <ArticleWrapper title="SOCIAL MEDIA">
-        <section className="ah-article-info-wrapper">
-          <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
-            FOLLOW ADAM HELDRING
-            <SocialMediaBar lightBackground></SocialMediaBar>
-          </div>
-        </section>
-      </ArticleWrapper>
-      <ArticleWrapper title="CONTACT" split>
-        <section className="ah-article-info-wrapper ah-article--split-section">
-          <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
-            <span>
-              <b>Management & Record Label:</b>
-              <br />
-            </span>
-            <span>
-              <i>Worldwide</i>
-              <br />
-            </span>
-            <span className="ah-contact-logo-wrapper ah-contact-logo-wrapper--tennis">
-              <Img fixed={data.tennislogoblack.childImageSharp.fixed} />
-            </span>
-            <span>
-              TENNIS MUSIC
-              <br />
-            </span>
-            <span>
-              <a href="mailto:info@tennismusic.net" className="ah-contact-link">
-                info@tennismusic.net
-              </a>
-              <br />
-            </span>
-            <span>
-              <a
-                href="http://www.tennismusic.net"
-                alt="Tennis Music"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ah-contact-link"
-              >
-                www.tennismusic.net
-              </a>
-              <br />
-            </span>
-            <span>
-              Stockholm – Sweden
-              <br />
-            </span>
-          </div>
-        </section>
-        <section className="ah-article-info-wrapper ah-article--split-section">
-          <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
-            <span>
-              <b>Synch Licensing:</b>
-              <br />
-            </span>
-            <span>
-              <i>United States</i>:
-              <br />
-            </span>
-            <span className="ah-contact-logo-wrapper ah-contact-logo-wrapper--media-horse">
-              <Img fixed={data.mediahorselogo.childImageSharp.fixed} />
-            </span>
-            <span>
-              MEDIA HORSE
-              <br />
-            </span>
-            <span>
-              <a href="mailto:info@mediahorse.net" className="ah-contact-link">
-                info@mediahorse.net
-              </a>
-              <br />
-            </span>
-            <span>
-              <a
-                href="http://www.mediahorse.net"
-                alt="Media Horse"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ah-contact-link"
-              >
-                www.mediahorse.net
-              </a>
-              <br />
-            </span>
-            <span>
-              Los Angeles, CA – USA
-              <br />
-            </span>
-          </div>
-        </section>
-      </ArticleWrapper>
+      <SocialMediaArticle />
+      <ContactArticle
+        tennislogo={data.tennislogoblack}
+        mediahorselogo={data.mediahorselogo}
+      />
     </div>
   </Fragment>
 )
