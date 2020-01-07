@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import './Footer.sass'
 import menuData from '../../../data/menuData'
 
-const Footer = ({ labelLogo }) => (
+const Footer = ({ labelLogo, currentUri }) => (
   <footer className="ah-footer">
     <div className="ah-footer-content">
       <div className="ah-footer-content-box">
@@ -55,7 +55,12 @@ const Footer = ({ labelLogo }) => (
         <div className="ah-footer-content-box ah-footer-content-box--center">
           <span className="ah-footer-content-box-heading">INFO</span>
           {menuData.submenu.map(submenuItem => (
-            <Link to={submenuItem.url} className="ah-footer-link">
+            <Link
+              to={submenuItem.url}
+              className={`ah-footer-link ${
+                submenuItem.url === currentUri ? 'ah-footer-link--active' : ''
+              }`}
+            >
               {submenuItem.title}
             </Link>
           ))}
@@ -63,7 +68,12 @@ const Footer = ({ labelLogo }) => (
         <div className="ah-footer-content-box ah-footer-content-box--right">
           <span className="ah-footer-content-box-heading">MENU</span>
           {menuData.menu.map(menuItem => (
-            <Link to={menuItem.url} className="ah-footer-link">
+            <Link
+              to={menuItem.url}
+              className={`ah-footer-link ${
+                menuItem.url === currentUri ? 'ah-footer-link--active' : ''
+              }`}
+            >
               {menuItem.title}
             </Link>
           ))}

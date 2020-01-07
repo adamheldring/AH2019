@@ -5,7 +5,6 @@ import SEO from '../components/seo'
 import ArticleWrapper from '../components/Article/ArticleWrapper/ArticleWrapper'
 import ReleaseArticle from '../components/Article/ReleaseArticle'
 import ContactArticle from '../components/Article/ContactArticle'
-import SocialMediaBar from '../components/SocialMediaBar/SocialMediaBar'
 import releaseData from '../../data/releaseData'
 import SocialMediaArticle from '../components/Article/SocialMediaArticle'
 

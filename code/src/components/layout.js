@@ -64,7 +64,10 @@ const Layout = ({ children }) => {
       <div className="ah-inner-wrapper">
         <main>{children}</main>
       </div>
-      <Footer labelLogo={data.tennislogowhite} />
+      <Footer
+        labelLogo={data.tennislogowhite}
+        currentUri={children.props.uri}
+      />
     </div>
   )
 }

@@ -58,7 +58,11 @@ const MobileMenu = ({
             <Link
               to={submenuItem.url}
               onClick={() => setMobileMenuOpen(false)}
-              className="mobile-menu__submenu-item"
+              className={`mobile-menu__submenu-item ${
+                submenuItem.url === currentUri
+                  ? 'mobile-menu__submenu-item--active'
+                  : ''
+              }`}
             >
               {submenuItem.title.toUpperCase()}
             </Link>
