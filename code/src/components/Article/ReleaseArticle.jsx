@@ -1,9 +1,29 @@
 import React, { useState } from 'react'
 import Img from 'gatsby-image'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
+import { useStaticQuery, graphql } from 'gatsby'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 
 const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
+  const data = useStaticQuery(graphql`
+    query imageQuery {
+      chevrondown: file(relativePath: { eq: "materials/chevron-down.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      chevronup: file(relativePath: { eq: "materials/chevron-up.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
   const [foldOutIsVisible, setFoldOutIsVisible] = useState(false)
   return (
     <ArticleWrapper
@@ -11,7 +31,10 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
       split
     >
       <section className="ah-article-visual--image-square-outer-container ah-article--split-section">
-        <div className="ah-article-visual--image-square-inner-container">
+        <div
+          className="ah-article-visual--image-square-inner-container"
+          style={{ position: 'relative' }}
+        >
           <Img fluid={coverFluid} />
         </div>
       </section>
@@ -37,7 +60,14 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
             }}
             className="ah-article-fold-out-trigger"
           >
-            {foldOutIsVisible ? <FiChevronUp /> : <FiChevronDown />}
+            <Img
+              className="ah-article-fold-out-trigger-icon"
+              fluid={
+                data[foldOutIsVisible ? 'chevronup' : 'chevrondown']
+                  .childImageSharp.fluid
+              }
+            />
+            {/* {foldOutIsVisible ? <FiChevronUp /> : <FiChevronDown />} */}
           </button>
         </div>
       </section>
@@ -57,6 +87,9 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
             allowTransparency="true"
             allow="encrypted-media"
           ></iframe>
+        </div>
+        <div className="ah-article-info-wrapper  ah-article--split-section">
+          {/* <div className="ah-article-info-paragraph">Test</div> */}
         </div>
       </section>
     </ArticleWrapper>
