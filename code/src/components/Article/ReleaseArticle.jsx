@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSpring, animated } from 'react-spring'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
@@ -24,6 +25,10 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
   `)
 
   const [foldOutIsVisible, setFoldOutIsVisible] = useState(false)
+  const foldOutPlayerStyle = useSpring({
+    height: `${foldOutIsVisible ? release.playerHeight : '0'}px`,
+  })
+
   return (
     <ArticleWrapper
       title={articleTitle.toUpperCase() || release.format.toUpperCase()}
@@ -35,11 +40,9 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
           style={{ position: 'relative' }}
         >
           <Img fluid={coverFluid} />
-          <div
-            style={{
-              height: `${foldOutIsVisible ? release.playerHeight : '0'}px`,
-              overflow: 'hidden',
-            }}
+          <animated.div
+            className="ah-article-fold-out-player-wrapper"
+            style={foldOutPlayerStyle}
           >
             <iframe
               title={release.title}
@@ -50,11 +53,11 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
               allowTransparency="true"
               allow="encrypted-media"
             ></iframe>
-          </div>
+          </animated.div>
         </div>
       </section>
       <section className="ah-article-info-wrapper ah-article--split-section">
-        <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
+        <div className="ah-article-info-paragraph ah-article-info-paragraph--list ah-article-info-paragraph--release-info">
           <h2 className="ah-article-info-paragraph-heading">{release.title}</h2>
           <span>
             Format: {release.format}

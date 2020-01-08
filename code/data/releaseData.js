@@ -9,7 +9,7 @@ export default {
       distribution: 'AWAL / Kobalt Music',
       spotifyLink:
         'https://open.spotify.com/embed/album/1Y5e9yno9NKbStR6Alqzjn',
-      playerHeight: 151,
+      playerHeight: 260,
       tracks: [
         {
           title: 'You / More',
@@ -22,11 +22,11 @@ export default {
       coverName: 'tncover',
       format: 'EP',
       year: 2010,
-      label: 'Tennis Music',
+      label: 'Tennis',
       distribution: 'Cosmos / Bonnier Amigo',
       spotifyLink:
         'https://open.spotify.com/embed/album/20F9ixARoEHvadqoITi1kV',
-      playerHeight: 151,
+      playerHeight: 260,
       tracks: [
         {
           title: 'Bear Town',
@@ -93,7 +93,7 @@ export default {
       distribution: 'Cosmos / Bonnier Amigo',
       spotifyLink:
         'https://open.spotify.com/embed/album/2qUnNrlNK1r1JcckqamyB3',
-      playerHeight: 210,
+      playerHeight: 260,
       tracks: [
         {
           title: 'OK Goodbye',
