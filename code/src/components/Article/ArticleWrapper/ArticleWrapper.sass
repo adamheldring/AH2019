@@ -9,6 +9,7 @@
         width: 50% !important
         display: flex
         align-items: center
+        // border: 1px solid red
     &-visual
       &-title
         background-color: #DDDDDD
@@ -54,7 +55,9 @@
         display: flex
         justify-content: center
       &-paragraph
+        position: relative
         margin: 0
+        // border: 1px solid blue
         &--list
           // background-color: #F0F0F0
           // border: 1px solid #CCCCCC
@@ -76,6 +79,16 @@
           &--space
             margin-top: 10px
             margin-bottom: 25px
+
+    &-fold-out
+      &-section
+        display: none
+        &--visible
+          display: block
+      &-trigger
+        font-size: 50px
+        position: absolute
+        bottom: 0
 
 // Breakpoint for splitting image and info horizontally
 @media only screen and (max-width: 750px)

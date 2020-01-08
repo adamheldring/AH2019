@@ -7,6 +7,8 @@ export default {
       year: 2019,
       label: 'Tennis',
       distribution: 'AWAL / Kobalt Music',
+      spotifyLink:
+        'https://open.spotify.com/embed/album/1Y5e9yno9NKbStR6Alqzjn',
       tracks: [
         {
           title: 'You / More',
@@ -21,6 +23,8 @@ export default {
       year: 2010,
       label: 'Tennis Music',
       distribution: 'Cosmos / Bonnier Amigo',
+      spotifyLink:
+        'https://open.spotify.com/embed/album/20F9ixARoEHvadqoITi1kV',
       tracks: [
         {
           title: 'Bear Town',
@@ -38,6 +42,8 @@ export default {
       year: 2009,
       label: 'Tennis',
       distribution: 'Cosmos / Bonnier Amigo',
+      spotifyLink:
+        'https://open.spotify.com/embed/album/3uJg4IN4wJMSf3gl0sZWst',
       tracks: [
         {
           title: 'Enter',
@@ -82,6 +88,8 @@ export default {
       year: 2008,
       label: 'Tennis',
       distribution: 'Cosmos / Bonnier Amigo',
+      spotifyLink:
+        'https://open.spotify.com/embed/album/2qUnNrlNK1r1JcckqamyB3',
       tracks: [
         {
           title: 'OK Goodbye',
