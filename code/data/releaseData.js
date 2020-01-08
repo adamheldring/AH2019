@@ -9,6 +9,7 @@ export default {
       distribution: 'AWAL / Kobalt Music',
       spotifyLink:
         'https://open.spotify.com/embed/album/1Y5e9yno9NKbStR6Alqzjn',
+      playerHeight: 151,
       tracks: [
         {
           title: 'You / More',
@@ -25,6 +26,7 @@ export default {
       distribution: 'Cosmos / Bonnier Amigo',
       spotifyLink:
         'https://open.spotify.com/embed/album/20F9ixARoEHvadqoITi1kV',
+      playerHeight: 151,
       tracks: [
         {
           title: 'Bear Town',
@@ -44,6 +46,7 @@ export default {
       distribution: 'Cosmos / Bonnier Amigo',
       spotifyLink:
         'https://open.spotify.com/embed/album/3uJg4IN4wJMSf3gl0sZWst',
+      playerHeight: 428,
       tracks: [
         {
           title: 'Enter',
@@ -90,6 +93,7 @@ export default {
       distribution: 'Cosmos / Bonnier Amigo',
       spotifyLink:
         'https://open.spotify.com/embed/album/2qUnNrlNK1r1JcckqamyB3',
+      playerHeight: 210,
       tracks: [
         {
           title: 'OK Goodbye',
