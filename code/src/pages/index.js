@@ -76,11 +76,11 @@ const IndexPage = ({ data }) => (
           </div>
         </section>
       </ArticleWrapper>
-      <SocialMediaArticle />
       <ContactArticle
         tennislogo={data.tennislogoblack}
         mediahorselogo={data.mediahorselogo}
       />
+      <SocialMediaArticle />
     </div>
   </Fragment>
 )
