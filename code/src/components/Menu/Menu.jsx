@@ -1,7 +1,9 @@
 import React from 'react'
-import { useSpring, useTransition, animated, config } from 'react-spring'
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import { useSpring, useTransition, animated, config } from 'react-spring'
 import { MdClose } from 'react-icons/md'
+import { FaArrowAltCircleUp } from 'react-icons/fa'
 import DesktopMenu from './DesktopMenu'
 import MobileMenu from './MobileMenu/MobileMenu'
 import './Menu.sass'
@@ -69,11 +71,20 @@ const Menu = ({
           }}
         >
           <div
+            className="ah-menu-leftside-wrapper"
             style={{
               display: `${menuInDarkmode ? 'block' : 'none'}`,
             }}
           >
-            <Img fixed={logo.childImageSharp.fixed} className="ah-menu-logo" />
+            <Link to="/">
+              <Img
+                fixed={logo.childImageSharp.fixed}
+                className="ah-menu-logo"
+              />
+            </Link>
+            <a role="button" href="#top">
+              <FaArrowAltCircleUp className="ah-menu-icon-up" />
+            </a>
           </div>
           {menuInDarkmode && (
             <span className="ah-menu-page-title">{currentPage}</span>

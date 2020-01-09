@@ -74,8 +74,24 @@
           position: relative
           color: var(--secondary-color)
           background-color: var(--tertiary-color)
+
+    &-leftside-wrapper
+      z-index: 10
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 30px
+
+      a
+        color: var(--primary-color)
+
     &-logo
       margin: 0px 1rem
+
+    &-icon-up
+      box-sizing: content-box
+      padding: 4px
+      filter: drop-shadow(2px 2px var(--custom-black))
 
     &-page-title
       display: none
@@ -90,4 +106,5 @@
       background-color: var(--primary-color)
       height: 22px
       margin: auto 0
-      margin-right: 20px //Compensating for offset between logo and menu toggle
+      //Compensating for offset between logo and menu toggle
+      // margin-right: 20px 
