@@ -9,15 +9,15 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
     query imageQuery {
       chevrondown: file(relativePath: { eq: "materials/chevron-down.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+          fixed(width: 90) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
       chevronup: file(relativePath: { eq: "materials/chevron-up.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+          fixed(width: 90) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -80,9 +80,9 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
           >
             <Img
               className="ah-article-fold-out-trigger-icon"
-              fluid={
+              fixed={
                 data[foldOutIsVisible ? 'chevronup' : 'chevrondown']
-                  .childImageSharp.fluid
+                  .childImageSharp.fixed
               }
             />
           </button>
