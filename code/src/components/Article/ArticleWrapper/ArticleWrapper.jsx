@@ -12,16 +12,21 @@ const ArticleWrapper = props => {
           color: '#333333',
           margin: '0',
           height: '50px',
-          padding: '0 20px',
           display: 'flex',
           alignItems: 'center',
           letterSpacing: '0.1rem',
           fontSize: '14px',
+          padding: '0 20px',
         }}
       >
         {title}
       </div>
-      <div className={`${split ? 'ah-article--split' : ''}`}>{children}</div>
+      <div className={`${split ? 'ah-article--split' : ''}`}>
+        {children.length
+          ? children.filter((child, index) => index < 2)
+          : children}
+      </div>
+      {children.length >= 3 && children.filter((child, index) => index >= 2)}
     </section>
   )
 }

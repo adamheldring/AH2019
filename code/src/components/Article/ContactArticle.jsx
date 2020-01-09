@@ -1,5 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 
 const ContactArticle = ({ tennislogo, mediahorselogo }) => (
@@ -85,6 +86,24 @@ const ContactArticle = ({ tennislogo, mediahorselogo }) => (
           <br />
         </span>
       </div>
+    </section>
+    <section className="ah-article-info-wrapper ah-article-info--addon-info">
+      <span>BOOKING & PRESS INQUIRIES:</span>
+      <span>
+        <a href="mailto:info@tennismusic.net" className="ah-contact-link">
+          info@tennismusic.net
+        </a>
+      </span>
+      <span>
+        <li
+          className="ah-menu-list-item-wrapper"
+          style={{ listStyle: 'none', margin: '10px 0 0' }}
+        >
+          <Link to="/press" className="ah-menu-list-item">
+            PRESS SECTION
+          </Link>
+        </li>
+      </span>
     </section>
   </ArticleWrapper>
 )
