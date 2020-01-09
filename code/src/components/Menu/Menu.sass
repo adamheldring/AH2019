@@ -35,7 +35,7 @@
         background-color: transparent
     &-wrapper-outer
       position: relative
-      padding: 0.5rem 0
+      padding: 0.8rem 0 0.2rem
       background: transparent
       top: 0
       z-index: 10
@@ -81,16 +81,20 @@
       align-items: center
       justify-content: center
       font-size: 30px
+      margin-right: 20px
 
       a
         color: var(--primary-color)
 
     &-logo
       margin: 0px 1rem
+      position: relative
+      top: -1.5px
 
     &-icon-up
       box-sizing: content-box
       padding: 4px
+      margin-bottom: 1px
       filter: drop-shadow(2px 2px var(--custom-black))
 
     &-page-title
@@ -106,5 +110,4 @@
       background-color: var(--primary-color)
       height: 22px
       margin: auto 0
-      //Compensating for offset between logo and menu toggle
-      // margin-right: 20px 
+      margin-right: 79px //Compensating for offset between sides and centering the page title
