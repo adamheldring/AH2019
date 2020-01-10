@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import SEO from '../components/seo'
-// import ArticleWrapper from '../components/Article/ArticleWrapper/ArticleWrapper'
 import VideoArticle from '../components/Article/VideoArticle'
 import videoData from '../../data/videoData'
 

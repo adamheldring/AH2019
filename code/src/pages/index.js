@@ -1,38 +1,32 @@
 import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import SEO from '../components/seo'
-import ArticleWrapper from '../components/Article/ArticleWrapper/ArticleWrapper'
 import ReleaseArticle from '../components/Article/ReleaseArticle'
 import ContactArticle from '../components/Article/ContactArticle'
 import releaseData from '../../data/releaseData'
 import SocialMediaArticle from '../components/Article/SocialMediaArticle'
 import BiographyArticle from '../components/Article/BiographyArticle'
+import VideoArticle from '../components/Article/VideoArticle'
+import videoData from '../../data/videoData'
 
 const latestRelease = releaseData.releases[0]
+const latestVideo = videoData.videos.find(
+  video => video.youTubeVideoCode === 'hP7B0h3oIdk'
+)
 
 const IndexPage = ({ data }) => (
   <Fragment>
     <SEO title="ABOUT" />
     <div className="ah-page">
-      <ArticleWrapper title="LATEST VIDEO">
-        <section className="ah-article-visual--video-container">
-          <iframe
-            title="You/More video"
-            className="ah-article-visual--video"
-            src="https://www.youtube.com/embed/hP7B0h3oIdk?loop=1&playList=hP7B0h3oIdk&modestbranding"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </section>
-        <section className="ah-article-info-wrapper">
-          <p className="ah-article-info-paragraph ah-article-info-paragraph--list">
-            <h2 className="ah-article-info-paragraph-heading">You / More</h2>
-            <span>From upcoming full album</span>
-          </p>
-        </section>
-      </ArticleWrapper>
+      {latestVideo && (
+        <VideoArticle
+          videoLabel="LATEST VIDEO"
+          metaTitle={latestVideo.metaTitle}
+          youTubeVideoCode={latestVideo.youTubeVideoCode}
+          title={latestVideo.title}
+          description={latestVideo.description}
+        />
+      )}
       <ReleaseArticle
         release={latestRelease}
         coverFluid={data[latestRelease.coverName].childImageSharp.fluid}
