@@ -8,11 +8,11 @@ const ContactPage = ({ data }) => (
   <Fragment>
     <SEO title="Contact" />
     <div className="ah-page">
-      <SocialMediaArticle />
       <ContactArticle
         tennislogo={data.tennislogoblack}
         mediahorselogo={data.mediahorselogo}
       />
+      <SocialMediaArticle />
     </div>
   </Fragment>
 )

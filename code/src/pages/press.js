@@ -1,9 +1,7 @@
 import React, { Fragment } from 'react'
-import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import SocialMediaArticle from '../components/Article/SocialMediaArticle'
-import ArticleWrapper from '../components/Article/ArticleWrapper/ArticleWrapper'
 import BiographyArticle from '../components/Article/BiographyArticle'
 import PressContactArticle from '../components/Article/PressContactArticle'
 import PressPhotosArticle from '../components/Article/PressPhotosArticle'
@@ -16,8 +14,8 @@ const PressPage = ({ data }) => (
       <BiographyArticle portrait={data.portrait} />
       <PressPhotosArticle />
       <CoverArtArticle />
-      <SocialMediaArticle />
       <PressContactArticle pressLogo={data.tennislogoblack} />
+      <SocialMediaArticle />
     </div>
   </Fragment>
 )
