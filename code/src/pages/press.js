@@ -1,43 +1,55 @@
 import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import Image from '../components/image'
-
 import SEO from '../components/seo'
+import SocialMediaArticle from '../components/Article/SocialMediaArticle'
+import ArticleWrapper from '../components/Article/ArticleWrapper/ArticleWrapper'
+import BiographyArticle from '../components/Article/BiographyArticle'
+import PressContactArticle from '../components/Article/PressContactArticle'
+import PressPhotosArticle from '../components/Article/PressPhotosArticle'
+import CoverArtArticle from '../components/Article/CoverArtArticle'
 
-const Press = ({ data }) => {
-  console.log(data)
-  return (
-    <Fragment>
-      <SEO title="press" />
-      <h1>Press</h1>
-      <p>Thinking about New York...</p>
+const PressPage = ({ data }) => (
+  <Fragment>
+    <SEO title="Press" />
+    <div className="ah-page">
+      <BiographyArticle portrait={data.portrait} />
+      <PressPhotosArticle />
+      <CoverArtArticle />
+      <SocialMediaArticle />
+      <PressContactArticle pressLogo={data.tennislogoblack} />
+    </div>
+  </Fragment>
+)
 
-      <div className="ah-page">
-        <h5>(Gatsby image query example)</h5>
-        <Img fluid={data.preston.childImageSharp.fluid} />
-        <Img fluid={data.logo.childImageSharp.fluid} />
-        <Image />
-      </div>
-    </Fragment>
-  )
-}
+export default PressPage
 
-export default Press
-
-export const logoQuery = graphql`
+export const imageQuery = graphql`
   query {
-    preston: file(relativePath: { eq: "preston.png" }) {
+    ymcover: file(relativePath: { eq: "covers/ah-youmore-single-cover.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    logo: file(relativePath: { eq: "materials/ahlogotrans.png" }) {
+    portrait: file(
+      relativePath: {
+        eq: "press/Adam_Heldring_press_2019_1_-_Photo_Andreas_Karlsson_(highres).jpg"
+      }
+    ) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    tennislogoblack: file(
+      relativePath: { eq: "materials/tennis-logo-trans-black.png" }
+    ) {
+      childImageSharp {
+        fixed(height: 35) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
