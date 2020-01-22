@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 
 const NewsArticle = ({ title, date, path, html, excerpt }) => (
-  <ArticleWrapper title={date} singlePageLink={path}>
+  <ArticleWrapper title={date}>
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--block">
         <h2 className="ah-article-info-paragraph-heading ah-article-info-paragraph-heading--space">

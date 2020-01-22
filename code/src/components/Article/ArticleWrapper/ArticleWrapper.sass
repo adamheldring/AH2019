@@ -3,13 +3,14 @@
     &-wrapper
       box-shadow: 2px 2px 6px #CCCCCC
       margin-bottom: 40px
+
     &--split
       display: flex
       &-section
         width: 50% !important
         display: flex
         align-items: center
-        // border: 1px solid red
+
     &-visual
       &-title
         background-color: #DDDDDD
@@ -46,7 +47,6 @@
           margin: 0
         &-inner-container
           width: 100%
-          // margin: 20px
 
     &-title
       background-color: #DDDDDD
@@ -55,12 +55,12 @@
       height: 50px
       display: flex
       align-items: center
+      flex-wrap: nowrap
       letter-spacing: 0.1rem
       font-size: 14px
       padding: 0 20px
-      &--link
-        &:hover
-          background: var(--tertiary-color)
+      &-text
+        width: 100%
 
     &-info
       &-wrapper
@@ -92,6 +92,8 @@
             color: var(--secondary-color)
             &:hover
               text-decoration: underline
+              text-decoration-color: var(--tertiary-color)
+
           &--space
             margin-top: 10px
             margin-bottom: 25px
@@ -119,6 +121,7 @@
         opacity: 0.2
         padding: 10px
         outline: none
+        cursor: pointer
         &-icon
           width: 90px
         &:hover

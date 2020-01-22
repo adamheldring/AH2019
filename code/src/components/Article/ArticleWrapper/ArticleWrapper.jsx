@@ -1,17 +1,12 @@
 import React from 'react'
-import Link from 'gatsby'
 import './ArticleWrapper.sass'
 
 const ArticleWrapper = props => {
-  const { children, title, split = false, singlePageLink = null } = props
+  const { children, title, split = false } = props
   return (
     <section className="ah-article-wrapper">
-      <div
-        className={`ah-article-title ${
-          singlePageLink ? 'ah-article-title--link' : ''
-        }`}
-      >
-        {title}
+      <div className="ah-article-title">
+        <span className="ah-article-title-text">{title}</span>
       </div>
       <div className={`${split ? 'ah-article--split' : ''}`}>
         {children.length
