@@ -1,12 +1,23 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import './ArticleWrapper.sass'
 
 const ArticleWrapper = props => {
-  const { children, title, split = false } = props
+  const { children, title, split = false, singlePageLink = false } = props
   return (
     <section className="ah-article-wrapper">
       <div className="ah-article-title">
-        <span className="ah-article-title-text">{title}</span>
+        <span
+          className="ah-article-title-text"
+          style={{ width: `${singlePageLink ? '50%' : '100%'}` }}
+        >
+          {title}
+        </span>
+        {singlePageLink && (
+          <Link to={singlePageLink}>
+            <span className="ah-article-title-link">FULL PAGE</span>
+          </Link>
+        )}
       </div>
       <div className={`${split ? 'ah-article--split' : ''}`}>
         {children.length
