@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
+import NewsArticle from '../components/Article/NewsArticle'
 
 const NewsPage = ({ data }) => {
   console.log(data)
@@ -8,30 +9,20 @@ const NewsPage = ({ data }) => {
     <Fragment>
       <SEO title="News" />
       <div className="ah-page">
-        {/* {data.allMarkdownRemark.edges.map(item => {
-          const { title, date, path } = item.node.frontmatter
-          return (
-            <div key={item.node.id} className="ah-news">
-              <h3>{title}</h3>
-              <p>
-                <small>{date}</small>
-              </p>
-              <p>{item.node.excerpt}</p>
-              <Link to={path}>Read more...</Link>
-            </div>
-          )
-        })} */}
         {data.allMarkdownRemark.edges.map(item => {
-          const { title, date, path } = item.node.frontmatter
+          const {
+            excerpt,
+            html,
+            frontmatter: { title, date, path },
+          } = item.node
           return (
-            <div key={item.node.id} className="ah-news">
-              <h3>{title}</h3>
-              <p>
-                <small>{date}</small>
-              </p>
-              <p>{item.node.excerpt}</p>
-              <Link to={path}>Read more...</Link>
-            </div>
+            <NewsArticle
+              title={title}
+              date={date}
+              path={path}
+              html={html}
+              excerpt={excerpt}
+            />
           )
         })}
       </div>
@@ -51,6 +42,7 @@ export const pageQuery = graphql`
             date
           }
           excerpt
+          html
         }
       }
     }
