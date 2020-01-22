@@ -9,16 +9,14 @@ const VideosPage = () => (
     <SEO title="Music" />
     <div className="ah-page">
       {videoData.videos.map(video => (
-        <Fragment>
-          <VideoArticle
-            videoLabel={video.videoLabel}
-            metaTitle={video.metaTitle}
-            youTubeVideoCode={video.youTubeVideoCode}
-            title={video.title}
-            description={video.description}
-            additionalInfo={video.additionalInfo}
-          />
-        </Fragment>
+        <VideoArticle
+          videoLabel={video.videoLabel}
+          metaTitle={video.metaTitle}
+          youTubeVideoCode={video.youTubeVideoCode}
+          title={video.title}
+          description={video.description}
+          additionalInfo={video.additionalInfo}
+        />
       ))}
     </div>
   </Fragment>

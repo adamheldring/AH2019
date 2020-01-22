@@ -10,17 +10,13 @@ const MusicPage = ({ data }) => (
   <Fragment>
     <SEO title="Music" />
     <div className="ah-page">
-      <div>
-        <ul>
-          {releases.map((releaseItem, index) => (
-            <ReleaseArticle
-              key={`${index}-${releaseItem.title}`}
-              release={releaseItem}
-              coverFluid={data[releaseItem.coverName].childImageSharp.fluid}
-            />
-          ))}
-        </ul>
-      </div>
+      {releases.map((releaseItem, index) => (
+        <ReleaseArticle
+          key={`${index}-${releaseItem.title}`}
+          release={releaseItem}
+          coverFluid={data[releaseItem.coverName].childImageSharp.fluid}
+        />
+      ))}
     </div>
   </Fragment>
 )

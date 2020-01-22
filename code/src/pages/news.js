@@ -2,14 +2,25 @@ import React, { Fragment } from 'react'
 import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
 
-const News = ({ data }) => {
+const NewsPage = ({ data }) => {
   console.log(data)
   return (
     <Fragment>
       <SEO title="News" />
-      <div>
-        <h1>Newsfeed</h1>
-        <p>placeholder</p>
+      <div className="ah-page">
+        {/* {data.allMarkdownRemark.edges.map(item => {
+          const { title, date, path } = item.node.frontmatter
+          return (
+            <div key={item.node.id} className="ah-news">
+              <h3>{title}</h3>
+              <p>
+                <small>{date}</small>
+              </p>
+              <p>{item.node.excerpt}</p>
+              <Link to={path}>Read more...</Link>
+            </div>
+          )
+        })} */}
         {data.allMarkdownRemark.edges.map(item => {
           const { title, date, path } = item.node.frontmatter
           return (
@@ -46,4 +57,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default News
+export default NewsPage
