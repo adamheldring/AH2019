@@ -7,6 +7,7 @@ import releaseData from '../../data/releaseData'
 import SocialMediaArticle from '../components/Article/SocialMediaArticle'
 import BiographyArticle from '../components/Article/BiographyArticle'
 import VideoArticle from '../components/Article/VideoArticle'
+
 import videoData from '../../data/videoData'
 
 const latestRelease = releaseData.releases[0]
