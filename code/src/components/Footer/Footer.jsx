@@ -1,10 +1,11 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
+import scrollToAnchorPoint from '../../helpers/scrollToAnchorPoint'
 import './Footer.sass'
 import menuData from '../../../data/menuData'
 
-const Footer = ({ labelLogo, currentUri }) => (
+const Footer = ({ labelLogo, currentUri, scrollUpAnchorRef }) => (
   <footer className="ah-footer">
     <div className="ah-footer-content">
       <div className="ah-footer-content-box">
@@ -56,7 +57,9 @@ const Footer = ({ labelLogo, currentUri }) => (
           <span className="ah-footer-content-box-heading">INFO</span>
           {menuData.submenu.map(submenuItem => (
             <Link
-              onClick={() => window.scroll({ top: 0, left: 0 })}
+              onClick={() => {
+                scrollToAnchorPoint(scrollUpAnchorRef)
+              }}
               to={submenuItem.url}
               className={`ah-footer-link ${
                 submenuItem.url === currentUri ? 'ah-footer-link--active' : ''
@@ -70,7 +73,9 @@ const Footer = ({ labelLogo, currentUri }) => (
           <span className="ah-footer-content-box-heading">MENU</span>
           {menuData.menu.map(menuItem => (
             <Link
-              onClick={() => window.scroll({ top: 0, left: 0 })}
+              onClick={() => {
+                scrollToAnchorPoint(scrollUpAnchorRef)
+              }}
               to={menuItem.url}
               className={`ah-footer-link ${
                 menuItem.url === currentUri ? 'ah-footer-link--active' : ''

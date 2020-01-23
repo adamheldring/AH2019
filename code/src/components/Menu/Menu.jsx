@@ -17,6 +17,7 @@ const Menu = ({
   menuInDarkmode,
   currentUri,
   logo,
+  scrollUpAnchorRef,
 }) => {
   smoothscroll.polyfill()
   const transitions = useTransition(mobileMenuOpen, null, {
@@ -69,6 +70,7 @@ const Menu = ({
           )
       )}
       <div
+        ref={scrollUpAnchorRef}
         className={`ah-menu-placeholder-when-sticky ${
           menuInDarkmode ? 'ah-menu-placeholder-when-sticky--active' : ''
         }`}

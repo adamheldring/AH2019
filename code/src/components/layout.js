@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import Header from './Header/Header'
@@ -18,6 +18,7 @@ import './mediaQueries.sass'
 require('intersection-observer')
 
 const Layout = ({ children }) => {
+  const scrollUpAnchorRef = useRef(null)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -46,7 +47,6 @@ const Layout = ({ children }) => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [menuInDarkmode, setMenuInDarkmode] = useState(false)
-
   return (
     <div className="ah-outer-wrapper">
       <Header
@@ -61,6 +61,7 @@ const Layout = ({ children }) => {
         menuInDarkmode={menuInDarkmode}
         currentUri={children.props.uri}
         logo={data.ahlogo}
+        scrollUpAnchorRef={scrollUpAnchorRef}
       />
       <div className="ah-inner-wrapper">
         <main>{children}</main>
@@ -68,6 +69,7 @@ const Layout = ({ children }) => {
       <Footer
         labelLogo={data.tennislogowhite}
         currentUri={children.props.uri}
+        scrollUpAnchorRef={scrollUpAnchorRef}
       />
     </div>
   )
