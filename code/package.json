@@ -25,7 +25,8 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
     "react-intersection-observer": "^8.25.2",
-    "react-spring": "^8.0.27"
+    "react-spring": "^8.0.27",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

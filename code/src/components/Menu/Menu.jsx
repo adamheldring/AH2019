@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import { useSpring, useTransition, animated, config } from 'react-spring'
 import { MdClose } from 'react-icons/md'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
+import smoothscroll from 'smoothscroll-polyfill'
 import DesktopMenu from './DesktopMenu'
 import MobileMenu from './MobileMenu/MobileMenu'
 import './Menu.sass'
@@ -17,6 +18,7 @@ const Menu = ({
   currentUri,
   logo,
 }) => {
+  smoothscroll.polyfill()
   const transitions = useTransition(mobileMenuOpen, null, {
     from: { marginLeft: '100vw' },
     enter: { marginLeft: '0' },
@@ -100,9 +102,12 @@ const Menu = ({
                 className="ah-menu-logo"
               />
             </Link>
-            <a role="button" href="#top">
-              <FaArrowAltCircleUp className="ah-menu-icon-up" />
-            </a>
+            <FaArrowAltCircleUp
+              className="ah-menu-icon-up"
+              onClick={() =>
+                window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+              }
+            />
           </div>
           {menuInDarkmode && (
             <span className="ah-menu-page-title">{getCurrentPageTitle()}</span>

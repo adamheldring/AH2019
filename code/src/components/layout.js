@@ -49,7 +49,6 @@ const Layout = ({ children }) => {
 
   return (
     <div className="ah-outer-wrapper">
-      <a name="top" />
       <Header
         siteTitle={data.site.siteMetadata.title}
         mobileMenuOpen={mobileMenuOpen}

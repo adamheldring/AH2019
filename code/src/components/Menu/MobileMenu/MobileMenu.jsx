@@ -84,7 +84,13 @@ const MenuItem = ({ menuItem, index, setMobileMenuOpen, currentUri }) => {
       {menuItem.url === currentUri && (
         <GiAnchor className="mobile-menu--active-marker" />
       )}
-      <Link to={menuItem.url} onClick={() => setMobileMenuOpen(false)}>
+      <Link
+        to={menuItem.url}
+        onClick={() => {
+          setMobileMenuOpen(false)
+          window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+        }}
+      >
         <animated.div
           style={listItemStyle}
           className="mobile-menu__item-wrapper-inner"

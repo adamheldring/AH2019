@@ -56,6 +56,7 @@ const Footer = ({ labelLogo, currentUri }) => (
           <span className="ah-footer-content-box-heading">INFO</span>
           {menuData.submenu.map(submenuItem => (
             <Link
+              onClick={() => window.scroll({ top: 0, left: 0 })}
               to={submenuItem.url}
               className={`ah-footer-link ${
                 submenuItem.url === currentUri ? 'ah-footer-link--active' : ''
@@ -69,6 +70,7 @@ const Footer = ({ labelLogo, currentUri }) => (
           <span className="ah-footer-content-box-heading">MENU</span>
           {menuData.menu.map(menuItem => (
             <Link
+              onClick={() => window.scroll({ top: 0, left: 0 })}
               to={menuItem.url}
               className={`ah-footer-link ${
                 menuItem.url === currentUri ? 'ah-footer-link--active' : ''
