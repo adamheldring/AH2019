@@ -46,6 +46,7 @@ const Layout = ({ children }) => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [menuInDarkmode, setMenuInDarkmode] = useState(false)
+
   return (
     <div className="ah-outer-wrapper">
       <a name="top" />

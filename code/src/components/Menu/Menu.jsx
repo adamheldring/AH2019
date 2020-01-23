@@ -8,6 +8,7 @@ import DesktopMenu from './DesktopMenu'
 import MobileMenu from './MobileMenu/MobileMenu'
 import './Menu.sass'
 import './MobileMenu/MobileMenu.sass'
+import menuData from '../../../data/menuData'
 
 const Menu = ({
   mobileMenuOpen,
@@ -31,7 +32,24 @@ const Menu = ({
     from: { height: '0%' },
     config: config.stiff,
   })
-  const currentPage = currentUri.slice(1).toUpperCase() || 'ABOUT'
+  const getCurrentPageTitle = () => {
+    let pageName = ''
+    if (menuData.menu.find(item => item.url === currentUri)) {
+      // Check if current page is a menu item
+      pageName = menuData.menu
+        .find(item => item.url === currentUri)
+        .title.toUpperCase()
+    } else if (menuData.submenu.find(item => item.url === currentUri)) {
+      // Check if current page is a submenu item
+      pageName = menuData.submenu
+        .find(item => item.url === currentUri)
+        .title.toUpperCase()
+    } else {
+      // Otherwise current page must be a full page single article
+      pageName = 'ARTICLE'
+    }
+    return pageName
+  }
 
   return (
     <nav>
@@ -87,7 +105,7 @@ const Menu = ({
             </a>
           </div>
           {menuInDarkmode && (
-            <span className="ah-menu-page-title">{currentPage}</span>
+            <span className="ah-menu-page-title">{getCurrentPageTitle()}</span>
           )}
 
           <DesktopMenu
