@@ -4,6 +4,7 @@ import { MdClose } from 'react-icons/md'
 import { GiAnchor } from 'react-icons/gi'
 import { useSpring, useTrail, animated } from 'react-spring'
 import Img from 'gatsby-image'
+import scrollToAnchorPoint from '../../../helpers/scrollToAnchorPoint'
 import SocialMediaBar from '../../SocialMediaBar/SocialMediaBar'
 import menuData from '../../../../data/menuData'
 
@@ -12,6 +13,8 @@ const MobileMenu = ({
   mobileMenuButtonStyle,
   logo,
   currentUri,
+  menuInDarkmode,
+  scrollUpAnchorRef,
 }) => {
   const menuItems = menuData.menu
   const trail = useTrail(menuItems.length, {
@@ -45,6 +48,8 @@ const MobileMenu = ({
               index={index}
               setMobileMenuOpen={setMobileMenuOpen}
               currentUri={currentUri}
+              menuInDarkmode={menuInDarkmode}
+              scrollUpAnchorRef={scrollUpAnchorRef}
             />
           </animated.div>
         ))}
@@ -57,7 +62,10 @@ const MobileMenu = ({
           <Fragment>
             <Link
               to={submenuItem.url}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false)
+                scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
+              }}
               className={`mobile-menu__submenu-item ${
                 submenuItem.url === currentUri
                   ? 'mobile-menu__submenu-item--active'
@@ -74,7 +82,14 @@ const MobileMenu = ({
   )
 }
 
-const MenuItem = ({ menuItem, index, setMobileMenuOpen, currentUri }) => {
+const MenuItem = ({
+  menuItem,
+  index,
+  setMobileMenuOpen,
+  currentUri,
+  menuInDarkmode,
+  scrollUpAnchorRef,
+}) => {
   const listItemStyle = useSpring({ color: '#333', from: { color: '#eeeeee' } })
   return (
     <li
@@ -88,7 +103,7 @@ const MenuItem = ({ menuItem, index, setMobileMenuOpen, currentUri }) => {
         to={menuItem.url}
         onClick={() => {
           setMobileMenuOpen(false)
-          window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+          scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
         }}
       >
         <animated.div

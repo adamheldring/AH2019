@@ -65,6 +65,8 @@ const Menu = ({
                 mobileMenuButtonStyle={mobileMenuButtonStyle}
                 logo={logo.childImageSharp.fixed}
                 currentUri={currentUri}
+                menuInDarkmode={menuInDarkmode}
+                scrollUpAnchorRef={scrollUpAnchorRef}
               />
             </animated.div>
           )
