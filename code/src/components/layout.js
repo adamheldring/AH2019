@@ -48,9 +48,13 @@ const Layout = ({ children }) => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [menuInDarkmode, setMenuInDarkmode] = useState(false)
+  const ahContextObj = {
+    scrollUpAnchorRef,
+    menuInDarkmode,
+  }
   return (
     <div className="ah-outer-wrapper">
-      <ahContext.Provider value={{ scrollUpAnchorRef, menuInDarkmode }}>
+      <ahContext.Provider value={ahContextObj}>
         <Header
           siteTitle={data.site.siteMetadata.title}
           mobileMenuOpen={mobileMenuOpen}
