@@ -70,6 +70,7 @@ const Layout = ({ children }) => {
         labelLogo={data.tennislogowhite}
         currentUri={children.props.uri}
         scrollUpAnchorRef={scrollUpAnchorRef}
+        menuInDarkmode={menuInDarkmode}
       />
     </div>
   )

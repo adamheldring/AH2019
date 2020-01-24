@@ -5,7 +5,12 @@ import scrollToAnchorPoint from '../../helpers/scrollToAnchorPoint'
 import './Footer.sass'
 import menuData from '../../../data/menuData'
 
-const Footer = ({ labelLogo, currentUri, scrollUpAnchorRef }) => (
+const Footer = ({
+  labelLogo,
+  currentUri,
+  scrollUpAnchorRef,
+  menuInDarkmode,
+}) => (
   <footer className="ah-footer">
     <div className="ah-footer-content">
       <div className="ah-footer-content-box">
@@ -58,7 +63,7 @@ const Footer = ({ labelLogo, currentUri, scrollUpAnchorRef }) => (
           {menuData.submenu.map(submenuItem => (
             <Link
               onClick={() => {
-                scrollToAnchorPoint(scrollUpAnchorRef)
+                scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
               }}
               to={submenuItem.url}
               className={`ah-footer-link ${
@@ -74,7 +79,7 @@ const Footer = ({ labelLogo, currentUri, scrollUpAnchorRef }) => (
           {menuData.menu.map(menuItem => (
             <Link
               onClick={() => {
-                scrollToAnchorPoint(scrollUpAnchorRef)
+                scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
               }}
               to={menuItem.url}
               className={`ah-footer-link ${

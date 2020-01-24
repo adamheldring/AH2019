@@ -1,7 +1,9 @@
-const scrollToAnchorPoint = refElement => {
-  if (refElement.current) {
+const scrollToAnchorPoint = (refElement, condition) => {
+  if (refElement.current && condition) {
     refElement.current.scrollIntoView()
     window.scrollBy(0, 1)
+  } else {
+    console.log('TEST: NO SCROLL')
   }
 }
 
