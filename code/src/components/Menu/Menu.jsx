@@ -118,6 +118,7 @@ const Menu = ({
           <DesktopMenu
             currentUri={currentUri}
             menuInDarkmode={menuInDarkmode}
+            scrollUpAnchorRef={scrollUpAnchorRef}
           />
 
           <div className="ah-mobile-menu-button-wrapper">

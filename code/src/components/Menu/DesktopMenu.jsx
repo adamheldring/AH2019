@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import scrollToAnchorPoint from '../../helpers/scrollToAnchorPoint'
 import menuData from '../../../data/menuData'
 
-const Menu = ({ currentUri, menuInDarkmode }) => {
+const Menu = ({ currentUri, menuInDarkmode, scrollUpAnchorRef }) => {
   const activeSubmenuItem = menuData.submenu.find(
     submenuItem => submenuItem.url === currentUri
   )
@@ -12,6 +13,9 @@ const Menu = ({ currentUri, menuInDarkmode }) => {
         {activeSubmenuItem && (
           <li className="ah-menu-list-item-wrapper">
             <Link
+              onClick={() =>
+                scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
+              }
               to={activeSubmenuItem.url}
               className={`ah-menu-list-item ah-menu-list-submenu-item--active ${
                 menuInDarkmode
@@ -29,6 +33,9 @@ const Menu = ({ currentUri, menuInDarkmode }) => {
             className="ah-menu-list-item-wrapper"
           >
             <Link
+              onClick={() =>
+                scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
+              }
               to={menuItem.url}
               className={`ah-menu-list-item ${
                 menuItem.url === currentUri ? 'ah-menu-list-item--active' : ''
