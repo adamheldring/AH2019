@@ -12,14 +12,14 @@ const NewsSinglePage = ({ data }) => {
       <div className="ah-page">
         <div className="ah-single-article-wrapper">
           {/* <Link to="/news">{`<--`} Go back</Link> */}
+          {ahFormatDate(post.frontmatter.date) && (
+            <h4 className="ah-single-article-date">
+              {ahFormatDate(post.frontmatter.date, true).toUpperCase()}
+            </h4>
+          )}
           <h1 className="ah-single-article-heading">
             {post.frontmatter.title}
           </h1>
-          {ahFormatDate() && (
-            <h4 className="ah-single-article-date">
-              Posted on {ahFormatDate(post.frontmatter.date)}
-            </h4>
-          )}
           <div
             dangerouslySetInnerHTML={{ __html: post.html }}
             className="ah-single-article-content"
