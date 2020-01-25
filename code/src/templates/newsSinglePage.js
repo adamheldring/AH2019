@@ -13,6 +13,7 @@ const NewsSinglePage = ({ data }) => {
   let featuredImgFluid = post.frontmatter.featuredImage
     ? (featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid)
     : null
+  const photoCredit = post.frontmatter.photoCredit || null
 
   return (
     <Fragment>
@@ -29,11 +30,19 @@ const NewsSinglePage = ({ data }) => {
             {post.frontmatter.title}
           </h1>
           {featuredImgFluid && (
-            <Img
-              fluid={featuredImgFluid}
-              className="ah-single-article-featured-image"
-            />
+            <div className="ah-single-article-featured-image-wrapper">
+              <Img
+                fluid={featuredImgFluid}
+                className="ah-single-article-featured-image"
+              />
+              {photoCredit && (
+                <div className="ah-single-article-featured-image-credit">
+                  {photoCredit}
+                </div>
+              )}
+            </div>
           )}
+
           <div
             dangerouslySetInnerHTML={{ __html: post.html }}
             className="ah-single-article-content"
@@ -75,6 +84,7 @@ export const postQuery = graphql`
             }
           }
         }
+        photoCredit
       }
     }
   }
