@@ -121,6 +121,7 @@ const Menu = ({
             currentUri={currentUri}
             menuInDarkmode={menuInDarkmode}
             scrollUpAnchorRef={scrollUpAnchorRef}
+            isCurrentPageSingleArticle={getCurrentPageTitle() === 'ARTICLE'}
           />
 
           <div className="ah-mobile-menu-button-wrapper">
