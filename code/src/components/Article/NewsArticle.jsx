@@ -1,9 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 
-const NewsArticle = ({ title, date, path, html, excerpt }) => (
+const NewsArticle = ({ title, date, path, html, excerpt, featuredImage }) => (
   <ArticleWrapper title={date} singlePageLink={path}>
+    {featuredImage && (
+      <section className="ah-article-visual--image-wide-container">
+        <Img fluid={featuredImage.childImageSharp.fluid} />
+      </section>
+    )}
     <section className="ah-article-info-wrapper ah-article--news">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--block">
         <h2 className="ah-article-info-paragraph-heading ah-article-info-paragraph-heading--space">

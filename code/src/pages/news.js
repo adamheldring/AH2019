@@ -12,7 +12,7 @@ const NewsPage = ({ data }) => (
         const {
           excerpt,
           html,
-          frontmatter: { title, date, path },
+          frontmatter: { title, date, path, featuredImage },
         } = item.node
         return (
           <NewsArticle
@@ -21,6 +21,7 @@ const NewsPage = ({ data }) => (
             path={path}
             html={html}
             excerpt={excerpt}
+            featuredImage={featuredImage}
           />
         )
       })}
@@ -38,6 +39,13 @@ export const pageQuery = graphql`
             title
             path
             date
+            featuredImage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           excerpt
           html
