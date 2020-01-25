@@ -14,12 +14,25 @@ const NewsArticle = ({
 }) => (
   <ArticleWrapper title={date} singlePageLink={path}>
     {featuredImage && (
-      <section className="ah-article-visual--image-wide-container">
+      <section
+        className="ah-article-visual--image-wide-container"
+        style={{ position: 'relative' }}
+      >
         <Link to={path}>
           <Img fluid={featuredImage.childImageSharp.fluid} />
         </Link>
         {photoCredit && (
-          <div className="ah-article-visual-credit">{photoCredit}</div>
+          <div
+            className="ah-article-visual-credit"
+            style={{
+              position: 'absolute',
+              left: '50%',
+              transform: 'translate(-50%)',
+            }}
+            margin-
+          >
+            {photoCredit}
+          </div>
         )}
       </section>
     )}
