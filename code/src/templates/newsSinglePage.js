@@ -1,17 +1,32 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link, graphql } from 'gatsby'
+import SEO from '../components/seo'
+import { ahFormatDate } from '../helpers/ahFormatDate'
+import './newsSinglePage.sass'
 
 const NewsSinglePage = ({ data }) => {
   const post = data.markdownRemark
   return (
-    <div>
-      <Link to="/news">{`<--`} Go back</Link>
-      <hr />
-      <h1>{post.frontmatter.title}</h1>
-      <h4>Posted on {post.frontmatter.date}</h4>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      <hr />
-    </div>
+    <Fragment>
+      <SEO title="News" />
+      <div className="ah-page">
+        <div className="ah-single-article-wrapper">
+          {/* <Link to="/news">{`<--`} Go back</Link> */}
+          <h1 className="ah-single-article-heading">
+            {post.frontmatter.title}
+          </h1>
+          {ahFormatDate() && (
+            <h4 className="ah-single-article-date">
+              Posted on {ahFormatDate(post.frontmatter.date)}
+            </h4>
+          )}
+          <div
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            className="ah-single-article-content"
+          />
+        </div>
+      </div>
+    </Fragment>
   )
 }
 

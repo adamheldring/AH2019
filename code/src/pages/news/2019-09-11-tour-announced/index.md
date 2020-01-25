@@ -4,8 +4,6 @@ date: "2019-09-11"
 title: "Tour announced long title, long title yes QQWWSir"
 ---
 
-International tour announced
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur vehicula imperdiet. Nunc lacus dolor, posuere sed enim vitae, lobortis consectetur ligula. Morbi euismod nisl eu orci euismod, nec accumsan urna finibus. In hac habitasse platea dictumst. Aenean ipsum purus, lacinia nec ultricies vel, egestas ac turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer quis tortor quam. Mauris volutpat varius diam, in tempus eros hendrerit a. Curabitur ultrices nec enim at rhoncus. Donec laoreet sapien tristique dui tincidunt, condimentum euismod sapien scelerisque. Maecenas porta orci et mauris placerat molestie.
 
 Donec ultrices sagittis sapien, id pharetra sem. Sed condimentum ultrices leo, dictum interdum orci commodo sed. Sed velit neque, mattis a ante quis, vehicula hendrerit purus. Pellentesque vitae magna ac enim egestas volutpat sit amet et enim. Morbi viverra tempor efficitur. Quisque nec condimentum justo, in convallis dui. Quisque a bibendum neque. Integer in dui ut ex elementum consectetur. Integer posuere libero id quam dapibus, eget ornare tortor maximus. Praesent lobortis dolor id nisi ultricies varius. Duis auctor, ante ut imperdiet auctor, augue felis venenatis urna, ac pulvinar diam nulla sed diam. Ut in pellentesque libero.
