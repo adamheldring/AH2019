@@ -1,6 +1,20 @@
-export const ahFormatDate = (date = '1982-01-01') => {
+export const ahFormatDate = (date = '1982-01-01', short = false) => {
   const ahDateArray = ['JAN', '1', '1982']
-  const months = [
+  const monthsLong = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]
+  const monthsShort = [
     'Jan',
     'Feb',
     'Mar',
@@ -16,7 +30,9 @@ export const ahFormatDate = (date = '1982-01-01') => {
   ]
   let errorDetected = false
   const getMonthInText = month => {
-    const monthInText = months[parseInt(month) - 1]
+    const monthInText = short
+      ? monthsShort[parseInt(month) - 1]
+      : monthsLong[parseInt(month) - 1]
     return monthInText
   }
   ahDateArray[0] = getMonthInText(date.slice(date.indexOf('-') + 1))
@@ -25,8 +41,8 @@ export const ahFormatDate = (date = '1982-01-01') => {
 
   // PERFOME BASIC SAFETY CHECKS
   // check that original date has two dashes
-
   if ((date.match(/-/g) || []).length !== 2) errorDetected = true
+
   // check that no part of formatted date is undefined
   ahDateArray.forEach(item => {
     if (typeof item === 'undefined') errorDetected = true

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
 import NewsArticle from '../components/Article/NewsArticle'
+import { ahFormatDate } from '../helpers/ahFormatDate'
 
 const NewsPage = ({ data }) => (
   <Fragment>
@@ -16,7 +17,7 @@ const NewsPage = ({ data }) => (
         return (
           <NewsArticle
             title={title}
-            date={date}
+            date={ahFormatDate(date, true).toUpperCase()}
             path={path}
             html={html}
             excerpt={excerpt}
