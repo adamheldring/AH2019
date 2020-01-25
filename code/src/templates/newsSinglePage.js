@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from 'react'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import SEO from '../components/seo'
 import { ahFormatDate } from '../helpers/ahFormatDate'
 import { ahContext } from '../helpers/ahContext'
@@ -9,6 +10,10 @@ import './newsSinglePage.sass'
 const NewsSinglePage = ({ data }) => {
   const { scrollUpAnchorRef, menuInDarkmode } = useContext(ahContext)
   const post = data.markdownRemark
+  let featuredImgFluid = post.frontmatter.featuredImage
+    ? (featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid)
+    : null
+
   return (
     <Fragment>
       <SEO title="News" />
@@ -16,12 +21,19 @@ const NewsSinglePage = ({ data }) => {
         <div className="ah-single-article-wrapper">
           {ahFormatDate(post.frontmatter.date) && (
             <div className="ah-single-article-date">
+              POSTED ON{' '}
               {ahFormatDate(post.frontmatter.date, true).toUpperCase()}
             </div>
           )}
           <h1 className="ah-single-article-heading">
             {post.frontmatter.title}
           </h1>
+          {featuredImgFluid && (
+            <Img
+              fluid={featuredImgFluid}
+              className="ah-single-article-featured-image"
+            />
+          )}
           <div
             dangerouslySetInnerHTML={{ __html: post.html }}
             className="ah-single-article-content"
@@ -56,6 +68,13 @@ export const postQuery = graphql`
         path
         title
         date
+        featuredImage {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

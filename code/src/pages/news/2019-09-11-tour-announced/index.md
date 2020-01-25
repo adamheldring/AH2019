@@ -2,6 +2,7 @@
 path: "/tour-announced"
 date: "2019-09-11"
 title: "Tour announced long title, long title yes QQWWSir"
+featuredImage: "testimage.jpg"
 ---
 
 ###Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur vehicula imperdiet. Nunc lacus dolor, posuere sed enim vitae, lobortis consectetur ligula. Morbi euismod nisl eu orci euismod, nec accumsan urna finibus.
