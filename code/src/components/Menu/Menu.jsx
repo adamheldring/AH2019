@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { useSpring, useTransition, animated, config } from 'react-spring'
@@ -124,7 +124,18 @@ const Menu = ({
             isCurrentPageSingleArticle={getCurrentPageTitle() === 'ARTICLE'}
           />
 
-          <div className="ah-mobile-menu-button-wrapper">
+          <div
+            className="ah-mobile-menu-button-wrapper"
+            style={menuInDarkmode ? {} : { width: '100%' }}
+          >
+            {!menuInDarkmode && (
+              <Fragment>
+                <div style={{ width: '63px' }} />
+                <h1 className="ah-menu-pagename-text">
+                  {getCurrentPageTitle()}
+                </h1>
+              </Fragment>
+            )}
             <animated.button
               type="button"
               className={`ah-mobile-menu-button-external ${
