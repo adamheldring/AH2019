@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
 import { ahFormatDate } from '../helpers/ahFormatDate'
+import { ahContext } from '../helpers/ahContext'
+import scrollToAnchorPoint from '../helpers/scrollToAnchorPoint'
 import './newsSinglePage.sass'
 
 const NewsSinglePage = ({ data }) => {
+  const { scrollUpAnchorRef, menuInDarkmode } = useContext(ahContext)
   const post = data.markdownRemark
   return (
     <Fragment>
@@ -24,6 +27,22 @@ const NewsSinglePage = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: post.html }}
             className="ah-single-article-content"
           />
+          <div className="ah-single-article-back-button-wrapper">
+            <li
+              className="ah-menu-list-item-wrapper"
+              style={{ listStyle: 'none', margin: '10px 0 0' }}
+            >
+              <Link
+                onClick={() =>
+                  scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
+                }
+                to="/news"
+                className="ah-menu-list-item ah-single-article-back-button"
+              >
+                BACK TO NEWS
+              </Link>
+            </li>
+          </div>
         </div>
       </div>
     </Fragment>
