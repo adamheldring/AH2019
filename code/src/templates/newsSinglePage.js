@@ -14,7 +14,6 @@ const NewsSinglePage = ({ data }) => {
       <SEO title="News" />
       <div className="ah-page">
         <div className="ah-single-article-wrapper">
-          {/* <Link to="/news">{`<--`} Go back</Link> */}
           {ahFormatDate(post.frontmatter.date) && (
             <div className="ah-single-article-date">
               {ahFormatDate(post.frontmatter.date, true).toUpperCase()}

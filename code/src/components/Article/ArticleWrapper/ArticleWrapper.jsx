@@ -18,7 +18,7 @@ const ArticleWrapper = props => {
             onClick={() => window.scroll({ top: 0, left: 0 })}
             to={singlePageLink}
           >
-            <span className="ah-article-title-link">FULL PAGE</span>
+            <span className="ah-article-title-link">VIEW PAGE</span>
           </Link>
         )}
       </div>
