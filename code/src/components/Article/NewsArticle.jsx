@@ -18,7 +18,7 @@ const NewsArticle = ({
         className="ah-article-visual--image-wide-container"
         style={{ position: 'relative' }}
       >
-        <Link to={path}>
+        <Link onClick={() => window.scroll({ top: 0, left: 0 })} to={path}>
           <Img fluid={featuredImage.childImageSharp.fluid} />
         </Link>
         {photoCredit && (
