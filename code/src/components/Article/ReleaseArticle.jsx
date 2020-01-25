@@ -39,7 +39,14 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
           className="ah-article-visual--image-square-inner-container"
           style={{ position: 'relative' }}
         >
-          <Img fluid={coverFluid} />
+          <div
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              setFoldOutIsVisible(!foldOutIsVisible)
+            }}
+          >
+            <Img fluid={coverFluid} />
+          </div>
           <animated.div
             className="ah-article-fold-out-player-wrapper"
             style={foldOutPlayerStyle}
