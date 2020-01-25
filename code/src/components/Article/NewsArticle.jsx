@@ -3,11 +3,24 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 
-const NewsArticle = ({ title, date, path, html, excerpt, featuredImage }) => (
+const NewsArticle = ({
+  title,
+  date,
+  path,
+  html,
+  excerpt,
+  featuredImage,
+  photoCredit,
+}) => (
   <ArticleWrapper title={date} singlePageLink={path}>
     {featuredImage && (
       <section className="ah-article-visual--image-wide-container">
-        <Img fluid={featuredImage.childImageSharp.fluid} />
+        <Link to={path}>
+          <Img fluid={featuredImage.childImageSharp.fluid} />
+        </Link>
+        {photoCredit && (
+          <div className="ah-article-visual-credit">{photoCredit}</div>
+        )}
       </section>
     )}
     <section className="ah-article-info-wrapper ah-article--news">
