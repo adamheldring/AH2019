@@ -13,9 +13,9 @@ const NewsSinglePage = ({ data }) => {
         <div className="ah-single-article-wrapper">
           {/* <Link to="/news">{`<--`} Go back</Link> */}
           {ahFormatDate(post.frontmatter.date) && (
-            <h4 className="ah-single-article-date">
+            <div className="ah-single-article-date">
               {ahFormatDate(post.frontmatter.date, true).toUpperCase()}
-            </h4>
+            </div>
           )}
           <h1 className="ah-single-article-heading">
             {post.frontmatter.title}
