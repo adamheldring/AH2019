@@ -11,8 +11,8 @@ const PressPage = ({ data }) => (
   <Fragment>
     <SEO title="Press" />
     <div className="ah-page">
-      <BiographyArticle portrait={data.portrait} />
       <PressPhotosArticle />
+      <BiographyArticle portrait={data.portrait} />
       <CoverArtArticle />
       <PressContactArticle pressLogo={data.tennislogoblack} />
       <SocialMediaArticle />
