@@ -2,22 +2,21 @@ import React from 'react'
 import Img from 'gatsby-image'
 import './DownloadableImageCollection.sass'
 
-const DownloadbleImageCollection = ({ collection }) => {
-  console.log('collection: ', collection)
-  return (
-    <div className="ah-downloadable-image-collection-wrapper">
-      {collection &&
-        Object.getOwnPropertyNames(collection).map(imageName => (
-          <DownloadableImageDisplayCard image={collection[imageName]} />
-        ))}
-    </div>
-  )
-}
+const DownloadbleImageCollection = ({ collection }) => (
+  <div className="ah-downloadable-image-collection-wrapper">
+    {collection.map(collectionItem => (
+      <DownloadableImageDisplayCard item={collectionItem} />
+    ))}
+  </div>
+)
 
 export default DownloadbleImageCollection
 
-const DownloadableImageDisplayCard = ({ image }) => (
+const DownloadableImageDisplayCard = ({ item }) => (
   <div className="ah-downloadable-image-card">
-    <Img fluid={image.childImageSharp.fluid} />
+    <Img fluid={item.displayInfo.childImageSharp.fluid} />
+    <a href={item.fileInfo.file} download>
+      PRESS 1
+    </a>
   </div>
 )

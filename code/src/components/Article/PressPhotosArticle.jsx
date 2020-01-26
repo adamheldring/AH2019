@@ -34,16 +34,34 @@ const PressPhotosArticle = () => {
   `)
 
   // Crate ascending image array of images from graphql data object
-  const imageArray = Object.getOwnPropertyNames(data)
+  const imageDisplayArray = Object.getOwnPropertyNames(data)
     .sort()
     .map(imageName => data[imageName])
 
-  const imageFileArray = [pressPhoto1, pressPhoto2]
+  const imageInfoArray = [
+    {
+      file: pressPhoto1,
+      name: 'Photo 1',
+      credit: 'Andreas Karlsson',
+      year: 2019,
+      description:
+        'Promotional photo for Adam Helring´s 2019 "You/More" single. ',
+    },
+
+    {
+      file: pressPhoto2,
+      name: 'Photo 2',
+      credit: 'Andreas Karlsson',
+      year: 2019,
+      description:
+        'Promotional photo for Adam Helring´s 2019 "You/More" single. ',
+    },
+  ]
 
   // Build a collection mathing images from graphql with corresponding download urls
-  const buildDownloadableImageCollection = (imageArray, fileArray) => {
+  const buildDownloadableImageCollection = (display, info) => {
     // Basic check that imageArray and file array match in lenght otherwise return empty array.
-    if (imageArray.length !== fileArray.length) {
+    if (display.length !== info.length) {
       console.log(
         "DEV NOTE: Image array and downloadable file array doesn't match when building collection"
       )
@@ -51,10 +69,10 @@ const PressPhotosArticle = () => {
     }
     // Build new collection array combining image data and corresponding downloadble file references
     const newCollection = []
-    imageArray.map((image, index) => {
+    display.forEach((displayInfo, index) => {
       const newImageObject = {
-        image,
-        file: fileArray[index],
+        displayInfo,
+        fileInfo: info[index],
       }
       newCollection.push(newImageObject)
     })
@@ -62,8 +80,8 @@ const PressPhotosArticle = () => {
   }
 
   const downloadablePressPhotoCollection = buildDownloadableImageCollection(
-    imageArray,
-    imageFileArray
+    imageDisplayArray,
+    imageInfoArray
   )
 
   console.log('THE BIG TEST: ', downloadablePressPhotoCollection)
@@ -73,10 +91,9 @@ const PressPhotosArticle = () => {
       <section className="ah-article-info-wrapper">
         <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
           <div className="ah-downloadble-image-collection-wrapper">
-            <DownloadbleImageCollection collection={data} />
-            <a href={pressPhoto1} download>
-              PRESS 1
-            </a>
+            <DownloadbleImageCollection
+              collection={downloadablePressPhotoCollection}
+            />
           </div>
         </div>
       </section>
