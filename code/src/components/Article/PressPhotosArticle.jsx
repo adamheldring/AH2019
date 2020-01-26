@@ -1,9 +1,13 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
-import DownloadbleImageCollection from '../DownloadbleImageCollection/DownloadableImageCollection'
-import pressPhoto1 from '../../images/press/Adam_Heldring_press_2019_1_-_Photo_Andreas_Karlsson_(highres).jpg'
-import pressPhoto2 from '../../images/press/Adam_Heldring_press_2019_4_-_Photo_Andreas_Karlsson_(highres).jpg'
+import DownloadbleImageCollection, {
+  buildDownloadableImageCollectionArray,
+} from '../DownloadbleImageCollection/DownloadableImageCollection'
+import pressPhoto1High from '../../images/press/Adam_Heldring_press_2019_1_-_Photo_Andreas_Karlsson_(highres).jpg'
+import pressPhoto1Low from '../../images/press/Adam_Heldring_press_2019_1_-_Photo_Andreas_Karlsson_(lowres).jpg'
+import pressPhoto2High from '../../images/press/Adam_Heldring_press_2019_4_-_Photo_Andreas_Karlsson_(highres).jpg'
+import pressPhoto2Low from '../../images/press/Adam_Heldring_press_2019_4_-_Photo_Andreas_Karlsson_(lowres).jpg'
 
 const PressPhotosArticle = () => {
   const data = useStaticQuery(graphql`
@@ -38,10 +42,14 @@ const PressPhotosArticle = () => {
     .sort()
     .map(imageName => data[imageName])
 
+  // Create array with static download links and other image info that corresponds with above display array
   const imageInfoArray = [
     {
-      file: pressPhoto1,
       name: 'Press Photo 1',
+      files: {
+        highres: pressPhoto1High,
+        lowres: pressPhoto1Low,
+      },
       credit: 'Andreas Karlsson',
       year: 2019,
       description:
@@ -49,8 +57,11 @@ const PressPhotosArticle = () => {
     },
 
     {
-      file: pressPhoto2,
       name: 'Press Photo 2',
+      files: {
+        highres: pressPhoto2High,
+        lowres: pressPhoto2Low,
+      },
       credit: 'Andreas Karlsson',
       year: 2019,
       description:
@@ -58,33 +69,10 @@ const PressPhotosArticle = () => {
     },
   ]
 
-  // Build a collection mathing images from graphql with corresponding download urls
-  const buildDownloadableImageCollection = (display, info) => {
-    // Basic check that imageArray and file array match in lenght otherwise return empty array.
-    if (display.length !== info.length) {
-      console.log(
-        "DEV NOTE: Image array and downloadable file array doesn't match when building collection"
-      )
-      return []
-    }
-    // Build new collection array combining image data and corresponding downloadble file references
-    const newCollection = []
-    display.forEach((displayInfo, index) => {
-      const newImageObject = {
-        displayInfo,
-        fileInfo: info[index],
-      }
-      newCollection.push(newImageObject)
-    })
-    return newCollection
-  }
-
-  const downloadablePressPhotoCollection = buildDownloadableImageCollection(
+  const downloadablePressPhotoCollection = buildDownloadableImageCollectionArray(
     imageDisplayArray,
     imageInfoArray
   )
-
-  console.log('THE BIG TEST: ', downloadablePressPhotoCollection)
 
   return (
     <ArticleWrapper title="PRESS PHOTOS">
