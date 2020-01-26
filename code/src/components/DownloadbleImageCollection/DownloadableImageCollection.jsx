@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Img from 'gatsby-image'
 import './DownloadableImageCollection.sass'
 
@@ -12,27 +12,44 @@ const DownloadbleImageCollection = ({ collection }) => (
 
 export default DownloadbleImageCollection
 
-const DownloadableImageDisplayCard = ({ item }) => (
-  <div className="ah-downloadable-image-card">
-    <Img fluid={item.displayInfo.childImageSharp.fluid} />
-    <div className="ah-downloadable-image-card-info-wrapper">
-      {item.fileInfo.name.toUpperCase()}
-      <a href={item.fileInfo.files.highres}>
-        <b>VIEW</b>
-      </a>
-      DONWLOAD:
-      <div>
-        <a href={item.fileInfo.files.highres} download>
-          <b>HIGH-RES</b>
+const DownloadableImageDisplayCard = ({ item }) => {
+  const { highres, midres, lowres } = item.fileInfo.files
+  return (
+    <div className="ah-downloadable-image-card">
+      <Img fluid={item.displayInfo.childImageSharp.fluid} />
+      <div className="ah-downloadable-image-card-info-wrapper">
+        {item.fileInfo.name.toUpperCase()}
+        <a href={item.fileInfo.files.highres}>
+          <b>VIEW</b>
         </a>
-        <span> | </span>
-        <a href={item.fileInfo.files.lowres} download>
-          <b>LOW RES</b>
-        </a>
+        DONWLOAD:
+        <div>
+          {highres && (
+            <a href={highres} download>
+              <b>HIGH</b>
+            </a>
+          )}
+          {midres && (
+            <Fragment>
+              {highres && <span> | </span>}
+              <a href={midres} download>
+                <b>STANDARD</b>
+              </a>
+            </Fragment>
+          )}
+          {lowres && (
+            <Fragment>
+              {(midres || (highres && !midres)) && <span> | </span>}
+              <a href={lowres} download>
+                <b>LOW</b>
+              </a>
+            </Fragment>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 export const buildDownloadableImageCollectionArray = (display, info) => {
   // Basic check that imageArray and file array match in lenght otherwise return empty array.
@@ -59,27 +76,32 @@ export const buildDownloadableImageCollectionArray = (display, info) => {
 //
 // The display parameter should be an Gatsby fluid imageQuery object turned into an array
 // And the info parameter should be a corresponding array of objects with the following structure
+//
+// files objcet must include at least one of high, mid, low resolutions
 
 // const imageInfoArray = [
-//   name: 'Press Photo 1',
-//   files: {
-//     highres: pressPhoto1High,
-//     lowres: pressPhoto1Low,
+//   {
+//     name: 'Press Photo 1',
+//     files: {
+//       highres: pressPhoto1High,
+//       midres: pressPhoto1High,
+//       lowres: pressPhoto1Low,
+//     },
+//     credit: 'Andreas Karlsson',
+//     year: 2019,
+//     description:
+//       'Promotional photo for Adam Helring´s 2019 "You/More" single. ',
 //   },
-//   credit: 'Andreas Karlsson',
-//   year: 2019,
-//   description:
-//     'Promotional photo for Adam Helring´s 2019 "You/More" single. ',
-// },
 
-// {
-//   name: 'Press Photo 2',
-//   files: {
-//     highres: pressPhoto2High,
-//     lowres: pressPhoto2Low,
+//   {
+//     name: 'Press Photo 2',
+//     files: {
+//       highres: pressPhoto2High,
+//       lowres: pressPhoto2Low,
+//     },
+//     credit: 'Andreas Karlsson',
+//     year: 2019,
+//     description:
+//       'Promotional photo for Adam Helring´s 2019 "You/More" single. ',
 //   },
-//   credit: 'Andreas Karlsson',
-//   year: 2019,
-//   description:
-//     'Promotional photo for Adam Helring´s 2019 "You/More" single. ',
 // ]
