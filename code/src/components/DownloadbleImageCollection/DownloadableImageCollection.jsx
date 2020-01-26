@@ -15,8 +15,12 @@ export default DownloadbleImageCollection
 const DownloadableImageDisplayCard = ({ item }) => (
   <div className="ah-downloadable-image-card">
     <Img fluid={item.displayInfo.childImageSharp.fluid} />
-    <a href={item.fileInfo.file} download>
-      PRESS 1
-    </a>
+    <div className="ah-downloadable-image-card-info-wrapper">
+      {item.fileInfo.name.toUpperCase()}
+      <a href={item.fileInfo.file}>VIEW</a>
+      <a href={item.fileInfo.file} download>
+        DOWNLOAD
+      </a>
+    </div>
   </div>
 )

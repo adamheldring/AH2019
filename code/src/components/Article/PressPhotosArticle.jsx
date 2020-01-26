@@ -41,7 +41,7 @@ const PressPhotosArticle = () => {
   const imageInfoArray = [
     {
       file: pressPhoto1,
-      name: 'Photo 1',
+      name: 'Press Photo 1',
       credit: 'Andreas Karlsson',
       year: 2019,
       description:
@@ -50,7 +50,7 @@ const PressPhotosArticle = () => {
 
     {
       file: pressPhoto2,
-      name: 'Photo 2',
+      name: 'Press Photo 2',
       credit: 'Andreas Karlsson',
       year: 2019,
       description:
@@ -90,11 +90,9 @@ const PressPhotosArticle = () => {
     <ArticleWrapper title="PRESS PHOTOS">
       <section className="ah-article-info-wrapper">
         <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
-          <div className="ah-downloadble-image-collection-wrapper">
-            <DownloadbleImageCollection
-              collection={downloadablePressPhotoCollection}
-            />
-          </div>
+          <DownloadbleImageCollection
+            collection={downloadablePressPhotoCollection}
+          />
         </div>
       </section>
     </ArticleWrapper>
