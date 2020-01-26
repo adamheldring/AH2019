@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import Img from 'gatsby-image'
 import './DownloadableImageCollection.sass'
 
@@ -14,9 +14,27 @@ export default DownloadbleImageCollection
 
 const DownloadableImageDisplayCard = ({ item }) => {
   const { highres, midres, lowres } = item.fileInfo.files
+  const [imageIsHovered, setImageIsHovered] = useState(false)
   return (
     <div className="ah-downloadable-image-card">
-      <Img fluid={item.displayInfo.childImageSharp.fluid} />
+      <div className="ah-downloadable-image-wrapper">
+        <div
+          className="ah-downloadable-image-display"
+          onMouseEnter={() => setImageIsHovered(true)}
+          onMouseLeave={() => setImageIsHovered(false)}
+        >
+          {imageIsHovered ? (
+            <Img fluid={item.displayInfo.childImageSharp.fluid} />
+          ) : (
+            <Img
+              fluid={{
+                ...item.displayInfo.childImageSharp.fluid,
+                aspectRatio: 1,
+              }}
+            />
+          )}
+        </div>
+      </div>
       <div className="ah-downloadable-image-card-info-wrapper">
         {item.fileInfo.name.toUpperCase()}
         <a href={item.fileInfo.files.highres}>
