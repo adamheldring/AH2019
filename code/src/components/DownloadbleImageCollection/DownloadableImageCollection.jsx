@@ -17,10 +17,13 @@ const DownloadableImageDisplayCard = ({ item }) => (
     <Img fluid={item.displayInfo.childImageSharp.fluid} />
     <div className="ah-downloadable-image-card-info-wrapper">
       {item.fileInfo.name.toUpperCase()}
-      <a href={item.fileInfo.file}>VIEW</a>
-      <a href={item.fileInfo.file} download>
-        DOWNLOAD
-      </a>
+      <div>
+        <a href={item.fileInfo.file}>VIEW</a>
+        <span> | </span>
+        <a href={item.fileInfo.file} download>
+          DOWNLOAD
+        </a>
+      </div>
     </div>
   </div>
 )
