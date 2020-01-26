@@ -24,7 +24,15 @@ const DownloadableImageDisplayCard = ({ item }) => {
           onMouseLeave={() => setImageIsHovered(false)}
         >
           {imageIsHovered ? (
-            <Img fluid={item.displayInfo.childImageSharp.fluid} />
+            <Img
+              fluid={item.displayInfo.childImageSharp.fluid}
+              style={{
+                border: '1px solid var(--secondary-color)',
+                transform: 'scale(1.5)',
+                maxWidth: '100vw',
+                zIndex: 100,
+              }}
+            />
           ) : (
             <Img
               fluid={{
