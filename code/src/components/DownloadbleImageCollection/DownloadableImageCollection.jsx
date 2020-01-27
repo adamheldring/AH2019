@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import Img from 'gatsby-image'
+import { FaPlus, FaMinus } from 'react-icons/fa'
 import './DownloadableImageCollection.sass'
 
 const DownloadbleImageCollection = ({ collection }) => (
@@ -14,6 +15,7 @@ export default DownloadbleImageCollection
 
 const DownloadableImageDisplayCard = ({ item }) => {
   const { highres, midres, lowres } = item.fileInfo.files
+  const [imageIsHovered, setImageIsHovered] = useState(false)
   const [imageIsHighlighted, setImageIsHighlighted] = useState(false)
   return (
     <div className="ah-downloadable-image-card">
@@ -21,27 +23,25 @@ const DownloadableImageDisplayCard = ({ item }) => {
         <div
           className="ah-downloadable-image-display"
           onClick={() => setImageIsHighlighted(!imageIsHighlighted)}
+          onMouseEnter={() => setImageIsHighlighted(true)}
+          onMouseLeave={() => setImageIsHighlighted(false)}
         >
+          <FaPlus
+            className="ah-downloadable-image-zoom-icon"
+            style={{ opacity: `${imageIsHighlighted ? '0' : '1'}` }}
+          />
           <Img
             fluid={{
               ...item.displayInfo.childImageSharp.fluid,
               aspectRatio: 1,
             }}
+            style={{ opacity: `${imageIsHighlighted ? '0' : '1'}` }}
           />
           {imageIsHighlighted && (
             <div className="ah-downloadable-image--highlighted-wrapper">
               <Img
                 fluid={item.displayInfo.childImageSharp.fluid}
                 className="ah-downloadable-image--highlighted"
-                style={{
-                  border: '1px solid var(--custom-black)',
-                  transform: 'translate(-25%, -50%)',
-                  width: '200%',
-                  zIndex: '1',
-                  position: 'absolute',
-                  top: 0,
-                  boxShadow: '6px 6px var(--custom-black)',
-                }}
               />
             </div>
           )}

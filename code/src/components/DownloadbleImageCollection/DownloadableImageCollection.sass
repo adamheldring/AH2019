@@ -1,7 +1,8 @@
 .ah
   &-downloadable-image-collection
     &-wrapper
-      width: 50%
+      width: 80%
+      max-width: 400px
   &-downloadable-image
     &-card
       width: 100%
@@ -17,9 +18,11 @@
 
     &--highlighted
       border: 1px solid var(--custom-black)
-      transform: translate(-25%, -50%)
-      width: 200%
-      z-index: 1
+      transform: translate(-20.2%, -50%)
+      width: 163%
+      max-width: 100vw
+      margin: 2px
+      z-index: 2
       position: absolute
       top: 0
       box-shadow: 6px 6px var(--custom-black)
@@ -28,3 +31,16 @@
         height: 50%
         position: absolute
         bottom: 0
+
+    &-zoom-icon
+      color: var(--primary-color)
+      background-color: rgba(0, 0, 0, 0.5)
+      font-size: 1em
+      width: 10%
+      height: 10%
+      border-radius: 50%
+      padding: 2%
+      top: 5%
+      left: 5%
+      z-index: 1
+      position: absolute
