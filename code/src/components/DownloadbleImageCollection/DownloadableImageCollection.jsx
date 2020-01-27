@@ -14,32 +14,36 @@ export default DownloadbleImageCollection
 
 const DownloadableImageDisplayCard = ({ item }) => {
   const { highres, midres, lowres } = item.fileInfo.files
-  const [imageIsHovered, setImageIsHovered] = useState(false)
+  const [imageIsHighlighted, setImageIsHighlighted] = useState(false)
   return (
     <div className="ah-downloadable-image-card">
       <div className="ah-downloadable-image-wrapper">
         <div
           className="ah-downloadable-image-display"
-          onMouseEnter={() => setImageIsHovered(true)}
-          onMouseLeave={() => setImageIsHovered(false)}
+          onClick={() => setImageIsHighlighted(!imageIsHighlighted)}
         >
-          {imageIsHovered ? (
-            <Img
-              fluid={item.displayInfo.childImageSharp.fluid}
-              style={{
-                border: '1px solid var(--secondary-color)',
-                transform: 'scale(1.5)',
-                maxWidth: '100vw',
-                zIndex: 100,
-              }}
-            />
-          ) : (
-            <Img
-              fluid={{
-                ...item.displayInfo.childImageSharp.fluid,
-                aspectRatio: 1,
-              }}
-            />
+          <Img
+            fluid={{
+              ...item.displayInfo.childImageSharp.fluid,
+              aspectRatio: 1,
+            }}
+          />
+          {imageIsHighlighted && (
+            <div className="ah-downloadable-image--highlighted-wrapper">
+              <Img
+                fluid={item.displayInfo.childImageSharp.fluid}
+                className="ah-downloadable-image--highlighted"
+                style={{
+                  border: '1px solid var(--custom-black)',
+                  transform: 'translate(-25%, -50%)',
+                  width: '200%',
+                  zIndex: '1',
+                  position: 'absolute',
+                  top: 0,
+                  boxShadow: '6px 6px var(--custom-black)',
+                }}
+              />
+            </div>
           )}
         </div>
       </div>
