@@ -62,7 +62,7 @@ const MobileMenu = ({
           </animated.div>
         ))}
       </ul>
-      <div style={{ width: '250px' }}>
+      <div style={{ width: '250px', marginTop: '-10px' }}>
         <SocialMediaBar />
       </div>
       <div className="mobile-menu__submenu">
