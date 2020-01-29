@@ -48,36 +48,45 @@ const Layout = ({ children }) => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [menuInDarkmode, setMenuInDarkmode] = useState(false)
+  const [isErrorView, setIsErrorView] = useState(false)
   const ahContextObj = {
     scrollUpAnchorRef,
     menuInDarkmode,
+    isErrorView,
+    setIsErrorView,
   }
   return (
     <div className="ah-outer-wrapper">
       <ahContext.Provider value={ahContextObj}>
-        <Header
-          siteTitle={data.site.siteMetadata.title}
-          mobileMenuOpen={mobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
-          setMenuInDarkmode={setMenuInDarkmode}
-        />
-        <Menu
-          mobileMenuOpen={mobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
-          menuInDarkmode={menuInDarkmode}
-          currentUri={children.props.uri}
-          logo={data.ahlogo}
-          scrollUpAnchorRef={scrollUpAnchorRef}
-        />
+        {!isErrorView && (
+          <Header
+            siteTitle={data.site.siteMetadata.title}
+            mobileMenuOpen={mobileMenuOpen}
+            setMobileMenuOpen={setMobileMenuOpen}
+            setMenuInDarkmode={setMenuInDarkmode}
+          />
+        )}
+        {!isErrorView && (
+          <Menu
+            mobileMenuOpen={mobileMenuOpen}
+            setMobileMenuOpen={setMobileMenuOpen}
+            menuInDarkmode={menuInDarkmode}
+            currentUri={children.props.uri}
+            logo={data.ahlogo}
+            scrollUpAnchorRef={scrollUpAnchorRef}
+          />
+        )}
         <div className="ah-inner-wrapper">
           <main>{children}</main>
         </div>
-        <Footer
-          labelLogo={data.tennislogowhite}
-          currentUri={children.props.uri}
-          scrollUpAnchorRef={scrollUpAnchorRef}
-          menuInDarkmode={menuInDarkmode}
-        />
+        {!isErrorView && (
+          <Footer
+            labelLogo={data.tennislogowhite}
+            currentUri={children.props.uri}
+            scrollUpAnchorRef={scrollUpAnchorRef}
+            menuInDarkmode={menuInDarkmode}
+          />
+        )}
       </ahContext.Provider>
     </div>
   )
