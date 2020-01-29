@@ -16,6 +16,14 @@ export default {
       title: 'Videos',
       url: '/videos',
     },
+    {
+      title: 'Tour',
+      url: '/tour',
+    },
+    // {
+    //   title: 'Merch',
+    //   url: '/merch',
+    // },
   ],
   submenu: [
     {

@@ -9,13 +9,28 @@
         letter-spacing: -1.1rem
 
 //M
-@media only screen and (max-width: 1023px) and (min-width: 766px)
+@media only screen and (max-width: 1023px) and (min-width: 832px)
   .ah
     &-header-title
       font-size: 9em
       letter-spacing: -0.4rem
       &-left-da-kerning
         letter-spacing: -0.75rem
+
+//Lower-Medium  (spec desktop menu breakpoint)
+@media only screen and (max-width: 831px) and (min-width: 766px)
+  .ah
+    &-header-title
+      font-size: 9em
+      letter-spacing: -0.4rem
+      &-left-da-kerning
+        letter-spacing: -0.75rem
+    &-menu
+      display: none
+      &-page-title
+        display: flex
+    &-mobile-menu-button-wrapper
+      display: flex
 
 //s
 @media only screen and (max-width: 765px) and (min-width: 606px)
