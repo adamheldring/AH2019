@@ -48,12 +48,21 @@ const DownloadableImageDisplayCard = ({ item }) => {
         </div>
       </div>
       <div className="ah-downloadable-image-card-info-wrapper">
-        <span className="ah-downloadable-image-card-info-title">
-          {item.fileInfo.name.toUpperCase()}
-        </span>
+        <div className="ah-downloadable-image-card-meta-wrapper">
+          {item.fileInfo.description && (
+            <span className="ah-downloadable-image-card-meta-item">
+              {item.fileInfo.description}
+            </span>
+          )}
+          {item.fileInfo.credit && (
+            <span className="ah-downloadable-image-card-meta-item">
+              <i>{item.fileInfo.credit}</i>
+            </span>
+          )}
+        </div>
         <li
           className="ah-menu-list-item-wrapper"
-          style={{ listStyle: 'none', margin: '5px 1px 5px 0px' }}
+          style={{ listStyle: 'none', margin: '5px 1px 10px 0px' }}
         >
           <a href={item.fileInfo.files.highres} className="ah-menu-list-item">
             VIEW

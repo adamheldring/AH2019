@@ -50,10 +50,9 @@ const PressPhotosArticle = () => {
         highres: pressPhoto1High,
         lowres: pressPhoto1Low,
       },
-      credit: 'Andreas Karlsson',
+      credit: 'Photo by Andreas Karlsson',
       year: 2019,
-      description:
-        'Promotional photo for Adam Helring´s 2019 "You/More" single. ',
+      description: 'Promotional photo for 2019 "You/More" single. ',
     },
 
     {
@@ -62,10 +61,9 @@ const PressPhotosArticle = () => {
         highres: pressPhoto2High,
         lowres: pressPhoto2Low,
       },
-      credit: 'Andreas Karlsson',
+      credit: 'Photo by Andreas Karlsson',
       year: 2019,
-      description:
-        'Promotional photo for Adam Helring´s 2019 "You/More" single. ',
+      description: 'Promotional photo for 2019 "You/More" single. ',
     },
   ]
 
