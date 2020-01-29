@@ -26,7 +26,15 @@ const MobileMenu = ({
     <div className="mobile-menu">
       <div className="mobile-menu__header">
         <span>
-          <Img fixed={logo} />
+          <Link
+            to="/"
+            onClick={() => {
+              setMobileMenuOpen(false)
+              scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
+            }}
+          >
+            <Img fixed={logo} className="mobile-menu__logo" />
+          </Link>
         </span>
         <animated.button
           style={mobileMenuButtonStyle}
