@@ -48,21 +48,28 @@ const DownloadableImageDisplayCard = ({ item }) => {
         </div>
       </div>
       <div className="ah-downloadable-image-card-info-wrapper">
-        {item.fileInfo.name.toUpperCase()}
-        <a href={item.fileInfo.files.highres}>
-          <b>VIEW</b>
-        </a>
-        DONWLOAD:
-        <div>
+        <span className="ah-downloadable-image-card-info-title">
+          {item.fileInfo.name.toUpperCase()}
+        </span>
+        <li
+          className="ah-menu-list-item-wrapper"
+          style={{ listStyle: 'none', margin: '5px 1px 5px 0px' }}
+        >
+          <a href={item.fileInfo.files.highres} className="ah-menu-list-item">
+            VIEW
+          </a>
+        </li>
+        DOWNLOAD:{' '}
+        <div style={{ display: 'flex' }}>
           {highres && (
-            <a href={highres} download>
+            <a href={highres} download className="ah-downloadable-image-link">
               <b>HIGH</b>
             </a>
           )}
           {midres && (
             <Fragment>
               {highres && <span> | </span>}
-              <a href={midres} download>
+              <a href={midres} download className="ah-downloadable-image-link">
                 <b>STANDARD</b>
               </a>
             </Fragment>
@@ -70,7 +77,8 @@ const DownloadableImageDisplayCard = ({ item }) => {
           {lowres && (
             <Fragment>
               {(midres || (highres && !midres)) && <span> | </span>}
-              <a href={lowres} download>
+
+              <a href={lowres} download className="ah-downloadable-image-link">
                 <b>LOW</b>
               </a>
             </Fragment>
