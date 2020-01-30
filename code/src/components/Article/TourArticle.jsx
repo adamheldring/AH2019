@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
+import { ahFormatDate } from '../../helpers/ahFormatDate'
 
 const ContactArticle = ({ shows = [], title = 'shows' }) => {
   console.log('SHOWS: ', shows)
@@ -8,17 +9,32 @@ const ContactArticle = ({ shows = [], title = 'shows' }) => {
     <ArticleWrapper title={title}>
       <section className="ah-article-info-wrapper">
         <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
-          <div>
+          <div className="ah-article--tour-wrapper">
             {shows.map(show => (
               <Fragment>
-                <div>
-                  <span>{show.date}</span>
-                  <span> ({show.country}) </span>
-                  <b>
-                    <span>{show.city}</span>
-                    {show.state && <span>, {show.state.toUpperCase()}</span>}
-                  </b>
-                  <span> – {show.venue}</span>
+                <div className="ah-article--tour-item">
+                  <span className="ah-article--tour-item-date">
+                    {/* {ahFormatDate(show.date, true)} */}
+                    {show.date}
+                  </span>
+                  <span className="ah-article--tour-item-country">
+                    {' '}
+                    ({show.country}){' '}
+                  </span>
+                  {/* <b> */}
+                  <span className="ah-article--tour-item-city">
+                    {show.city}
+                  </span>
+                  {show.state && (
+                    <span className="ah-article--tour-item-state">
+                      , {show.state.toUpperCase()}
+                    </span>
+                  )}
+                  {/* </b> */}
+                  <span> – </span>
+                  <span className="ah-article--tour-item-venue">
+                    {show.venue}
+                  </span>
                 </div>
               </Fragment>
             ))}
