@@ -15,6 +15,7 @@ import Footer from './Footer/Footer'
 import './layout.css'
 import './ah2019.sass'
 import './mediaQueries.sass'
+import logAsciiArt from '../helpers/logAsciiArt'
 
 require('intersection-observer')
 
@@ -56,20 +57,7 @@ const Layout = ({ children }) => {
     setIsErrorView,
   }
   useEffect(() => {
-    console.log(`${'     '}___    ____  ___    __  ___   __  __________    ____  ____  _____   ________
-    /   |  / __ \\/   |  /  |/  /  / / / / ____/ /   / __ \\/ __ \\/  _/ | / / ____/
-   / /| | / / / / /| | / /|_/ /  / /_/ / __/ / /   / / / / /_/ // //  |/ / / __  
-  / ___ |/ /_/ / ___ |/ /  / /  / __  / /___/ /___/ /_/ / _, _// // /|  / /_/ /  
- /_/  |_/_____/_/  |_/_/  /_/  /_/ /_/_____/_____/_____/_/ |_/___/_/ |_/\\____/   
-                                                                                 
- `)
-    console.log(`${'    '}__  ______  __  __      __   __  _______  ____  ______
-    \\ \\/ / __ \\/ / / /    _/_/  /  |/  / __ \\/ __ \\/ ____/
-    ${' '}\\  / / / / / / /   _/_/   / /|_/ / / / / /_/ / __/   
-     / / /_/ / /_/ /  _/_/    / /  / / /_/ / _, _/ /___   
-    /_/\\____/\\____/  /_/     /_/  /_/\\____/_/ |_/_____/   
-                                                          
-    `)
+    logAsciiArt()
   }, [])
   return (
     <div className="ah-outer-wrapper">
