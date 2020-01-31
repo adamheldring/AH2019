@@ -11,35 +11,36 @@ const ContactArticle = ({ shows = [], title = 'shows' }) => {
       <section className="ah-article-info-wrapper">
         <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
           <div className="ah-article--tour-wrapper">
-            {shows.map(show => (
-              <Fragment>
-                <div className="ah-article--tour-item">
-                  <span className="ah-article--tour-item-date">
-                    {ahFormatDate(show.date, true)}
-                    {/* {show.date} */}
-                  </span>
-                  <span className="ah-article--tour-item-country">
-                    {' '}
-                    {/* ({show.country}){' '} */}
-                    {flag(show.country)}
-                  </span>
-                  {/* <b> */}
-                  <span className="ah-article--tour-item-city">
-                    {show.city}
-                  </span>
-                  {show.state && (
-                    <span className="ah-article--tour-item-state">
-                      , {show.state.toUpperCase()}
+            {shows.length ? (
+              shows.map(show => (
+                <Fragment>
+                  <div className="ah-article--tour-item">
+                    <span className="ah-article--tour-item-date">
+                      {ahFormatDate(show.date, true)}
                     </span>
-                  )}
-                  {/* </b> */}
-                  <span className="ah-article--tour-item-separator"> – </span>
-                  <span className="ah-article--tour-item-venue">
-                    {show.venue}
-                  </span>
-                </div>
-              </Fragment>
-            ))}
+                    <span className="ah-article--tour-item-country">
+                      {flag(show.country)}
+                    </span>
+                    <span className="ah-article--tour-item-city">
+                      {show.city}
+                    </span>
+                    {show.state && (
+                      <span className="ah-article--tour-item-state">
+                        , {show.state.toUpperCase()}
+                      </span>
+                    )}
+                    <span className="ah-article--tour-item-separator"> – </span>
+                    <span className="ah-article--tour-item-venue">
+                      {show.venue}
+                    </span>
+                  </div>
+                </Fragment>
+              ))
+            ) : (
+              <span className="ah-article--tour--noshows-placeholder">
+                No shows announced
+              </span>
+            )}
           </div>
         </div>
       </section>
