@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
+import { flag } from 'country-emoji'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 import { ahFormatDate } from '../../helpers/ahFormatDate'
 
 const ContactArticle = ({ shows = [], title = 'shows' }) => {
   console.log('SHOWS: ', shows)
-
+  console.log('TEST', shows.length && flag(shows[0].country))
   return (
     <ArticleWrapper title={title}>
       <section className="ah-article-info-wrapper">
@@ -14,12 +15,13 @@ const ContactArticle = ({ shows = [], title = 'shows' }) => {
               <Fragment>
                 <div className="ah-article--tour-item">
                   <span className="ah-article--tour-item-date">
-                    {/* {ahFormatDate(show.date, true)} */}
-                    {show.date}
+                    {ahFormatDate(show.date, true)}
+                    {/* {show.date} */}
                   </span>
                   <span className="ah-article--tour-item-country">
                     {' '}
-                    ({show.country}){' '}
+                    {/* ({show.country}){' '} */}
+                    {flag(show.country)}
                   </span>
                   {/* <b> */}
                   <span className="ah-article--tour-item-city">
@@ -31,7 +33,7 @@ const ContactArticle = ({ shows = [], title = 'shows' }) => {
                     </span>
                   )}
                   {/* </b> */}
-                  <span> – </span>
+                  <span className="ah-article--tour-item-separator"> – </span>
                   <span className="ah-article--tour-item-venue">
                     {show.venue}
                   </span>
