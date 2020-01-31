@@ -2,10 +2,16 @@ import React, { Fragment } from 'react'
 import { flag } from 'country-emoji'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 import { ahFormatDate } from '../../helpers/ahFormatDate'
+import { timeCheckShows } from '../../helpers/timeCheckShows'
 
 const ContactArticle = ({ shows = [], title = 'shows' }) => {
   console.log('SHOWS: ', shows)
   console.log('TEST', shows.length && flag(shows[0].country))
+  console.log(shows)
+  const { future, past } = timeCheckShows(shows)
+  console.log('FUTURE: ', future)
+  console.log('PAST: ', past)
+
   return (
     <ArticleWrapper title={title}>
       <section className="ah-article-info-wrapper">
