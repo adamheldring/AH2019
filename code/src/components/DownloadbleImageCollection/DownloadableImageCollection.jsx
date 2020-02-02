@@ -65,14 +65,14 @@ const DownloadableImageDisplayCard = ({ item }) => {
           style={{ listStyle: 'none', margin: '5px 1px 10px 0px' }}
         >
           <a href={item.fileInfo.files.highres} className="ah-menu-list-item">
-            VIEW
+            VIEW FULL
           </a>
         </li>
         DOWNLOAD:{' '}
         <div style={{ display: 'flex' }}>
           {highres && (
             <a href={highres} download className="ah-downloadable-image-link">
-              <b>HIGH</b>
+              <b>HIGH-RES</b>
             </a>
           )}
           {midres && (
@@ -88,7 +88,7 @@ const DownloadableImageDisplayCard = ({ item }) => {
               {(midres || (highres && !midres)) && <span> | </span>}
 
               <a href={lowres} download className="ah-downloadable-image-link">
-                <b>LOW</b>
+                <b>LOW-RES</b>
               </a>
             </Fragment>
           )}
