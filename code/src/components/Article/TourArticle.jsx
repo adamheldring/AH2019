@@ -15,17 +15,19 @@ const ContactArticle = ({ shows = [], title = 'shows' }) => (
                   <span className="ah-article--tour-item-date">
                     {ahFormatDate(show.date, true)}
                   </span>
-                  <span className="ah-article--tour-item-country">
-                    {flag(show.country)}
-                  </span>
-                  <span className="ah-article--tour-item-city">
-                    {show.city}
-                  </span>
-                  {show.state && (
-                    <span className="ah-article--tour-item-state">
-                      , {show.state.toUpperCase()}
+                  <div className="ah-article--tour-item--geogroup">
+                    <span className="ah-article--tour-item-country">
+                      {flag(show.country)}
                     </span>
-                  )}
+                    <span className="ah-article--tour-item-city">
+                      {show.city}
+                    </span>
+                    {show.state && (
+                      <span className="ah-article--tour-item-state">
+                        , {show.state.toUpperCase()}
+                      </span>
+                    )}
+                  </div>
                   <span className="ah-article--tour-item-separator"> – </span>
                   <span className="ah-article--tour-item-venue">
                     {show.venue}

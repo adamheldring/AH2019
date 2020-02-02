@@ -138,6 +138,7 @@
         &-date
           display: inline-block
           text-align: center
+
         &-country
           padding: 0 8px
           display: inline-block
@@ -212,9 +213,28 @@
         margin: 10px 0
 
 // Breakpoint for rearranging tour items
-@media only screen and (max-width: 636px)
+@media only screen and (max-width: 590px)
   .ah
     &-article
       &--tour
         &-wrapper
-          background-color: red
+        &-item
+          flex-direction: column
+          height: auto
+          margin-bottom: 20px
+          padding: 5px 0
+
+          &-date
+            font-style: italic
+          &-country
+            padding-left: 0
+          &-separator
+            display: none
+          &-venue
+            max-width: 100%
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+        &--noshows-placeholder
+          display: flex
+          justify-content: center
