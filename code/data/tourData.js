@@ -1,14 +1,14 @@
 export default {
   shows: [
     {
-      date: '2020-03-01',
+      date: '2020-03-03',
       country: 'DK',
       city: 'Test Town',
       state: null,
       venue: 'Fake Venue',
     },
     {
-      date: '2020-02-01',
+      date: '2020-03-02',
       country: 'FR',
       city: 'Stockholm',
       state: null,

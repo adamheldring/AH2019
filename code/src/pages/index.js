@@ -7,6 +7,9 @@ import releaseData from '../../data/releaseData'
 import SocialMediaArticle from '../components/Article/SocialMediaArticle'
 import BiographyArticle from '../components/Article/BiographyArticle'
 import VideoArticle from '../components/Article/VideoArticle'
+import TourArticle from '../components/Article/TourArticle'
+import tourData from '../../data/tourData'
+import { timeCheckShows } from '../helpers/timeCheckShows'
 
 import videoData from '../../data/videoData'
 
@@ -15,33 +18,43 @@ const latestVideo = videoData.videos.find(
   video => video.youTubeVideoCode === 'hP7B0h3oIdk'
 )
 
-const IndexPage = ({ data }) => (
-  <Fragment>
-    <SEO title="ABOUT" />
-    <div className="ah-page">
-      {latestVideo && (
-        <VideoArticle
-          videoLabel="LATEST VIDEO"
-          metaTitle={latestVideo.metaTitle}
-          youTubeVideoCode={latestVideo.youTubeVideoCode}
-          title={latestVideo.title}
-          description={latestVideo.description}
+const IndexPage = ({ data }) => {
+  const { future } = timeCheckShows(tourData.shows)
+  console.log('FUTURE: ', future.length)
+  return (
+    <Fragment>
+      <SEO title="ABOUT" />
+      <div className="ah-page">
+        {latestVideo && (
+          <VideoArticle
+            videoLabel="LATEST VIDEO"
+            metaTitle={latestVideo.metaTitle}
+            youTubeVideoCode={latestVideo.youTubeVideoCode}
+            title={latestVideo.title}
+            description={latestVideo.description}
+          />
+        )}
+        <ReleaseArticle
+          release={latestRelease}
+          coverFluid={data[latestRelease.coverName].childImageSharp.fluid}
+          articleTitle="LATEST RELEASE"
         />
-      )}
-      <ReleaseArticle
-        release={latestRelease}
-        coverFluid={data[latestRelease.coverName].childImageSharp.fluid}
-        articleTitle="LATEST RELEASE"
-      />
-      <BiographyArticle portrait={data.portrait} />
-      <ContactArticle
-        tennislogo={data.tennislogoblack}
-        mediahorselogo={data.mediahorselogo}
-      />
-      <SocialMediaArticle />
-    </div>
-  </Fragment>
-)
+        {future.length > 0 && (
+          <TourArticle
+            title="NEXT SHOW"
+            shows={future.slice(future.length - 1)}
+          />
+        )}
+        <BiographyArticle portrait={data.portrait} />
+        <ContactArticle
+          tennislogo={data.tennislogoblack}
+          mediahorselogo={data.mediahorselogo}
+        />
+        <SocialMediaArticle />
+      </div>
+    </Fragment>
+  )
+}
 
 export default IndexPage
 
