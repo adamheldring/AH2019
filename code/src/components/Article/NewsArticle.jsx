@@ -29,7 +29,6 @@ const NewsArticle = ({
               left: '50%',
               transform: 'translate(-50%)',
             }}
-            margin-
           >
             {photoCredit}
           </div>
@@ -43,9 +42,10 @@ const NewsArticle = ({
             {title}
           </Link>
         </h2>
-        <p style={{ marginBottom: '20px' }}>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </p>
+        <div
+          dangerouslySetInnerHTML={{ __html: html }}
+          className="ah-article--news-markup-wrapper"
+        />
       </div>
     </section>
   </ArticleWrapper>

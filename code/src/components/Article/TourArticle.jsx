@@ -3,14 +3,14 @@ import { flag } from 'country-emoji'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 import { ahFormatDate } from '../../helpers/ahFormatDate'
 
-const ContactArticle = ({ shows = [], title = 'shows' }) => (
+const TourArticle = ({ shows = [], title = 'shows' }) => (
   <ArticleWrapper title={title}>
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
         <div className="ah-article--tour-wrapper">
           {shows.length ? (
-            shows.map(show => (
-              <Fragment>
+            shows.map((show, index) => (
+              <Fragment key={`${show.date}-${index}`}>
                 <div className="ah-article--tour-item">
                   <span className="ah-article--tour-item-date">
                     {ahFormatDate(show.date, true)}
@@ -46,4 +46,4 @@ const ContactArticle = ({ shows = [], title = 'shows' }) => (
   </ArticleWrapper>
 )
 
-export default ContactArticle
+export default TourArticle

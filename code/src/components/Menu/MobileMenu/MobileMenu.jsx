@@ -67,7 +67,7 @@ const MobileMenu = ({
       </div>
       <div className="mobile-menu__submenu">
         {menuData.submenu.map((submenuItem, index) => (
-          <Fragment>
+          <Fragment key={submenuItem.title}>
             <Link
               to={submenuItem.url}
               onClick={() => {

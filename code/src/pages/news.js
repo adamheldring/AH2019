@@ -16,6 +16,7 @@ const NewsPage = ({ data }) => (
         } = item.node
         return (
           <NewsArticle
+            key={`${date}-${title}`}
             title={title}
             date={ahFormatDate(date, true).toUpperCase()}
             path={path}

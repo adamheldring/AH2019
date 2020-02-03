@@ -5,8 +5,11 @@ import './DownloadableImageCollection.sass'
 
 const DownloadbleImageCollection = ({ collection }) => (
   <div className="ah-downloadable-image-collection-wrapper">
-    {collection.map(collectionItem => (
-      <DownloadableImageDisplayCard item={collectionItem} />
+    {collection.map((collectionItem, index) => (
+      <DownloadableImageDisplayCard
+        item={collectionItem}
+        key={`${collectionItem.fileInfo.name}-${index}`}
+      />
     ))}
   </div>
 )
