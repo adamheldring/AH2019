@@ -23,7 +23,7 @@ const VideoArticle = props => {
         ></iframe>
       </section>
       <section className="ah-article-info-wrapper">
-        <p className="ah-article-info-paragraph ah-article-info-paragraph--list">
+        <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
           {title && (
             <h2 className="ah-article-info-paragraph-heading">{title}</h2>
           )}
@@ -34,7 +34,7 @@ const VideoArticle = props => {
               <i>{additionalInfo}</i>
             </span>
           )}
-        </p>
+        </div>
       </section>
     </ArticleWrapper>
   )

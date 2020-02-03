@@ -20,7 +20,6 @@ const latestVideo = videoData.videos.find(
 
 const IndexPage = ({ data }) => {
   const { future } = timeCheckShows(tourData.shows)
-  console.log('FUTURE: ', future.length)
   return (
     <Fragment>
       <SEO title="ABOUT" />

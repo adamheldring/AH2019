@@ -57,7 +57,6 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
               width="100%"
               height={release.playerHeight}
               frameBorder="0"
-              allowTransparency="true"
               allow="encrypted-media"
             ></iframe>
           </animated.div>

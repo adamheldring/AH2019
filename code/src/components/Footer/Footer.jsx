@@ -62,6 +62,7 @@ const Footer = ({
           <span className="ah-footer-content-box-heading">INFO</span>
           {menuData.submenu.map(submenuItem => (
             <Link
+              key={submenuItem.title}
               onClick={() => {
                 scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
               }}
@@ -78,6 +79,7 @@ const Footer = ({
           <span className="ah-footer-content-box-heading">MENU</span>
           {menuData.menu.map(menuItem => (
             <Link
+              key={menuItem.title}
               onClick={() => {
                 scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
               }}

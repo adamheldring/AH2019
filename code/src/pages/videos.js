@@ -8,8 +8,9 @@ const VideosPage = () => (
   <Fragment>
     <SEO title="Music" />
     <div className="ah-page">
-      {videoData.videos.map(video => (
+      {videoData.videos.map((video, index) => (
         <VideoArticle
+          key={`${video.title}-${index}`}
           videoLabel={video.videoLabel}
           metaTitle={video.metaTitle}
           youTubeVideoCode={video.youTubeVideoCode}
