@@ -1,7 +1,7 @@
 ---
 path: "/media-horse"
 date: "2020-01-01"
-title: "Media Horse will represent Adam Heldring for synch licensing in North America"
+title: "Media Horse will be representing Adam Heldring for synch licensing in North America"
 featuredImage: ""
 photoCredit: ""
 ---

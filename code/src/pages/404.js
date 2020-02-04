@@ -7,7 +7,7 @@ const NotFoundPage = () => {
   const { setIsErrorView } = useContext(ahContext)
   useEffect(() => {
     setIsErrorView(true)
-    scrollTo(0, 0)
+    window.scrollTo(0, 0)
     return () => setIsErrorView(false)
   }, [setIsErrorView])
 
