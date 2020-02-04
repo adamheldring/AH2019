@@ -1,20 +1,6 @@
 export default {
   shows: [
     {
-      date: '2020-03-03',
-      country: 'DK',
-      city: 'Test Town',
-      state: null,
-      venue: 'Fake Venue',
-    },
-    {
-      date: '2020-03-02',
-      country: 'FR',
-      city: 'Stockholm',
-      state: null,
-      venue: 'Hemma',
-    },
-    {
       date: '2019-03-01',
       country: 'SWE',
       city: 'Stockholm',

@@ -1,6 +1,6 @@
 ---
 path: "/tour-announced"
-date: "2019-09-11"
+date: "2020-12-24"
 title: "Tour announced long title, long title yes QQWWSir"
 featuredImage: "testimage.jpg"
 photoCredit: "Photo by Adam Heldring"
