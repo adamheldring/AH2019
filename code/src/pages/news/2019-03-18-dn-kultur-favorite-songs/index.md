@@ -2,7 +2,7 @@
 path: "/dn-kultur-favorite-songs-playlist"
 date: "2019-03-18"
 title: "DN Kultur has picked You/More for their favorite songs"
-featuredImage: ""
+featuredImage: "dn-kultur-favorites.jpg"
 photoCredit: ""
 ---
 
