@@ -2,7 +2,7 @@
 path: "/single-release-date"
 date: "2019-02-05"
 title: "Single release date"
-featuredImage: "stringing-guitar.jpg"
+featuredImage: "getting-the-gear-in-order.jpg"
 photoCredit: ""
 ---
 
