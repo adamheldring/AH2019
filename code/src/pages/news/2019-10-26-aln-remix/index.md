@@ -2,7 +2,7 @@
 path: "/dn-kultur-favorite-songs-playlist"
 date: "2019-10-26"
 title: "My remix of Another Late Night is out now"
-featuredImage: ""
+featuredImage: "aln-remix.jpg"
 photoCredit: ""
 ---
 

@@ -2,7 +2,7 @@
 path: "/spotify-aktellt-playlist"
 date: "2019-03-08"
 title: "Spotify Aktuellt playlist"
-featuredImage: ""
+featuredImage: "spotify-aktuellt-playlist.png"
 photoCredit: ""
 ---
 
