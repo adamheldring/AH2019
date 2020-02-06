@@ -1,17 +1,11 @@
 ---
-path: "/cover-art-sneek-peek"
+path: "/cover-art-sneak-peek"
 date: "2019-02-08"
-title: "Cover art sneek peek"
+title: "You/More cover art sneak peek"
 featuredImage: "ah-youmore-single-cover.jpg"
 photoCredit: ""
 ---
 
-###Lorem ipsum dolor sit amet, 
+### Three weeks to release. Here is a sneak peek of the cover art.
 
-2019-02-08
-
-Three weeks to single release.
-Cover art sneak peek.
-
-You / More
-March 1
+The "You/More" single drops on all platforms Friday March 1.
