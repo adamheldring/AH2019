@@ -2,7 +2,7 @@
 path: "/cover-art-sneek-peek"
 date: "2019-02-08"
 title: "Cover art sneek peek"
-featuredImage: ""
+featuredImage: "ah-youmore-single-cover.jpg"
 photoCredit: ""
 ---
 

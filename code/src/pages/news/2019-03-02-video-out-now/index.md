@@ -2,7 +2,7 @@
 path: "/music-video-out-now"
 date: "2019-03-02"
 title: "Music video out now"
-featuredImage: ""
+featuredImage: "youmore-video-screenshot.png"
 photoCredit: ""
 ---
 

@@ -2,7 +2,7 @@
 path: "/eskilstuna-kuriren-interview"
 date: "2019-03-02"
 title: "Eskilstuna Kuriren interview"
-featuredImage: ""
+featuredImage: "eskilstuna-kuriren-article.jpg"
 photoCredit: ""
 ---
 

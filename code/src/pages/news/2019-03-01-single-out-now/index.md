@@ -2,7 +2,7 @@
 path: "/new-single-out-now"
 date: "2019-03-01"
 title: "New single out now"
-featuredImage: ""
+featuredImage: "now-streaming.jpg"
 photoCredit: ""
 ---
 
