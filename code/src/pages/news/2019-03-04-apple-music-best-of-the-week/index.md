@@ -2,7 +2,7 @@
 path: "/apple-music-best-of-the-week"
 date: "2019-03-04"
 title: "Apple Music - Best of the week"
-featuredImage: ""
+featuredImage: "apple-music-best-of-week-4.jpg"
 photoCredit: ""
 ---
 
