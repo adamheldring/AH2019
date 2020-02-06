@@ -6,8 +6,7 @@ featuredImage: "youmore-video-screenshot-2.png"
 photoCredit: ""
 ---
 
-###Lorem ipsum dolor sit amet, 
+### The "You/More" music video was world premiered with a live screening at the Stockholm release party last night and is now digitally available starting today.
 
-2019-03-02
-You/More official music video out now!
+Watch it now on YouTube:  
 https://youtu.be/hP7B0h3oIdk
