@@ -6,8 +6,11 @@ featuredImage: "release-show_phtoto_robert-karpf.jpeg"
 photoCredit: "Photo by Robert Karpf"
 ---
 
-###Lorem ipsum dolor sit amet, 
+### Big thanks to everybody who came out on Friday night and made the release show a big success. Old friends and new faces – you all made it special.
 
-2019-03-03 
+The room was full but I saw you all. The screening of the music video was an emotional moment for me as it premiered some very old and very personal family footage. Some are still with us and some are not. 
 
-Release show report
+It was a great feeling to get to play the new single live but also to try out a few additional songs from the upcoming album. 
+
+Thank you.  
+– Adam

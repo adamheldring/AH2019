@@ -6,10 +6,10 @@ featuredImage: "eskilstuna-kuriren-article.jpg"
 photoCredit: ""
 ---
 
-###Lorem ipsum dolor sit amet, 
+### My hometown newspaper Eskilstuna Kuriren reporting about the "You/More" single release.
 
-2019-03-02
-Eskilstuna Kuriren - artkel
+Always grateful to my hometown Eskilstuna and the people, bands and musicians I grew up alongside. Support your local news if you want them to stick around.
 
-My hometown newspaper Eskilstuna Kuriren reporting about the "You/More" single release. 
-https://www.ekuriren.se/kultur-noje/adam-heldring-slapper-singel-fran-kommande-album/?fbclid=IwAR3LPp5UJMlUwiFxj8Gl_7VI-bQqIbQCAIMMejr9bltug8ZTTFmYxKVH4bE
+[Full read at their website](https://www.ekuriren.se/kultur-noje/adam-heldring-slapper-singel-fran-kommande-album/?fbclid=IwAR3LPp5UJMlUwiFxj8Gl_7VI-bQqIbQCAIMMejr9bltug8ZTTFmYxKVH4bE)
+
+– Adam

@@ -10,5 +10,5 @@ photoCredit: ""
 
 "You/More" is the first song to be released from the long awaited second album. The single will be accompanied by a music video that will be premiered at the release event. There will be a release party at the Scala Theater in Stockholm on the night of the release – Friday March 1, 2019.
 
-For more info – see the Facebook event:
-https://www.facebook.com/events/742285559488144/
+For more info:  
+[Go to the Facebook event](https://www.facebook.com/events/742285559488144/)

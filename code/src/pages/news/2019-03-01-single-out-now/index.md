@@ -10,7 +10,6 @@ photoCredit: ""
 
 Release party with live set and music video premiere tonight at the Scala Theater in Stockholm.
 
-Listen now on Spotify:
-https://open.spotify.com/album/1Y5e9yno9NKbStR6Alqzjn
+[Listen now on Spotify](https://open.spotify.com/album/1Y5e9yno9NKbStR6Alqzjn)
 
 
