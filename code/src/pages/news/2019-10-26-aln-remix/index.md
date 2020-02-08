@@ -6,7 +6,7 @@ featuredImage: "aln-remix.jpg"
 photoCredit: ""
 ---
 
-### I have made a remix Another Late Night's song "Will You Still Love Me" that was released today along with their original single.
+### I have made a remix of Another Late Night's song "Will You Still Love Me" that was released today along with their original single.
 
 Another Late Night is a newly formed band with members that have been an important part of the Eskilstuna music community for a long time. We share the same hometown, I consider them good friends and I had a really good time working on their sounds.
 

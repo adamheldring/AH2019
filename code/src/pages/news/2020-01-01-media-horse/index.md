@@ -10,6 +10,6 @@ photoCredit: ""
 
 There is a deal in place concerning the entire Adam Heldring song catalogue including the unreleased upcoming album.
 
-Synchronization licensing is the part of music publishing that deals with connecting music to a video format, e.g. when songs are featured in movies, television and commercials.
+Synchronization licensing is the part of music publishing that deals with connecting music to video. The common case being when songs are featured in movies, television and commercials.
 
 [www.mediahorse.net](http://www.mediahorse.net)
