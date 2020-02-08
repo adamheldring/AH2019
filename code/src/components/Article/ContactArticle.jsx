@@ -57,7 +57,7 @@ const ContactArticle = ({ tennislogo, mediahorselogo }) => {
             <br />
           </span>
           <span>
-            <i>United States</i>:
+            <i>United States</i>
             <br />
           </span>
           <span className="ah-contact-logo-wrapper ah-contact-logo-wrapper--media-horse">
