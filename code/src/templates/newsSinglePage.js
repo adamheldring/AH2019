@@ -10,10 +10,11 @@ import './newsSinglePage.sass'
 const NewsSinglePage = ({ data }) => {
   const { scrollUpAnchorRef, menuInDarkmode } = useContext(ahContext)
   const post = data.markdownRemark
-  let featuredImgFluid = post.frontmatter.featuredImage
-    ? (featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid)
-    : null
   const photoCredit = post.frontmatter.photoCredit || null
+  let featuredImgFluid = null
+  if (post.frontmatter.featuredImage) {
+    featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
+  }
 
   return (
     <Fragment>

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { useSpring, useTransition, animated, config } from 'react-spring'
@@ -20,7 +20,6 @@ const Menu = ({
   logo,
   scrollUpAnchorRef,
 }) => {
-  smoothscroll.polyfill()
   const transitions = useTransition(mobileMenuOpen, null, {
     from: { marginLeft: '100vw' },
     enter: { marginLeft: '0' },
@@ -53,6 +52,13 @@ const Menu = ({
       pageName = 'ARTICLE'
     }
     return pageName
+  }
+  const [smoothScrollIsPolyfilled, setSmoothScrollIsPolyfilled] = useState(
+    false
+  )
+  if (typeof window !== 'undefined' && !smoothScrollIsPolyfilled) {
+    smoothscroll.polyfill()
+    setSmoothScrollIsPolyfilled(true)
   }
 
   return (
