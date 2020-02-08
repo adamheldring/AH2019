@@ -6,7 +6,7 @@ featuredImage: "getting-the-gear-in-order.jpg"
 photoCredit: ""
 ---
 
-### New song "You/More" will be out on all platforms on March 1. Release Party with full live set and music video premiere at Scala in Stockholm on the big night.
+### New song "You/More" will be out on all platforms on March 1. Release party with full live set and music video premiere at Scala in Stockholm on the big night.
 
 "You/More" is the first song to be released from the long awaited second album. The single will be accompanied by a music video that will be premiered at the release event. There will be a release party at the Scala Theater in Stockholm on the night of the release – Friday March 1, 2019.
 
