@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
+import scrollToTop from '../../helpers/scrollToTop'
 
 const NewsArticle = ({
   title,
@@ -18,7 +19,7 @@ const NewsArticle = ({
         className="ah-article-visual--image-wide-container"
         style={{ position: 'relative' }}
       >
-        <Link onClick={() => window.scroll({ top: 0, left: 0 })} to={path}>
+        <Link onClick={scrollToTop} to={path}>
           <Img fluid={featuredImage.childImageSharp.fluid} />
         </Link>
         {photoCredit && (
@@ -38,7 +39,7 @@ const NewsArticle = ({
     <section className="ah-article-info-wrapper ah-article--news">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--block">
         <h2 className="ah-article-info-paragraph-heading ah-article-info-paragraph-heading--space">
-          <Link onClick={() => window.scroll({ top: 0, left: 0 })} to={path}>
+          <Link onClick={scrollToTop} to={path}>
             {title}
           </Link>
         </h2>

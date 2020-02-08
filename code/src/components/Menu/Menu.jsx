@@ -7,6 +7,7 @@ import { FaArrowAltCircleUp } from 'react-icons/fa'
 import smoothscroll from 'smoothscroll-polyfill'
 import DesktopMenu from './DesktopMenu'
 import MobileMenu from './MobileMenu/MobileMenu'
+import scrollToTop from '../../helpers/scrollToTop'
 import './Menu.sass'
 import './MobileMenu/MobileMenu.sass'
 import menuData from '../../../data/menuData'
@@ -108,9 +109,7 @@ const Menu = ({
             </Link>
             <FaArrowAltCircleUp
               className="ah-menu-icon-up"
-              onClick={() =>
-                window.scroll({ top: 0, left: 0, behavior: 'smooth' })
-              }
+              onClick={() => scrollToTop({ behaviorType: 'smooth' })}
             />
           </div>
           {menuInDarkmode && (

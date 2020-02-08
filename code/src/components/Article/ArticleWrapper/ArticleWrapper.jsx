@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import './ArticleWrapper.sass'
+import scrollToTop from '../../../helpers/scrollToTop'
 
 const ArticleWrapper = props => {
   const { children, title, split = false, singlePageLink = false } = props
@@ -14,10 +15,7 @@ const ArticleWrapper = props => {
           {title}
         </span>
         {singlePageLink && (
-          <Link
-            onClick={() => window.scroll({ top: 0, left: 0 })}
-            to={singlePageLink}
-          >
+          <Link onClick={scrollToTop} to={singlePageLink}>
             <span className="ah-article-title-link">VIEW PAGE</span>
           </Link>
         )}
