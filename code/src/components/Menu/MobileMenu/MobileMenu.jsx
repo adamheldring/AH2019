@@ -5,6 +5,7 @@ import { GiAnchor } from 'react-icons/gi'
 import { useSpring, useTrail, animated } from 'react-spring'
 import Img from 'gatsby-image'
 import scrollToAnchorPoint from '../../../helpers/scrollToAnchorPoint'
+import scrollToTop from '../../../helpers/scrollToTop'
 import SocialMediaBar from '../../SocialMediaBar/SocialMediaBar'
 import menuData from '../../../../data/menuData'
 
@@ -30,7 +31,7 @@ const MobileMenu = ({
             to="/"
             onClick={() => {
               setMobileMenuOpen(false)
-              scrollToAnchorPoint(scrollUpAnchorRef, menuInDarkmode)
+              scrollToTop({ behaviorType: 'auto' })
             }}
           >
             <Img fixed={logo} className="mobile-menu__logo" />

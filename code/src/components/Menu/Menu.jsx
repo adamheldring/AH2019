@@ -107,7 +107,7 @@ const Menu = ({
               display: `${menuInDarkmode ? 'block' : 'none'}`,
             }}
           >
-            <Link to="/">
+            <Link to="/" onClick={scrollToTop}>
               <Img
                 fixed={logo.childImageSharp.fixed}
                 className="ah-menu-logo"
