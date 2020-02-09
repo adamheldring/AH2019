@@ -6,7 +6,7 @@ import { ahFormatDate } from '../helpers/ahFormatDate'
 
 const NewsPage = ({ data }) => (
   <Fragment>
-    <SEO title="News" />
+    <SEO title="NEWS" />
     <div className="ah-page">
       {data.allMarkdownRemark.edges.map(item => {
         const {

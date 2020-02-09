@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `AH2019`,
+    title: `ADAM HELDRING`,
     description: `New album to be released this year.`,
     author: `A-Game`,
   },

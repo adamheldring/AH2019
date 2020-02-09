@@ -6,7 +6,7 @@ import videoData from '../../data/videoData'
 
 const VideosPage = () => (
   <Fragment>
-    <SEO title="Music" />
+    <SEO title="VIDEOS" />
     <div className="ah-page">
       {videoData.videos.map((video, index) => (
         <VideoArticle

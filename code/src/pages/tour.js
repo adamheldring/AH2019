@@ -8,7 +8,7 @@ const TourPage = () => {
   const { future, past } = timeCheckShows(tourData.shows)
   return (
     <Fragment>
-      <SEO title="Tour" />
+      <SEO title="TOUR" />
       <div className="ah-page">
         <TourArticle shows={future} title="UPCOMING SHOWS" />
         <TourArticle shows={past} title="PAST SHOWS" />

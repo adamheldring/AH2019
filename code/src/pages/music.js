@@ -8,7 +8,7 @@ const { releases } = releaseData
 
 const MusicPage = ({ data }) => (
   <Fragment>
-    <SEO title="Music" />
+    <SEO title="MUSIC" />
     <div className="ah-page">
       {releases.map((releaseItem, index) => (
         <ReleaseArticle

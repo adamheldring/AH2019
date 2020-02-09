@@ -9,7 +9,7 @@ import CoverArtArticle from '../components/Article/CoverArtArticle'
 
 const PressPage = ({ data }) => (
   <Fragment>
-    <SEO title="Press" />
+    <SEO title="PRESS" />
     <div className="ah-page">
       <PressPhotosArticle />
       <CoverArtArticle />

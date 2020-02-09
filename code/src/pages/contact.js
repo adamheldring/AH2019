@@ -6,7 +6,7 @@ import ContactArticle from '../components/Article/ContactArticle'
 
 const ContactPage = ({ data }) => (
   <Fragment>
-    <SEO title="Contact" />
+    <SEO title="CONTACT" />
     <div className="ah-page">
       <ContactArticle
         tennislogo={data.tennislogoblack}
