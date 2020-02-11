@@ -1,6 +1,6 @@
 ---
 path: "/media-horse-representing-adam-heldring"
-date: "2020-02-09"
+date: "2020-02-11"
 title: "Media Horse now representing Adam Heldring in the United States"
 featuredImage: "media-horse.jpg"
 photoCredit: ""

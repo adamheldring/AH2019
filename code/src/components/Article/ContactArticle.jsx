@@ -53,7 +53,7 @@ const ContactArticle = ({ tennislogo, mediahorselogo }) => {
       <section className="ah-article-info-wrapper ah-article--split-section">
         <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
           <span>
-            <b>Synch Licensing:</b>
+            <b>Sync Licensing:</b>
             <br />
           </span>
           <span>
