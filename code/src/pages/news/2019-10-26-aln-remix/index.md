@@ -1,5 +1,5 @@
 ---
-path: "/dn-kultur-favorite-songs-playlist"
+path: "/another-late-night-adam-heldring-remix"
 date: "2019-10-26"
 title: "My remix of Another Late Night's Will You Still Love Me is out now"
 featuredImage: "aln-remix.jpg"
