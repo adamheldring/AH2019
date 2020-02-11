@@ -18,7 +18,7 @@ const NewsSinglePage = ({ data }) => {
 
   return (
     <Fragment>
-      <SEO title="ARTICLE" />
+      <SEO title="ARTICLE" description={post.frontmatter.title} />
       <div className="ah-page">
         <div className="ah-single-article-wrapper">
           {ahFormatDate(post.frontmatter.date) && (
