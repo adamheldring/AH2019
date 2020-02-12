@@ -12,6 +12,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    `gatsby-plugin-htaccess`,
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
