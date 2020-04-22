@@ -39,7 +39,7 @@ export const ahFormatDate = (date = '1982-01-01', short = false) => {
   ahDateArray[1] = date.slice(date.lastIndexOf('-') + 1)
   ahDateArray[2] = date.slice(0, date.indexOf('-'))
 
-  // PERFOME BASIC SAFETY CHECKS
+  // PERFORM BASIC SAFETY CHECKS
   // check that original date has two dashes
   if ((date.match(/-/g) || []).length !== 2) errorDetected = true
 
