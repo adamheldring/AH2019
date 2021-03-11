@@ -1,21 +1,22 @@
-import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
-import SEO from '../components/seo'
-import ReleaseArticle from '../components/Article/ReleaseArticle'
-import ContactArticle from '../components/Article/ContactArticle'
-import releaseData from '../../data/releaseData'
-import SocialMediaArticle from '../components/Article/SocialMediaArticle'
-import BiographyArticle from '../components/Article/BiographyArticle'
-import VideoArticle from '../components/Article/VideoArticle'
-import TourArticle from '../components/Article/TourArticle'
-import tourData from '../../data/tourData'
-import { timeCheckShows } from '../helpers/timeCheckShows'
+import React, { Fragment } from "react"
+import { graphql } from "gatsby"
+import SEO from "../components/seo"
+import SnippetArticle from "../components/Article/SnippetArticle"
+import ReleaseArticle from "../components/Article/ReleaseArticle"
+import ContactArticle from "../components/Article/ContactArticle"
+import releaseData from "../../data/releaseData"
+import SocialMediaArticle from "../components/Article/SocialMediaArticle"
+import BiographyArticle from "../components/Article/BiographyArticle"
+import VideoArticle from "../components/Article/VideoArticle"
+import TourArticle from "../components/Article/TourArticle"
+import tourData from "../../data/tourData"
+import { timeCheckShows } from "../helpers/timeCheckShows"
 
-import videoData from '../../data/videoData'
+import videoData from "../../data/videoData"
 
 const latestRelease = releaseData.releases[0]
 const latestVideo = videoData.videos.find(
-  video => video.youTubeVideoCode === 'hP7B0h3oIdk'
+  video => video.youTubeVideoCode === "hP7B0h3oIdk"
 )
 
 const IndexPage = ({ data }) => {
@@ -24,6 +25,7 @@ const IndexPage = ({ data }) => {
     <Fragment>
       <SEO title="ABOUT" />
       <div className="ah-page">
+        <SnippetArticle />
         {latestVideo && (
           <VideoArticle
             videoLabel="LATEST VIDEO"
