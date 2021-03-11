@@ -1,7 +1,7 @@
-import React from 'react'
-import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
+import React from "react"
+import ArticleWrapper from "./ArticleWrapper/ArticleWrapper"
 
-const SocialMediaArticle = ({ title, message, children }) => (
+const ErrorArticle = ({ title, message, children }) => (
   <ArticleWrapper title={title}>
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
@@ -11,4 +11,4 @@ const SocialMediaArticle = ({ title, message, children }) => (
   </ArticleWrapper>
 )
 
-export default SocialMediaArticle
+export default ErrorArticle
