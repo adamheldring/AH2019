@@ -1,7 +1,7 @@
 ---
 path: "/dance-single-release"
 date: "2021-03-12"
-title: 'New single "Dance" out March 26'
+title: "New single DANCE out March 26"
 featuredImage: "ah-dance-single-cover.jpg"
 photoCredit: ""
 ---
