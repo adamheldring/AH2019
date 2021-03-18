@@ -4,7 +4,17 @@ import scrollToTop from "../../helpers/scrollToTop"
 import ArticleWrapper from "./ArticleWrapper/ArticleWrapper"
 
 const SnippetArticle = () => (
-  <ArticleWrapper title="MAR-12-2021" singlePageLink="/dance-single-release">
+  <ArticleWrapper title="TEASER" singlePageLink="/dance-single-release">
+    <section className="ah-article-visual--video-container">
+      <iframe
+        title="Dance (Teaser)"
+        className="ah-article-visual--video"
+        src="https://www.youtube.com/embed/3rEP14ghceE?loop=1&playList=3rEP14ghceE&modestbranding"
+        frameBorder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </section>
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
         <h2 className="ah-article-info-paragraph-heading">
