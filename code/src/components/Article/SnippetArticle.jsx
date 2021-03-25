@@ -21,7 +21,7 @@ const SnippetArticle = () => (
           New single DANCE out now!
         </h2>
         <a
-          href="https://open.spotify.com/album/7lpHjjvrMggNhHpxIINvFr"
+          href="spotify:album:7lpHjjvrMggNhHpxIINvFr"
           alt="Open Dance single on Spotify"
           target="_blank"
           rel="noopener noreferrer"

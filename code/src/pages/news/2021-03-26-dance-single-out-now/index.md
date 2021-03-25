@@ -8,7 +8,7 @@ photoCredit: ""
 
 ### The "Dance" single dropped today and is now available globally on all platforms.
 
-––> **[Listen now on Spotify](https://open.spotify.com/album/7lpHjjvrMggNhHpxIINvFr)**
+––> **[Listen now on Spotify](spotify:album:7lpHjjvrMggNhHpxIINvFr)**
 
 ––> **[Listen now on iTunes](https://music.apple.com/us/album/dance-single/1555719857?ls=1&app=itunes)**
 
