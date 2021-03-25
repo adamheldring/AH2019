@@ -2,7 +2,7 @@
 path: "/dance-single-out-now"
 date: "2021-03-26"
 title: 'OUT NOW – new single "DANCE"'
-featuredImage: "dance-spotify.png"
+featuredImage: "dance-out-now.png"
 photoCredit: ""
 ---
 
