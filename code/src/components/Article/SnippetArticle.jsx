@@ -1,10 +1,10 @@
-import React from "react"
-import { Link } from "gatsby"
-import scrollToTop from "../../helpers/scrollToTop"
-import ArticleWrapper from "./ArticleWrapper/ArticleWrapper"
+import React from 'react'
+import { Link } from 'gatsby'
+import scrollToTop from '../../helpers/scrollToTop'
+import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 
 const SnippetArticle = () => (
-  <ArticleWrapper title="TEASER" singlePageLink="/dance-single-release">
+  <ArticleWrapper title="LATEST NEWS" singlePageLink="">
     <section className="ah-article-visual--video-container">
       <iframe
         title="Dance (Teaser)"
@@ -18,9 +18,18 @@ const SnippetArticle = () => (
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
         <h2 className="ah-article-info-paragraph-heading">
-          New single DANCE out March 26.
+          New single DANCE out now!
         </h2>
-        <Link onClick={scrollToTop} to="/dance-single-release">
+        <a
+          href="https://open.spotify.com/album/7lpHjjvrMggNhHpxIINvFr"
+          alt="Open Dance single on Spotify"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ah-snippet-link"
+        >
+          LISTEN NOW ON SPOTIFY
+        </a>
+        <Link onClick={scrollToTop} to="/dance-single-out-now">
           <span className="ah-contact-link">
             <i>Read full article</i>
           </span>

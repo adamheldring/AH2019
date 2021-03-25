@@ -25,6 +25,13 @@ export default MusicPage
 
 export const imageQuery = graphql`
   query {
+    dcover: file(relativePath: { eq: "covers/ah-dance-single-cover.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     ymcover: file(relativePath: { eq: "covers/ah-youmore-single-cover.jpg" }) {
       childImageSharp {
         fluid {

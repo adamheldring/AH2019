@@ -35,8 +35,8 @@ const BiographyArticle = ({ portrait }) => (
           studio doors and under great secrecy. <br />
           <br />
           <i>
-            The first single "You/More" was released in 2019 and the full second
-            album is expected in 2020.
+            "Dance" dropped on March 26 and is the second single off the album.
+            The full album will be out in the spring of 2021´.
           </i>
         </p>
       </div>

@@ -1,6 +1,23 @@
 export default {
   releases: [
     {
+      title: 'Dance',
+      coverName: 'dcover',
+      format: 'Single',
+      year: 2021,
+      label: 'Tennis',
+      distribution: 'AWAL / Kobalt Music',
+      spotifyLink:
+        'https://open.spotify.com/embed/album/7lpHjjvrMggNhHpxIINvFr',
+      playerHeight: 260,
+      tracks: [
+        {
+          title: 'Dance',
+        },
+      ],
+      credits: {},
+    },
+    {
       title: 'You / More',
       coverName: 'ymcover',
       format: 'Single',
