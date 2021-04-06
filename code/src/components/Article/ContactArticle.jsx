@@ -5,7 +5,7 @@ import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 import scrollToAnchorPoint from '../../helpers/scrollToAnchorPoint'
 import { ahContext } from '../../helpers/ahContext'
 
-const ContactArticle = ({ tennislogo, mediahorselogo }) => {
+const ContactArticle = ({ tennislogo, mediahorselogo, ileslogo }) => {
   const { menuInDarkmode, scrollUpAnchorRef } = useContext(ahContext)
   return (
     <ArticleWrapper title="CONTACT" split>
@@ -92,16 +92,68 @@ const ContactArticle = ({ tennislogo, mediahorselogo }) => {
         </div>
       </section>
       <section className="ah-article-info-wrapper ah-article-info--addon-info">
-        <span>BOOKING & PRESS INQUIRIES:</span>
+        {/* <span>BOOKING & PRESS INQUIRIES:</span>
         <span>
           <a href="mailto:info@tennismusic.net" className="ah-contact-link">
             info@tennismusic.net
           </a>
-        </span>
+        </span> */}
+        <section className="ah-article-info-wrapper">
+          <div
+            className="ah-article-info-paragraph ah-article-info-paragraph--list"
+            style={{ paddingTop: '0px', paddingBottom: '0px' }} // Modd for ILES update
+          >
+            <span>
+              <b>Press Contact:</b>
+              <br />
+            </span>
+            <span>
+              <i>Worldwide</i>
+              <br />
+            </span>
+            <span className="ah-contact-logo-wrapper ah-contact-logo-wrapper--tennis">
+              <Img fixed={ileslogo.childImageSharp.fixed} />
+            </span>
+            <span>
+              ILES PR
+              <br />
+            </span>
+            <span>
+              Molly Brunner
+              <br />
+            </span>
+            <span>
+              <a href="mailto:molly@iles.se" className="ah-contact-link">
+                molly@iles.se
+              </a>
+              <br />
+            </span>
+            <span>
+              +46 (0)70 270 70 64
+              <br />
+            </span>
+            <span>
+              <a
+                href="http://www.iles.se"
+                alt="ILES PR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ah-contact-link"
+              >
+                www.iles.se
+              </a>
+              {/* <br /> */}
+            </span>
+            {/* <span>
+              Stockholm – Sweden
+              <br />
+            </span> */}
+          </div>
+        </section>
         <span>
           <li
             className="ah-menu-list-item-wrapper"
-            style={{ listStyle: 'none', margin: '10px 0 0' }}
+            style={{ listStyle: 'none', margin: '0 0 0' }}
           >
             <Link
               onClick={() =>

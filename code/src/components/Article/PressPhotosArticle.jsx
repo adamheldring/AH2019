@@ -52,7 +52,7 @@ const PressPhotosArticle = () => {
       },
       credit: 'Photo by Andreas Karlsson',
       year: 2019,
-      description: 'Promotional photo for 2019 "You/More" single. ',
+      description: 'Press photo horizontal.',
     },
 
     {
@@ -63,7 +63,7 @@ const PressPhotosArticle = () => {
       },
       credit: 'Photo by Andreas Karlsson',
       year: 2019,
-      description: 'Promotional photo for 2019 "You/More" single. ',
+      description: 'Press photo vertical',
     },
   ]
 
