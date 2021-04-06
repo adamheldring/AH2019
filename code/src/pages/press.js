@@ -1,11 +1,11 @@
-import React, { Fragment } from "react"
-import { graphql } from "gatsby"
-import SEO from "../components/seo"
-import SocialMediaArticle from "../components/Article/SocialMediaArticle"
-import BiographyArticle from "../components/Article/BiographyArticle"
-import PressContactArticle from "../components/Article/PressContactArticle"
-import PressPhotosArticle from "../components/Article/PressPhotosArticle"
-import CoverArtArticle from "../components/Article/CoverArtArticle"
+import React, { Fragment } from 'react'
+import { graphql } from 'gatsby'
+import SEO from '../components/seo'
+import SocialMediaArticle from '../components/Article/SocialMediaArticle'
+import BiographyArticle from '../components/Article/BiographyArticle'
+import PressContactArticle from '../components/Article/PressContactArticle'
+import PressPhotosArticle from '../components/Article/PressPhotosArticle'
+import CoverArtArticle from '../components/Article/CoverArtArticle'
 
 const PressPage = ({ data }) => (
   <Fragment>
@@ -14,7 +14,7 @@ const PressPage = ({ data }) => (
       <PressPhotosArticle />
       <CoverArtArticle />
       <BiographyArticle portrait={data.portrait} />
-      <PressContactArticle pressLogo={data.tennislogoblack} />
+      <PressContactArticle pressLogo={data.ileslogo} />
       <SocialMediaArticle />
     </div>
   </Fragment>
@@ -35,11 +35,9 @@ export const imageQuery = graphql`
         }
       }
     }
-    tennislogoblack: file(
-      relativePath: { eq: "materials/tennis-logo-trans-black.png" }
-    ) {
+    ileslogo: file(relativePath: { eq: "materials/iles-logo.png" }) {
       childImageSharp {
-        fixed(height: 35) {
+        fixed(height: 100) {
           ...GatsbyImageSharpFixed
         }
       }
