@@ -11,6 +11,7 @@ const ContactPage = ({ data }) => (
       <ContactArticle
         tennislogo={data.tennislogoblack}
         mediahorselogo={data.mediahorselogo}
+        ileslogo={data.ileslogo}
       />
       <SocialMediaArticle />
     </div>
@@ -35,6 +36,13 @@ export const imageQuery = graphql`
     ) {
       childImageSharp {
         fixed(height: 80) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    ileslogo: file(relativePath: { eq: "materials/iles-logo.png" }) {
+      childImageSharp {
+        fixed(height: 100) {
           ...GatsbyImageSharpFixed
         }
       }
