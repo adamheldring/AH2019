@@ -25,6 +25,15 @@ export default MusicPage
 
 export const imageQuery = graphql`
   query {
+    gscover: file(
+      relativePath: { eq: "covers/ah-golden-state-single-cover.jpg" }
+    ) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     dcover: file(relativePath: { eq: "covers/ah-dance-single-cover.jpg" }) {
       childImageSharp {
         fluid {

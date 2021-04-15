@@ -2,7 +2,7 @@
 path: "/golden-state-single"
 date: "2021-04-09"
 title: "New single GOLDEN STATE out next Friday April 16"
-featuredImage: "ah-golden_state-single-cover.jpg"
+featuredImage: "ah-golden-state-single-cover.jpg"
 photoCredit: ""
 ---
 

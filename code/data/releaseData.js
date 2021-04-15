@@ -1,6 +1,23 @@
 export default {
   releases: [
     {
+      title: 'Golden State',
+      coverName: 'gscover',
+      format: 'Single',
+      year: 2021,
+      label: 'Tennis',
+      distribution: 'AWAL / Kobalt Music',
+      spotifyLink:
+        'https://open.spotify.com/embed/album/21hS2pth9WstNMvwp2abIL',
+      playerHeight: 260,
+      tracks: [
+        {
+          title: 'Golden State',
+        },
+      ],
+      credits: {},
+    },
+    {
       title: 'Dance',
       coverName: 'dcover',
       format: 'Single',
