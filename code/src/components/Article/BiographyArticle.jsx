@@ -14,7 +14,7 @@ const BiographyArticle = ({ portrait }) => (
         </h2>
         <p style={{ marginBottom: '20px' }}>
           <b>
-            Adam Heldring released two Ep:s and the debut album ”Mount
+            Adam Heldring released two EPs and the debut album ”Mount
             Foreverest” in quick succession which generated wide interest both
             at home in Sweden and on international ground.
           </b>
@@ -32,12 +32,17 @@ const BiographyArticle = ({ portrait }) => (
           spotlight and spent months on the move in Los Angeles, Berlin and
           Paris – constantly writing on the music for his second album. The
           record has come together during a series of silent years behind locked
-          studio doors and under great secrecy. <br />
+          studio doors and under great secrecy. The full second album "Ports of
+          Call" will be released on May 7, 2021. <br />
           <br />
-          <i>
-            "Dance" dropped on March 26 and is the second single off the album.
-            The full album will be out in the spring of 2021´.
-          </i>
+          Childhood and future come crashing together with the tear between
+          metropolis and solitude. ”Ports of Call” is a world where chairs are
+          broken over people’s backs and dreams are broken by their own weight.
+          Vagabonds and bartenders in hillbilly towns and Hollywood share an
+          undeniable nostalgia without wanting to go back. The album title
+          refers to the list of ports where a ship stops on its way to the final
+          destination. A theme that ties the eleven tracks together like a red
+          thread woven around pins in a map.
         </p>
       </div>
     </section>
