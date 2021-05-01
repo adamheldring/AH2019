@@ -65,17 +65,17 @@ const PressContactArticle = ({ pressLogo }) => (
           <br />
         </span>
         <span>
-          Molly Brunner
+          Ellinor Wannmyr
           <br />
         </span>
         <span>
-          <a href="mailto:molly@iles.se" className="ah-contact-link">
-            molly@iles.se
+          <a href="mailto:ellinor@iles.se" className="ah-contact-link">
+            ellinor@iles.se
           </a>
           <br />
         </span>
         <span>
-          +46 (0)70 270 70 64
+          +46 (0)73 908 12 83
           <br />
         </span>
         <span>
