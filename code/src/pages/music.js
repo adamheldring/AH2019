@@ -25,6 +25,15 @@ export default MusicPage
 
 export const imageQuery = graphql`
   query {
+    poccover: file(
+      relativePath: { eq: "covers/ah-ports_of_call-album-cover.jpg" }
+    ) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     gscover: file(
       relativePath: { eq: "covers/ah-golden-state-single-cover.jpg" }
     ) {

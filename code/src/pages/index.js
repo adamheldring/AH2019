@@ -62,8 +62,8 @@ export default IndexPage
 
 export const imageQuery = graphql`
   query {
-    gscover: file(
-      relativePath: { eq: "covers/ah-golden-state-single-cover.jpg" }
+    poccover: file(
+      relativePath: { eq: "covers/ah-ports_of_call-album-cover.jpg" }
     ) {
       childImageSharp {
         fluid {
