@@ -4,23 +4,6 @@ import scrollToTop from '../../helpers/scrollToTop'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 
 // const SnippetArticle = () => (
-//   <ArticleWrapper title="LATEST NEWS" singlePageLink="/golden-state-single">
-//     <section className="ah-article-info-wrapper">
-//       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
-//         <h2 className="ah-article-info-paragraph-heading">
-//           New single GOLDEN STATE out April 16
-//         </h2>
-//         <Link onClick={scrollToTop} to="/golden-state-single">
-//           <span className="ah-contact-link">
-//             <i>Read full article</i>
-//           </span>
-//         </Link>
-//       </div>
-//     </section>
-//   </ArticleWrapper>
-// )
-
-// const SnippetArticle = () => (
 //   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
 //     <section className="ah-article-visual--video-container">
 //       <iframe
@@ -61,18 +44,18 @@ const SnippetArticle = () => (
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
         <h2 className="ah-article-info-paragraph-heading">
-          New single GOLDEN STATE out now!
+          New album PORTS OF CALL out now!
         </h2>
         <a
-          href="spotify:album:21hS2pth9WstNMvwp2abIL"
-          alt="Open Golden State single on Spotify"
+          href="spotify:album:6Ej7e8J3wCNoN9bL2vE03M"
+          alt="Open Ports Of Call album on Spotify"
           target="_blank"
           rel="noopener noreferrer"
           className="ah-snippet-link"
         >
           LISTEN NOW ON SPOTIFY
         </a>
-        <Link onClick={scrollToTop} to="/golden-state-single-out-now">
+        <Link onClick={scrollToTop} to="/ports-of-call-album-out-now">
           <span className="ah-contact-link">
             <i>Read full article</i>
           </span>
