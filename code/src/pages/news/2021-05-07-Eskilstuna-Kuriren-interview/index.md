@@ -1,5 +1,5 @@
 ---
-path: "/eskilstuna-kuriren-interview"
+path: "/eskilstuna-kuriren-article"
 date: "2021-05-07"
 title: 'Full page and front page in Eskilstuna Kuriren'
 featuredImage: "ekuriren-210507.jpg"
