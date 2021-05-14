@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import scrollToTop from '../../helpers/scrollToTop'
 import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 
+// VIDEO SNIPPET
 // const SnippetArticle = () => (
 //   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
 //     <section className="ah-article-visual--video-container">
@@ -39,23 +40,42 @@ import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 //   </ArticleWrapper>
 // )
 
+// PORTS OF CALL OUT NOW SNIPPET
+// const SnippetArticle = () => (
+//   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
+//     <section className="ah-article-info-wrapper">
+//       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
+//         <h2 className="ah-article-info-paragraph-heading">
+//           New album PORTS OF CALL out now!
+//         </h2>
+//         <a
+//           href="spotify:album:6Ej7e8J3wCNoN9bL2vE03M"
+//           alt="Open Ports Of Call album on Spotify"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//           className="ah-snippet-link"
+//         >
+//           LISTEN NOW ON SPOTIFY
+//         </a>
+//         <Link onClick={scrollToTop} to="/ports-of-call-album-out-now">
+//           <span className="ah-contact-link">
+//             <i>Read full article</i>
+//           </span>
+//         </Link>
+//       </div>
+//     </section>
+//   </ArticleWrapper>
+// )
+
+// DANCE STRAIGHT TO NUMBER ONE SNIPPET
 const SnippetArticle = () => (
   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
         <h2 className="ah-article-info-paragraph-heading">
-          New album PORTS OF CALL out now!
+          "Dance" straight to number ONE on Swedish Radio list
         </h2>
-        <a
-          href="spotify:album:6Ej7e8J3wCNoN9bL2vE03M"
-          alt="Open Ports Of Call album on Spotify"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ah-snippet-link"
-        >
-          LISTEN NOW ON SPOTIFY
-        </a>
-        <Link onClick={scrollToTop} to="/ports-of-call-album-out-now">
+        <Link onClick={scrollToTop} to="/dance-straight-to-number-one">
           <span className="ah-contact-link">
             <i>Read full article</i>
           </span>
