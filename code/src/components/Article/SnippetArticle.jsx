@@ -68,14 +68,31 @@ import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 // )
 
 // DANCE STRAIGHT TO NUMBER ONE SNIPPET
+// const SnippetArticle = () => (
+//   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
+//     <section className="ah-article-info-wrapper">
+//       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
+//         <h2 className="ah-article-info-paragraph-heading">
+//           "Dance" straight to number ONE on Swedish Radio list
+//         </h2>
+//         <Link onClick={scrollToTop} to="/dance-straight-to-number-one">
+//           <span className="ah-contact-link">
+//             <i>Read full article</i>
+//           </span>
+//         </Link>
+//       </div>
+//     </section>
+//   </ArticleWrapper>
+
+// ALBUM OF THE MONTH SNIPPET
 const SnippetArticle = () => (
   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
         <h2 className="ah-article-info-paragraph-heading">
-          "Dance" straight to number ONE on Swedish Radio list
+          Ports of Call named "Best album of the month"
         </h2>
-        <Link onClick={scrollToTop} to="/dance-straight-to-number-one">
+        <Link onClick={scrollToTop} to="/news">
           <span className="ah-contact-link">
             <i>Read full article</i>
           </span>
