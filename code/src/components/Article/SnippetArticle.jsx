@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import scrollToTop from '../../helpers/scrollToTop'
-import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
+import React from "react"
+import { Link } from "gatsby"
+import scrollToTop from "../../helpers/scrollToTop"
+import ArticleWrapper from "./ArticleWrapper/ArticleWrapper"
 
 // VIDEO SNIPPET
 // const SnippetArticle = () => (
@@ -85,12 +85,30 @@ import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
 //   </ArticleWrapper>
 
 // ALBUM OF THE MONTH SNIPPET
+// const SnippetArticle = () => (
+//   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
+//     <section className="ah-article-info-wrapper">
+//       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
+//         <h2 className="ah-article-info-paragraph-heading">
+//           Ports of Call named "Best album of the month"
+//         </h2>
+//         <Link onClick={scrollToTop} to="/news">
+//           <span className="ah-contact-link">
+//             <i>Read full article</i>
+//           </span>
+//         </Link>
+//       </div>
+//     </section>
+//   </ArticleWrapper>
+// )
+
+// KALKFEST 2024 SNIPPET
 const SnippetArticle = () => (
   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
         <h2 className="ah-article-info-paragraph-heading">
-          Ports of Call named "Best album of the month"
+          Adam Heldring live @ Kalkfest 2024 Festival
         </h2>
         <Link onClick={scrollToTop} to="/news">
           <span className="ah-contact-link">
