@@ -1,21 +1,29 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import ArticleWrapper from "./ArticleWrapper/ArticleWrapper"
 import DownloadbleImageCollection, {
   buildDownloadableImageCollectionArray,
-} from '../DownloadbleImageCollection/DownloadableImageCollection'
-import coverArt1High from '../../images/covers/ah-ports_of_call-album-cover.jpg'
-import coverArt2High from '../../images/covers/ah-golden-state-single-cover.jpg'
-import coverArt3High from '../../images/covers/ah-dance-single-cover.jpg'
-import coverArt4High from '../../images/covers/ah-youmore-single-cover.jpg'
-import coverArt5High from '../../images/covers/ah-true_north-ep-cover.jpg'
-import coverArt6High from '../../images/covers/ah-mount_foreverest-album-cover.jpg'
-import coverArt7High from '../../images/covers/ah-metro-ep-cover.jpg'
+} from "../DownloadbleImageCollection/DownloadableImageCollection"
+import coverArt1High from "../../images/covers/ah-youmore-remix-cover.jpg"
+import coverArt2High from "../../images/covers/ah-ports_of_call-album-cover.jpg"
+import coverArt3High from "../../images/covers/ah-golden-state-single-cover.jpg"
+import coverArt4High from "../../images/covers/ah-dance-single-cover.jpg"
+import coverArt5High from "../../images/covers/ah-youmore-single-cover.jpg"
+import coverArt6High from "../../images/covers/ah-true_north-ep-cover.jpg"
+import coverArt7High from "../../images/covers/ah-mount_foreverest-album-cover.jpg"
+import coverArt8High from "../../images/covers/ah-metro-ep-cover.jpg"
 
 const CoverArtArticle = () => {
   const data = useStaticQuery(graphql`
     query coverArtQuery {
-      cover1: file(
+      cover1: file(relativePath: { eq: "covers/ah-youmore-remix-cover.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      cover2: file(
         relativePath: { eq: "covers/ah-ports_of_call-album-cover.jpg" }
       ) {
         childImageSharp {
@@ -24,7 +32,7 @@ const CoverArtArticle = () => {
           }
         }
       }
-      cover2: file(
+      cover3: file(
         relativePath: { eq: "covers/ah-golden-state-single-cover.jpg" }
       ) {
         childImageSharp {
@@ -33,28 +41,28 @@ const CoverArtArticle = () => {
           }
         }
       }
-      cover3: file(relativePath: { eq: "covers/ah-dance-single-cover.jpg" }) {
+      cover4: file(relativePath: { eq: "covers/ah-dance-single-cover.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      cover4: file(relativePath: { eq: "covers/ah-youmore-single-cover.jpg" }) {
+      cover5: file(relativePath: { eq: "covers/ah-youmore-single-cover.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      cover5: file(relativePath: { eq: "covers/ah-true_north-ep-cover.jpg" }) {
+      cover6: file(relativePath: { eq: "covers/ah-true_north-ep-cover.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      cover6: file(
+      cover7: file(
         relativePath: { eq: "covers/ah-mount_foreverest-album-cover.jpg" }
       ) {
         childImageSharp {
@@ -63,7 +71,7 @@ const CoverArtArticle = () => {
           }
         }
       }
-      cover7: file(relativePath: { eq: "covers/ah-metro-ep-cover.jpg" }) {
+      cover8: file(relativePath: { eq: "covers/ah-metro-ep-cover.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -81,60 +89,68 @@ const CoverArtArticle = () => {
   // Create array with static download links and other image info that corresponds with above display array
   const imageInfoArray = [
     {
-      name: 'Ports Of Call',
+      name: "You / More - Fredrik Liiv Remix",
       files: {
         highres: coverArt1High,
       },
       year: 2021,
-      description: 'Ports Of Call album cover art.',
+      description: "You / More - Fredrik Liiv Remix single cover art.",
     },
     {
-      name: 'Golden State',
+      name: "Ports Of Call",
       files: {
         highres: coverArt2High,
       },
       year: 2021,
-      description: 'Golden State single cover art.',
+      description: "Ports Of Call album cover art.",
     },
     {
-      name: 'Dance',
+      name: "Golden State",
       files: {
         highres: coverArt3High,
       },
       year: 2021,
-      description: 'Dance single cover art.',
+      description: "Golden State single cover art.",
     },
     {
-      name: 'You / More',
+      name: "Dance",
       files: {
         highres: coverArt4High,
       },
-      year: 2019,
-      description: 'You / More single cover art.',
+      year: 2021,
+      description: "Dance single cover art.",
     },
     {
-      name: 'True North EP',
+      name: "You / More",
       files: {
         highres: coverArt5High,
       },
-      year: 2010,
-      description: 'True North EP cover art.',
+      year: 2019,
+      description: "You / More single cover art.",
     },
     {
-      name: 'You / More',
+      name: "True North EP",
       files: {
         highres: coverArt6High,
       },
-      year: 2009,
-      description: 'Mount Foreverest album cover art.',
+      year: 2010,
+      description: "True North EP cover art.",
     },
     {
-      name: 'Metro EP',
+      name: "You / More",
       files: {
         highres: coverArt7High,
       },
       year: 2009,
-      description: 'Metro EP cover art.',
+      description: "Mount Foreverest album cover art.",
+    },
+    {
+      name: "Metro EP",
+      files: {
+        highres: coverArt8High,
+      },
+      year: 2009,
+      description: "Metro EP cover art.",
     },
   ]
 
