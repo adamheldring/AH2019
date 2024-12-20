@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { useSpring, animated } from 'react-spring'
-import Img from 'gatsby-image'
-import { useStaticQuery, graphql } from 'gatsby'
-import ArticleWrapper from './ArticleWrapper/ArticleWrapper'
+import React, { useState } from "react"
+import { useSpring, animated } from "react-spring"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
+import ArticleWrapper from "./ArticleWrapper/ArticleWrapper"
 
-const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
+const ReleaseArticle = ({ release, coverFluid, articleTitle = "" }) => {
   const data = useStaticQuery(graphql`
     query imageQuery {
       chevrondown: file(relativePath: { eq: "materials/chevron-down.png" }) {
@@ -26,7 +26,7 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
 
   const [foldOutIsVisible, setFoldOutIsVisible] = useState(false)
   const foldOutPlayerStyle = useSpring({
-    height: `${foldOutIsVisible ? release.playerHeight : '0'}px`,
+    height: `${foldOutIsVisible ? release.playerHeight : "0"}px`,
   })
 
   return (
@@ -37,10 +37,10 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
       <section className="ah-article-visual--image-square-outer-container ah-article--split-section">
         <div
           className="ah-article-visual--image-square-inner-container"
-          style={{ position: 'relative' }}
+          style={{ position: "relative" }}
         >
           <div
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
             onClick={() => {
               setFoldOutIsVisible(!foldOutIsVisible)
             }}
@@ -64,7 +64,14 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
       </section>
       <section className="ah-article-info-wrapper ah-article--split-section">
         <div className="ah-article-info-paragraph ah-article-info-paragraph--list ah-article-info-paragraph--release-info">
-          <h2 className="ah-article-info-paragraph-heading">{release.title}</h2>
+          <h2
+            className={`ah-article-info-paragraph-heading ${
+              // Control long release titles with media queries
+              release.title.length > 25 ? "ah-article--release-title-long" : ""
+            }`}
+          >
+            {release.title}
+          </h2>
           <span>
             Format: {release.format}
             <br />
@@ -87,7 +94,7 @@ const ReleaseArticle = ({ release, coverFluid, articleTitle = '' }) => {
             <Img
               className="ah-article-fold-out-trigger-icon"
               fixed={
-                data[foldOutIsVisible ? 'chevronup' : 'chevrondown']
+                data[foldOutIsVisible ? "chevronup" : "chevrondown"]
                   .childImageSharp.fixed
               }
             />

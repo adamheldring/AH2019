@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
-import ReleaseArticle from '../components/Article/ReleaseArticle'
-import SEO from '../components/seo'
-import releaseData from '../../data/releaseData'
+import React, { Fragment } from "react"
+import { graphql } from "gatsby"
+import ReleaseArticle from "../components/Article/ReleaseArticle"
+import SEO from "../components/seo"
+import releaseData from "../../data/releaseData"
 
 const { releases } = releaseData
 
@@ -25,6 +25,15 @@ export default MusicPage
 
 export const imageQuery = graphql`
   query {
+    ymremixcover: file(
+      relativePath: { eq: "covers/ah-youmore-remix-cover.jpg" }
+    ) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     poccover: file(
       relativePath: { eq: "covers/ah-ports_of_call-album-cover.jpg" }
     ) {

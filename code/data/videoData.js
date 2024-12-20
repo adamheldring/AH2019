@@ -1,20 +1,21 @@
 export default {
   videos: [
     {
-      title: "Dance (Single TEASER)",
-      description: "From upcoming full album",
-      additionalInfo: "From Dance single",
-      videoLabel: "TEASER",
-      metaTitle: "Dance Teaser",
-      youTubeVideoCode: "3rEP14ghceE",
-    },
-    {
       title: "You / More",
-      description: "From upcoming full album",
+      description:
+        'Music video for "You / More" single from full album "Ports of Call"',
       additionalInfo: "From You / More single",
       videoLabel: "MUSIC VIDEO",
       metaTitle: "You / More video",
       youTubeVideoCode: "hP7B0h3oIdk",
+    },
+    {
+      title: "Dance (Single TEASER)",
+      description: 'Single from full album "Ports of Call"',
+      additionalInfo: "From Dance single",
+      videoLabel: "TEASER",
+      metaTitle: "Dance Teaser",
+      youTubeVideoCode: "3rEP14ghceE",
     },
     {
       title: "Bear Town",
