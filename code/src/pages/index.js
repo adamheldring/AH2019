@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
             shows={future.slice(future.length - 1)}
           />
         )}
-        {latestVideo && (
+        {/* {latestVideo && (
           <VideoArticle
             videoLabel="LATEST VIDEO"
             metaTitle={latestVideo.metaTitle}
@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
             title={latestVideo.title}
             description={latestVideo.description}
           />
-        )}
+        )} */}
         <BiographyArticle portrait={data.portrait} />
         <ContactArticle
           tennislogo={data.tennislogoblack}
