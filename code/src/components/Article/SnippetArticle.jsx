@@ -102,13 +102,31 @@ import ArticleWrapper from "./ArticleWrapper/ArticleWrapper"
 //   </ArticleWrapper>
 // )
 
+// KALKFEST 2024 SNIPPET
+// const SnippetArticle = () => (
+//   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
+//     <section className="ah-article-info-wrapper">
+//       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
+//         <h2 className="ah-article-info-paragraph-heading">
+//           Adam Heldring live @ Kalkfest 2024 Festival
+//         </h2>
+//         <Link onClick={scrollToTop} to="/news">
+//           <span className="ah-contact-link">
+//             <i>Read full article</i>
+//           </span>
+//         </Link>
+//       </div>
+//     </section>
+//   </ArticleWrapper>
+// )
+
 // YOU / MORE REMIX OUT NOW SNIPPET
 const SnippetArticle = () => (
   <ArticleWrapper title="LATEST NEWS" singlePageLink="">
     <section className="ah-article-info-wrapper">
       <div className="ah-article-info-paragraph ah-article-info-paragraph--list">
         <h2 className="ah-article-info-paragraph-heading">
-          "You / More - Fredrik Liiv Remix" OUT NOW
+          You / More (Fredrik Liiv Remix) – OUT NOW
         </h2>
         <Link onClick={scrollToTop} to="/news">
           <span className="ah-contact-link">
