@@ -73,7 +73,7 @@ export const imageQuery = graphql`
     }
     portrait: file(
       relativePath: {
-        eq: "press/Adam_Heldring_press_2019_1_-_Photo_Andreas_Karlsson_(highres).jpg"
+        eq: "press/Adam_Heldring_press_2024-1_-_Photo_Emelie_Lind_(highres).jpg"
       }
     ) {
       childImageSharp {

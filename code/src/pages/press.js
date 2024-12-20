@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
-import SEO from '../components/seo'
-import SocialMediaArticle from '../components/Article/SocialMediaArticle'
-import BiographyArticle from '../components/Article/BiographyArticle'
-import PressContactArticle from '../components/Article/PressContactArticle'
-import PressPhotosArticle from '../components/Article/PressPhotosArticle'
-import CoverArtArticle from '../components/Article/CoverArtArticle'
+import React, { Fragment } from "react"
+import { graphql } from "gatsby"
+import SEO from "../components/seo"
+import SocialMediaArticle from "../components/Article/SocialMediaArticle"
+import BiographyArticle from "../components/Article/BiographyArticle"
+import PressContactArticle from "../components/Article/PressContactArticle"
+import PressPhotosArticle from "../components/Article/PressPhotosArticle"
+import CoverArtArticle from "../components/Article/CoverArtArticle"
 
 const PressPage = ({ data }) => (
   <Fragment>
@@ -26,7 +26,7 @@ export const imageQuery = graphql`
   query {
     portrait: file(
       relativePath: {
-        eq: "press/Adam_Heldring_press_2019_1_-_Photo_Andreas_Karlsson_(highres).jpg"
+        eq: "press/Adam_Heldring_press_2024-1_-_Photo_Emelie_Lind_(highres).jpg"
       }
     ) {
       childImageSharp {
